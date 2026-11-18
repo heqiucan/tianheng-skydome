@@ -1,0 +1,454 @@
+{
+  "incident": {
+    "id": "inc-demo-001",
+    "title": "实训基地温度异常",
+    "location_id": "loc-training-2f",
+    "event_type": "suspected_fire",
+    "status": "open",
+    "risk_level": "high",
+    "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+    "triggered_at": "2026-11-15T16:37:20.883+08:00",
+    "is_simulated": true,
+    "location_name": "实训基地二层（DEMO 楼层）",
+    "source": {
+      "kind": "demo_fixture",
+      "label": "预置演示场景 · DEMO"
+    },
+    "building_id": "loc-training",
+    "building_name": "物流与航空实训基地",
+    "device_ids": [
+      "dev-camera-01",
+      "dev-robot-01",
+      "dev-smoke-01",
+      "dev-temp-01",
+      "dev-water-01"
+    ]
+  },
+  "data_scope": "event_snapshot",
+  "devices": [
+    {
+      "id": "dev-camera-01",
+      "code": "CAM-021",
+      "name": "实训楼走廊摄像机",
+      "type": "camera",
+      "location_id": "loc-training-2f",
+      "status": "alarm",
+      "last_seen": "2026-11-15T16:37:20.883+08:00",
+      "metrics": [
+        {
+          "kind": "camera_event",
+          "label": "异常记录",
+          "value": 1.0,
+          "unit": "",
+          "observation_id": "obs-3452374af8a84692",
+          "observed_at": "2026-11-15T16:37:20.883+08:00",
+          "incident_id": "inc-demo-001",
+          "quality": "alarm",
+          "data_scope": "event_snapshot"
+        }
+      ],
+      "is_simulated": true
+    },
+    {
+      "id": "dev-robot-01",
+      "code": "ROBOT-001",
+      "name": "校园巡检机器人",
+      "type": "robot",
+      "location_id": "loc-training-2f",
+      "status": "offline",
+      "last_seen": "2026-11-15T16:37:20.883+08:00",
+      "metrics": [
+        {
+          "kind": "connectivity",
+          "label": "通信状态",
+          "value": "离线",
+          "unit": "",
+          "observation_id": "obs-1cb60dcb447c459e",
+          "observed_at": "2026-11-15T16:37:20.883+08:00",
+          "incident_id": "inc-demo-001",
+          "quality": "offline",
+          "data_scope": "event_snapshot"
+        }
+      ],
+      "is_simulated": true
+    },
+    {
+      "id": "dev-smoke-01",
+      "code": "SMOKE-012",
+      "name": "实训楼烟雾传感器",
+      "type": "smoke",
+      "location_id": "loc-training-2f",
+      "status": "alarm",
+      "last_seen": "2026-11-15T16:37:20.883+08:00",
+      "metrics": [
+        {
+          "kind": "smoke_alarm",
+          "label": "烟雾告警",
+          "value": "告警",
+          "unit": "",
+          "observation_id": "obs-d5fb1e7e258b4ca4",
+          "observed_at": "2026-11-15T16:37:20.883+08:00",
+          "incident_id": "inc-demo-001",
+          "quality": "alarm",
+          "data_scope": "event_snapshot"
+        }
+      ],
+      "is_simulated": true
+    },
+    {
+      "id": "dev-temp-01",
+      "code": "TEMP-008",
+      "name": "实训楼温度传感器",
+      "type": "temperature",
+      "location_id": "loc-training-2f",
+      "status": "alarm",
+      "last_seen": "2026-11-15T16:37:20.883+08:00",
+      "metrics": [
+        {
+          "kind": "temperature",
+          "label": "温度",
+          "value": 78.0,
+          "unit": "°C",
+          "observation_id": "obs-af1200e1d7bc413b",
+          "observed_at": "2026-11-15T16:37:20.883+08:00",
+          "incident_id": "inc-demo-001",
+          "quality": "alarm",
+          "data_scope": "event_snapshot"
+        }
+      ],
+      "is_simulated": true
+    },
+    {
+      "id": "dev-water-01",
+      "code": "FIRE-003",
+      "name": "实训楼消防水压监测",
+      "type": "water_pressure",
+      "location_id": "loc-training-2f",
+      "status": "online",
+      "last_seen": "2026-11-15T16:37:20.883+08:00",
+      "metrics": [
+        {
+          "kind": "water_pressure",
+          "label": "消防水压",
+          "value": 0.35,
+          "unit": "MPa",
+          "observation_id": "obs-df0ed7d6f33b475c",
+          "observed_at": "2026-11-15T16:37:20.883+08:00",
+          "incident_id": "inc-demo-001",
+          "quality": "good",
+          "data_scope": "event_snapshot"
+        }
+      ],
+      "is_simulated": true
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-aa56d71ddc88488e",
+      "device_id": "dev-temp-01",
+      "incident_id": "inc-demo-001",
+      "kind": "temperature",
+      "value": 26.0,
+      "unit": "°C",
+      "observed_at": "2026-11-15T16:22:20.883+08:00",
+      "quality": "good",
+      "description": "预置模拟温度记录",
+      "observation_id": "obs-aa56d71ddc88488e",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-b8fce2ef7daf4db2",
+      "device_id": "dev-temp-01",
+      "incident_id": "inc-demo-001",
+      "kind": "temperature",
+      "value": 27.0,
+      "unit": "°C",
+      "observed_at": "2026-11-15T16:25:20.883+08:00",
+      "quality": "good",
+      "description": "预置模拟温度记录",
+      "observation_id": "obs-b8fce2ef7daf4db2",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-db545fea80824326",
+      "device_id": "dev-temp-01",
+      "incident_id": "inc-demo-001",
+      "kind": "temperature",
+      "value": 31.0,
+      "unit": "°C",
+      "observed_at": "2026-11-15T16:28:20.883+08:00",
+      "quality": "good",
+      "description": "预置模拟温度记录",
+      "observation_id": "obs-db545fea80824326",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-b87e09c44f3c4b2e",
+      "device_id": "dev-temp-01",
+      "incident_id": "inc-demo-001",
+      "kind": "temperature",
+      "value": 42.0,
+      "unit": "°C",
+      "observed_at": "2026-11-15T16:31:20.883+08:00",
+      "quality": "good",
+      "description": "预置模拟温度记录",
+      "observation_id": "obs-b87e09c44f3c4b2e",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-5bbad6e5c6bc4e55",
+      "device_id": "dev-temp-01",
+      "incident_id": "inc-demo-001",
+      "kind": "temperature",
+      "value": 61.0,
+      "unit": "°C",
+      "observed_at": "2026-11-15T16:34:20.883+08:00",
+      "quality": "alarm",
+      "description": "预置模拟温度记录",
+      "observation_id": "obs-5bbad6e5c6bc4e55",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-af1200e1d7bc413b",
+      "device_id": "dev-temp-01",
+      "incident_id": "inc-demo-001",
+      "kind": "temperature",
+      "value": 78.0,
+      "unit": "°C",
+      "observed_at": "2026-11-15T16:37:20.883+08:00",
+      "quality": "alarm",
+      "description": "预置模拟温度记录",
+      "observation_id": "obs-af1200e1d7bc413b",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-d5fb1e7e258b4ca4",
+      "device_id": "dev-smoke-01",
+      "incident_id": "inc-demo-001",
+      "kind": "smoke_alarm",
+      "value": 1.0,
+      "unit": "",
+      "observed_at": "2026-11-15T16:37:20.883+08:00",
+      "quality": "alarm",
+      "description": "预置模拟烟雾告警",
+      "observation_id": "obs-d5fb1e7e258b4ca4",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-3452374af8a84692",
+      "device_id": "dev-camera-01",
+      "incident_id": "inc-demo-001",
+      "kind": "camera_event",
+      "value": 1.0,
+      "unit": "",
+      "observed_at": "2026-11-15T16:37:20.883+08:00",
+      "quality": "alarm",
+      "description": "模拟异常事件记录，未进行视频识别或现场确认",
+      "observation_id": "obs-3452374af8a84692",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-df0ed7d6f33b475c",
+      "device_id": "dev-water-01",
+      "incident_id": "inc-demo-001",
+      "kind": "water_pressure",
+      "value": 0.35,
+      "unit": "MPa",
+      "observed_at": "2026-11-15T16:37:20.883+08:00",
+      "quality": "good",
+      "description": "预置模拟消防水压记录",
+      "observation_id": "obs-df0ed7d6f33b475c",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-1cb60dcb447c459e",
+      "device_id": "dev-robot-01",
+      "incident_id": "inc-demo-001",
+      "kind": "connectivity",
+      "value": 0.0,
+      "unit": "",
+      "observed_at": "2026-11-15T16:37:20.883+08:00",
+      "quality": "offline",
+      "description": "模拟设备离线",
+      "observation_id": "obs-1cb60dcb447c459e",
+      "data_scope": "event_snapshot"
+    }
+  ],
+  "current_devices": [
+    {
+      "id": "dev-camera-01",
+      "code": "CAM-021",
+      "name": "实训楼走廊摄像机",
+      "type": "camera",
+      "location_id": "loc-training-2f",
+      "status": "offline",
+      "last_seen": "2026-11-15T17:56:46.721+08:00",
+      "metrics": [
+        {
+          "kind": "camera_event",
+          "label": "异常记录",
+          "value": 1.0,
+          "unit": "",
+          "observation_id": "obs-2f700148150546f3",
+          "observed_at": "2026-11-15T17:03:15.223+08:00",
+          "incident_id": "inc-84854a2c5b254f19",
+          "quality": "alarm",
+          "data_scope": "current_device_state"
+        },
+        {
+          "kind": "connectivity",
+          "label": "通信状态",
+          "value": "离线",
+          "unit": "",
+          "observation_id": "obs-3af0d77648f943e5",
+          "observed_at": "2026-11-15T17:56:46.721+08:00",
+          "incident_id": "inc-demo-offline",
+          "quality": "offline",
+          "data_scope": "current_device_state"
+        }
+      ],
+      "is_simulated": true
+    },
+    {
+      "id": "dev-robot-01",
+      "code": "ROBOT-001",
+      "name": "校园巡检机器人",
+      "type": "robot",
+      "location_id": "loc-training-2f",
+      "status": "online",
+      "last_seen": "2026-11-15T17:56:46.721+08:00",
+      "metrics": [
+        {
+          "kind": "connectivity",
+          "label": "通信状态",
+          "value": "在线",
+          "unit": "",
+          "observation_id": "obs-c9513997b10e40d1",
+          "observed_at": "2026-11-15T17:56:46.721+08:00",
+          "incident_id": "inc-demo-offline",
+          "quality": "good",
+          "data_scope": "current_device_state"
+        },
+        {
+          "kind": "battery",
+          "label": "电量",
+          "value": 76.0,
+          "unit": "%",
+          "observation_id": "obs-14889b7233c44317",
+          "observed_at": "2026-11-15T17:56:46.721+08:00",
+          "incident_id": "inc-demo-offline",
+          "quality": "good",
+          "data_scope": "current_device_state"
+        }
+      ],
+      "is_simulated": true
+    },
+    {
+      "id": "dev-smoke-01",
+      "code": "SMOKE-012",
+      "name": "实训楼烟雾传感器",
+      "type": "smoke",
+      "location_id": "loc-training-2f",
+      "status": "alarm",
+      "last_seen": "2026-11-15T17:03:15.223+08:00",
+      "metrics": [
+        {
+          "kind": "smoke_alarm",
+          "label": "烟雾告警",
+          "value": "告警",
+          "unit": "",
+          "observation_id": "obs-4bfcae7f156a44b6",
+          "observed_at": "2026-11-15T17:03:15.223+08:00",
+          "incident_id": "inc-84854a2c5b254f19",
+          "quality": "alarm",
+          "data_scope": "current_device_state"
+        }
+      ],
+      "is_simulated": true
+    },
+    {
+      "id": "dev-temp-01",
+      "code": "TEMP-008",
+      "name": "实训楼温度传感器",
+      "type": "temperature",
+      "location_id": "loc-training-2f",
+      "status": "alarm",
+      "last_seen": "2026-11-15T17:03:15.223+08:00",
+      "metrics": [
+        {
+          "kind": "temperature",
+          "label": "温度",
+          "value": 78.0,
+          "unit": "°C",
+          "observation_id": "obs-536f85d792cc49cf",
+          "observed_at": "2026-11-15T17:03:15.223+08:00",
+          "incident_id": "inc-84854a2c5b254f19",
+          "quality": "alarm",
+          "data_scope": "current_device_state"
+        }
+      ],
+      "is_simulated": true
+    },
+    {
+      "id": "dev-water-01",
+      "code": "FIRE-003",
+      "name": "实训楼消防水压监测",
+      "type": "water_pressure",
+      "location_id": "loc-training-2f",
+      "status": "alarm",
+      "last_seen": "2026-11-15T17:56:46.721+08:00",
+      "metrics": [
+        {
+          "kind": "water_pressure",
+          "label": "消防水压",
+          "value": 0.08,
+          "unit": "MPa",
+          "observation_id": "obs-2386b09065a84adb",
+          "observed_at": "2026-11-15T17:56:46.721+08:00",
+          "incident_id": "inc-demo-fire",
+          "quality": "alarm",
+          "data_scope": "current_device_state"
+        }
+      ],
+      "is_simulated": true
+    }
+  ],
+  "history": [
+    {
+      "id": "inc-demo-fire",
+      "title": "校园区域消防设备异常",
+      "location_id": "loc-training-2f",
+      "event_type": "fire_equipment",
+      "status": "open",
+      "risk_level": "high",
+      "summary": "DEMO：FIRE-003 水压记录异常，需要人工核验。",
+      "triggered_at": "2026-11-15T16:37:19.883+08:00",
+      "is_simulated": true,
+      "location_name": "实训基地二层（DEMO 楼层）"
+    },
+    {
+      "id": "inc-demo-offline",
+      "title": "实验空间设备离线",
+      "location_id": "loc-training-2f",
+      "event_type": "device_offline",
+      "status": "open",
+      "risk_level": "medium",
+      "summary": "DEMO：CAM-021 通信中断；真实实验空间与楼层待核实。",
+      "triggered_at": "2026-11-15T16:37:18.883+08:00",
+      "is_simulated": true,
+      "location_name": "实训基地二层（DEMO 楼层）"
+    }
+  ],
+  "source_context": {
+    "source_view": "map",
+    "image_id": "training-2026",
+    "selection": {
+      "kind": "incident",
+      "id": "inc-demo-001"
+    }
+  },
+  "is_simulated": true,
+  "snapshot_id": "evidence-4c1a5d6df753402e",
+  "captured_at": "2026-11-15T20:16:57.238+08:00",
+  "checksum": "3e04823e4bb33d0582c896353b132f4e7234c2985f6f0393621b911ba5cb0549"
+}

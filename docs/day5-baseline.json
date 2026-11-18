@@ -1,0 +1,4810 @@
+{
+  "checked_at": "2026-11-15T15:12:10.843427+00:00",
+  "incidents": [
+    {
+      "id": "inc-b95fceb429634ad6",
+      "title": "实训楼二层疑似火情",
+      "location_id": "loc-training-2f",
+      "event_type": "suspected_fire",
+      "status": "open",
+      "risk_level": "high",
+      "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+      "triggered_at": "2026-11-15T14:57:58.632+00:00",
+      "is_simulated": true,
+      "location_name": "实训基地二层（DEMO 楼层）"
+    },
+    {
+      "id": "inc-temp-10795e72d90d438e",
+      "title": "实训基地单项温度异常（对照场景）",
+      "location_id": "loc-training-2f",
+      "event_type": "temperature_anomaly",
+      "status": "open",
+      "risk_level": "unassessed",
+      "summary": "DEMO：温度68.5℃、烟雾未触发、摄像机在线；温度异常不等于火灾。",
+      "triggered_at": "2026-11-15T12:50:01.326+00:00",
+      "is_simulated": true,
+      "location_name": "实训基地二层（DEMO 楼层）"
+    },
+    {
+      "id": "inc-temp-6151439068f444c9",
+      "title": "实训基地单项温度异常（对照场景）",
+      "location_id": "loc-training-2f",
+      "event_type": "temperature_anomaly",
+      "status": "open",
+      "risk_level": "medium",
+      "summary": "基础数据核查完成。存在单项异常，需要补充核查；这不是已批准的处置方案。",
+      "triggered_at": "2026-11-15T12:21:16.231+00:00",
+      "is_simulated": true,
+      "location_name": "实训基地二层（DEMO 楼层）"
+    },
+    {
+      "id": "inc-84854a2c5b254f19",
+      "title": "实训楼二层疑似火情",
+      "location_id": "loc-training-2f",
+      "event_type": "suspected_fire",
+      "status": "open",
+      "risk_level": "high",
+      "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+      "triggered_at": "2026-11-15T09:03:15.223+00:00",
+      "is_simulated": true,
+      "location_name": "实训基地二层（DEMO 楼层）"
+    },
+    {
+      "id": "inc-demo-001",
+      "title": "实训基地温度异常",
+      "location_id": "loc-training-2f",
+      "event_type": "suspected_fire",
+      "status": "open",
+      "risk_level": "high",
+      "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+      "triggered_at": "2026-11-15T08:37:20.883+00:00",
+      "is_simulated": true,
+      "location_name": "实训基地二层（DEMO 楼层）"
+    },
+    {
+      "id": "inc-demo-fire",
+      "title": "校园区域消防设备异常",
+      "location_id": "loc-training-2f",
+      "event_type": "fire_equipment",
+      "status": "open",
+      "risk_level": "high",
+      "summary": "DEMO：FIRE-003 水压记录异常，需要人工核验。",
+      "triggered_at": "2026-11-15T08:37:19.883+00:00",
+      "is_simulated": true,
+      "location_name": "实训基地二层（DEMO 楼层）"
+    },
+    {
+      "id": "inc-demo-offline",
+      "title": "实验空间设备离线",
+      "location_id": "loc-training-2f",
+      "event_type": "device_offline",
+      "status": "open",
+      "risk_level": "medium",
+      "summary": "DEMO：CAM-021 通信中断；真实实验空间与楼层待核实。",
+      "triggered_at": "2026-11-15T08:37:18.883+00:00",
+      "is_simulated": true,
+      "location_name": "实训基地二层（DEMO 楼层）"
+    }
+  ],
+  "runs": [
+    {
+      "id": "run-4a95bd997879485e",
+      "conversation_id": "chat-b813b484dc674383",
+      "incident_id": "inc-b95fceb429634ad6",
+      "instruction": "检查实训楼二层异常情况，分析风险并核查关联设备与历史事件。",
+      "mode": "demo",
+      "status": "completed",
+      "stage": "completed",
+      "created_at": "2026-11-15T14:58:54.528+00:00",
+      "started_at": "2026-11-15T14:58:54.557+00:00",
+      "finished_at": "2026-11-15T14:58:54.744+00:00",
+      "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+      "result": {
+        "level": "high",
+        "title": "多源异常需要优先人工复核",
+        "evidence": [
+          {
+            "label": "温度",
+            "value": "78°C",
+            "source_id": "obs-0e73c9115c584c57"
+          },
+          {
+            "label": "烟雾告警",
+            "value": "触发",
+            "source_id": "obs-6cc10b6fcd344ad3"
+          }
+        ],
+        "reasons": [
+          "温度记录命中 ≥60°C 的演示阈值；此阈值不是消防认证标准。",
+          "同一事件的烟雾传感器存在模拟告警。"
+        ],
+        "uncertainties": [
+          "所有设备记录均为预置模拟数据；未核实现场情况。",
+          "当前为规则初步核查，未经过真实模型综合研判或人工审批。",
+          "关联设备存在离线状态，不能以其缺失读数判断现场正常。"
+        ],
+        "recommendations": [
+          "由授权人员依据正式校园预案复核现场信息。",
+          "核对关联设备的通信状态和数据质量。",
+          "补充证据后进入方案审批；本阶段不会创建或执行处置任务。"
+        ],
+        "rule_version": "demo-risk-v1",
+        "is_demo": true,
+        "scope": "preliminary_demo_assessment",
+        "evidence_snapshot_id": null,
+        "data_scope": "event_snapshot"
+      },
+      "error": null,
+      "evidence_snapshot_id": null
+    },
+    {
+      "id": "run-c1b19372dcc2492a",
+      "conversation_id": "chat-1bf7ceb9d83749c0",
+      "incident_id": "inc-temp-6151439068f444c9",
+      "instruction": "复核单温异常，列出观测来源与尚缺信息。",
+      "mode": "demo",
+      "status": "completed",
+      "stage": "completed",
+      "created_at": "2026-11-15T12:32:52.945+00:00",
+      "started_at": "2026-11-15T12:32:52.960+00:00",
+      "finished_at": "2026-11-15T12:32:53.033+00:00",
+      "summary": "基础数据核查完成。存在单项异常，需要补充核查；这不是已批准的处置方案。",
+      "result": {
+        "level": "medium",
+        "title": "存在单项异常，需要补充核查",
+        "evidence": [
+          {
+            "label": "温度",
+            "value": "68.5°C",
+            "source_id": "obs-f82274a358694bd0"
+          },
+          {
+            "label": "烟雾告警",
+            "value": "未触发",
+            "source_id": "obs-156be92b42f045c6"
+          }
+        ],
+        "reasons": [
+          "温度记录命中 ≥60°C 的演示阈值；此阈值不是消防认证标准。"
+        ],
+        "uncertainties": [
+          "所有设备记录均为预置模拟数据；未核实现场情况。",
+          "当前为规则初步核查，未经过真实模型综合研判或人工审批。"
+        ],
+        "recommendations": [
+          "由授权人员依据正式校园预案复核现场信息。",
+          "核对关联设备的通信状态和数据质量。",
+          "补充证据后进入方案审批；本阶段不会创建或执行处置任务。"
+        ],
+        "rule_version": "demo-risk-v1",
+        "is_demo": true,
+        "scope": "preliminary_demo_assessment",
+        "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+        "data_scope": "event_snapshot"
+      },
+      "error": null,
+      "evidence_snapshot_id": "evidence-99d4647d2f3544ba"
+    },
+    {
+      "id": "run-b1e1bc9feab5400d",
+      "conversation_id": "chat-ce3cc39f65c34027",
+      "incident_id": "inc-temp-6151439068f444c9",
+      "instruction": "核查实训基地单项温度异常（对照场景）的监测数据、关联设备和历史记录，说明证据与信息缺口。",
+      "mode": "demo",
+      "status": "completed",
+      "stage": "completed",
+      "created_at": "2026-11-15T12:22:41.462+00:00",
+      "started_at": "2026-11-15T12:22:41.475+00:00",
+      "finished_at": "2026-11-15T12:22:41.563+00:00",
+      "summary": "基础数据核查完成。存在单项异常，需要补充核查；这不是已批准的处置方案。",
+      "result": {
+        "level": "medium",
+        "title": "存在单项异常，需要补充核查",
+        "evidence": [
+          {
+            "label": "温度",
+            "value": "68.5°C",
+            "source_id": "obs-f82274a358694bd0"
+          },
+          {
+            "label": "烟雾告警",
+            "value": "未触发",
+            "source_id": "obs-156be92b42f045c6"
+          }
+        ],
+        "reasons": [
+          "温度记录命中 ≥60°C 的演示阈值；此阈值不是消防认证标准。"
+        ],
+        "uncertainties": [
+          "所有设备记录均为预置模拟数据；未核实现场情况。",
+          "当前为规则初步核查，未经过真实模型综合研判或人工审批。"
+        ],
+        "recommendations": [
+          "由授权人员依据正式校园预案复核现场信息。",
+          "核对关联设备的通信状态和数据质量。",
+          "补充证据后进入方案审批；本阶段不会创建或执行处置任务。"
+        ],
+        "rule_version": "demo-risk-v1",
+        "is_demo": true,
+        "scope": "preliminary_demo_assessment",
+        "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+        "data_scope": "event_snapshot"
+      },
+      "error": null,
+      "evidence_snapshot_id": "evidence-99d4647d2f3544ba"
+    },
+    {
+      "id": "run-3b454709f0cb41f8",
+      "conversation_id": "chat-601b07d198da4638",
+      "incident_id": "inc-demo-001",
+      "instruction": "核查实训基地温度异常的监测数据、关联设备和历史记录，说明证据与信息缺口。",
+      "mode": "demo",
+      "status": "completed",
+      "stage": "completed",
+      "created_at": "2026-11-15T12:17:35.540+00:00",
+      "started_at": "2026-11-15T12:17:35.558+00:00",
+      "finished_at": "2026-11-15T12:17:35.649+00:00",
+      "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+      "result": {
+        "level": "high",
+        "title": "多源异常需要优先人工复核",
+        "evidence": [
+          {
+            "label": "温度",
+            "value": "78°C",
+            "source_id": "obs-af1200e1d7bc413b"
+          },
+          {
+            "label": "烟雾告警",
+            "value": "触发",
+            "source_id": "obs-d5fb1e7e258b4ca4"
+          }
+        ],
+        "reasons": [
+          "温度记录命中 ≥60°C 的演示阈值；此阈值不是消防认证标准。",
+          "同一事件的烟雾传感器存在模拟告警。"
+        ],
+        "uncertainties": [
+          "所有设备记录均为预置模拟数据；未核实现场情况。",
+          "当前为规则初步核查，未经过真实模型综合研判或人工审批。",
+          "关联设备存在离线状态，不能以其缺失读数判断现场正常。"
+        ],
+        "recommendations": [
+          "由授权人员依据正式校园预案复核现场信息。",
+          "核对关联设备的通信状态和数据质量。",
+          "补充证据后进入方案审批；本阶段不会创建或执行处置任务。"
+        ],
+        "rule_version": "demo-risk-v1",
+        "is_demo": true,
+        "scope": "preliminary_demo_assessment",
+        "evidence_snapshot_id": "evidence-4c1a5d6df753402e",
+        "data_scope": "event_snapshot"
+      },
+      "error": null,
+      "evidence_snapshot_id": "evidence-4c1a5d6df753402e"
+    },
+    {
+      "id": "run-fd9f6bb111ed48c0",
+      "conversation_id": "chat-ef383d7eb30247b5",
+      "incident_id": "inc-demo-001",
+      "instruction": "检查当前实训基地温度异常事件，核对监测数据、设备状态和历史记录。",
+      "mode": "demo",
+      "status": "completed",
+      "stage": "completed",
+      "created_at": "2026-11-15T10:37:09.193+00:00",
+      "started_at": "2026-11-15T10:37:09.208+00:00",
+      "finished_at": "2026-11-15T10:37:09.314+00:00",
+      "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+      "result": {
+        "level": "high",
+        "title": "多源异常需要优先人工复核",
+        "evidence": [
+          {
+            "label": "温度",
+            "value": "78°C",
+            "source_id": "obs-af1200e1d7bc413b"
+          },
+          {
+            "label": "烟雾告警",
+            "value": "触发",
+            "source_id": "obs-d5fb1e7e258b4ca4"
+          }
+        ],
+        "reasons": [
+          "温度记录命中 ≥60°C 的演示阈值；此阈值不是消防认证标准。",
+          "同一事件的烟雾传感器存在模拟告警。"
+        ],
+        "uncertainties": [
+          "所有设备记录均为预置模拟数据；未核实现场情况。",
+          "当前为规则初步核查，未经过真实模型综合研判或人工审批。",
+          "关联设备存在离线状态，不能以其缺失读数判断现场正常。"
+        ],
+        "recommendations": [
+          "由授权人员依据正式校园预案复核现场信息。",
+          "核对关联设备的通信状态和数据质量。",
+          "补充证据后进入方案审批；本阶段不会创建或执行处置任务。"
+        ],
+        "rule_version": "demo-risk-v1",
+        "is_demo": true,
+        "scope": "preliminary_demo_assessment"
+      },
+      "error": null,
+      "evidence_snapshot_id": null
+    },
+    {
+      "id": "run-0412a232d9474405",
+      "conversation_id": "chat-8dccd1af80524f79",
+      "incident_id": "inc-84854a2c5b254f19",
+      "instruction": "检查实训楼二层的温度、烟雾与设备记录。",
+      "mode": "demo",
+      "status": "completed",
+      "stage": "completed",
+      "created_at": "2026-11-15T09:03:36.591+00:00",
+      "started_at": "2026-11-15T09:03:36.606+00:00",
+      "finished_at": "2026-11-15T09:03:36.712+00:00",
+      "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+      "result": {
+        "level": "high",
+        "title": "多源异常需要优先人工复核",
+        "evidence": [
+          {
+            "label": "温度",
+            "value": "78°C",
+            "source_id": "obs-536f85d792cc49cf"
+          },
+          {
+            "label": "烟雾告警",
+            "value": "触发",
+            "source_id": "obs-4bfcae7f156a44b6"
+          }
+        ],
+        "reasons": [
+          "温度记录命中 ≥60°C 的演示阈值；此阈值不是消防认证标准。",
+          "同一事件的烟雾传感器存在模拟告警。"
+        ],
+        "uncertainties": [
+          "所有设备记录均为预置模拟数据；未核实现场情况。",
+          "当前为规则初步核查，未经过真实模型综合研判或人工审批。",
+          "关联设备存在离线状态，不能以其缺失读数判断现场正常。"
+        ],
+        "recommendations": [
+          "由授权人员依据正式校园预案复核现场信息。",
+          "核对关联设备的通信状态和数据质量。",
+          "补充证据后进入方案审批；本阶段不会创建或执行处置任务。"
+        ],
+        "rule_version": "demo-risk-v1",
+        "is_demo": true,
+        "scope": "preliminary_demo_assessment"
+      },
+      "error": null,
+      "evidence_snapshot_id": null
+    },
+    {
+      "id": "run-907093b4901c4d76",
+      "conversation_id": "chat-ef383d7eb30247b5",
+      "incident_id": "inc-demo-001",
+      "instruction": "检查实训楼二层异常情况，分析风险并核查关联设备与历史事件。",
+      "mode": "demo",
+      "status": "completed",
+      "stage": "completed",
+      "created_at": "2026-11-15T08:58:08.331+00:00",
+      "started_at": "2026-11-15T08:58:08.346+00:00",
+      "finished_at": "2026-11-15T08:58:08.432+00:00",
+      "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+      "result": {
+        "level": "high",
+        "title": "多源异常需要优先人工复核",
+        "evidence": [
+          {
+            "label": "温度",
+            "value": "78°C",
+            "source_id": "obs-af1200e1d7bc413b"
+          },
+          {
+            "label": "烟雾告警",
+            "value": "触发",
+            "source_id": "obs-d5fb1e7e258b4ca4"
+          }
+        ],
+        "reasons": [
+          "温度记录命中 ≥60°C 的演示阈值；此阈值不是消防认证标准。",
+          "同一事件的烟雾传感器存在模拟告警。"
+        ],
+        "uncertainties": [
+          "所有设备记录均为预置模拟数据；未核实现场情况。",
+          "当前为规则初步核查，未经过真实模型综合研判或人工审批。",
+          "关联设备存在离线状态，不能以其缺失读数判断现场正常。",
+          "本地尚无更早的同区域演示事件记录。"
+        ],
+        "recommendations": [
+          "由授权人员依据正式校园预案复核现场信息。",
+          "核对关联设备的通信状态和数据质量。",
+          "补充证据后进入方案审批；本阶段不会创建或执行处置任务。"
+        ],
+        "rule_version": "demo-risk-v1",
+        "is_demo": true,
+        "scope": "preliminary_demo_assessment"
+      },
+      "error": null,
+      "evidence_snapshot_id": null
+    },
+    {
+      "id": "run-9b92343b35d644f5",
+      "conversation_id": "chat-bd03980ccef94702",
+      "incident_id": "inc-demo-001",
+      "instruction": "检查实训楼二层异常情况，核对监测数据与设备状态。",
+      "mode": "demo",
+      "status": "completed",
+      "stage": "completed",
+      "created_at": "2026-11-15T08:38:48.507+00:00",
+      "started_at": "2026-11-15T08:38:48.531+00:00",
+      "finished_at": "2026-11-15T08:38:48.694+00:00",
+      "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+      "result": {
+        "level": "high",
+        "title": "多源异常需要优先人工复核",
+        "evidence": [
+          {
+            "label": "温度",
+            "value": "78°C",
+            "source_id": "obs-af1200e1d7bc413b"
+          },
+          {
+            "label": "烟雾告警",
+            "value": "触发",
+            "source_id": "obs-d5fb1e7e258b4ca4"
+          }
+        ],
+        "reasons": [
+          "温度记录命中 ≥60°C 的演示阈值；此阈值不是消防认证标准。",
+          "同一事件的烟雾传感器存在模拟告警。"
+        ],
+        "uncertainties": [
+          "所有设备记录均为预置模拟数据；未核实现场情况。",
+          "当前为规则初步核查，未经过真实模型综合研判或人工审批。",
+          "关联设备存在离线状态，不能以其缺失读数判断现场正常。",
+          "本地尚无更早的同区域演示事件记录。"
+        ],
+        "recommendations": [
+          "由授权人员依据正式校园预案复核现场信息。",
+          "核对关联设备的通信状态和数据质量。",
+          "补充证据后进入方案审批；本阶段不会创建或执行处置任务。"
+        ],
+        "rule_version": "demo-risk-v1",
+        "is_demo": true,
+        "scope": "preliminary_demo_assessment"
+      },
+      "error": null,
+      "evidence_snapshot_id": null
+    }
+  ],
+  "execution_tasks": [
+    {
+      "id": "execution-d379c72464d74f7f",
+      "code": "TASK-006",
+      "title": "校区区域遥感流程复核",
+      "task_type": "remote_sensing",
+      "source_kind": "manual_demo",
+      "source_label": "手动创建 · 演示",
+      "source_run_id": null,
+      "evidence_snapshot_id": null,
+      "incident_id": "inc-temp-10795e72d90d438e",
+      "incident_title": "实训基地单项温度异常（对照场景）",
+      "device_ids": [
+        "dev-camera-01",
+        "dev-smoke-01",
+        "dev-temp-01"
+      ],
+      "target_building_id": "loc-training",
+      "target_building_name": "物流与航空实训基地",
+      "priority": "medium",
+      "risk_level": "unassessed",
+      "resource_id": "SAT-001",
+      "resource_code": "SAT-001",
+      "resource_name": "区域遥感复核（纯模拟）",
+      "status": "completed",
+      "progress": 100,
+      "created_at": "2026-11-15T14:27:52.556+00:00",
+      "updated_at": "2026-11-15T14:28:20.390+00:00",
+      "started_at": "2026-11-15T14:27:53.390+00:00",
+      "finished_at": "2026-11-15T14:28:20.390+00:00",
+      "dispatch_seconds": 3,
+      "duration_seconds": 24,
+      "image_id": "training-2026",
+      "route": [],
+      "position": null,
+      "target_point": {
+        "x": 0.435,
+        "y": 0.49
+      },
+      "patrol_id": null,
+      "parent_task_id": null,
+      "attempt": 1,
+      "steps": [
+        {
+          "id": "dispatch",
+          "title": "模拟资源调度",
+          "status": "completed",
+          "started_at": "2026-11-15T14:27:53.390+00:00",
+          "finished_at": "2026-11-15T14:27:56.390+00:00"
+        },
+        {
+          "id": "execute",
+          "title": "模拟巡检 / 区域复核",
+          "status": "completed",
+          "started_at": "2026-11-15T14:27:56.390+00:00",
+          "finished_at": "2026-11-15T14:28:20.390+00:00"
+        },
+        {
+          "id": "report",
+          "title": "保存记录，等待人工复核",
+          "status": "completed",
+          "started_at": "2026-11-15T14:28:20.390+00:00",
+          "finished_at": "2026-11-15T14:28:20.390+00:00"
+        }
+      ],
+      "logs": [
+        {
+          "id": "tasklog-91bd45a27d9e41fd",
+          "sequence": 1,
+          "at": "2026-11-15T14:27:52.556+00:00",
+          "kind": "created",
+          "message": "手动创建 · 演示：已关联事件 inc-temp-10795e72d90d438e，等待选择资源。"
+        },
+        {
+          "id": "tasklog-37e7fe7d9bde4791",
+          "sequence": 2,
+          "at": "2026-11-15T14:27:53.115+00:00",
+          "kind": "assigned",
+          "message": "选择 SAT-001 · 区域遥感复核（纯模拟）（演示）；启动后才占用资源。"
+        },
+        {
+          "id": "tasklog-85e4c43d14864704",
+          "sequence": 3,
+          "at": "2026-11-15T14:27:53.390+00:00",
+          "kind": "dispatching",
+          "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+        },
+        {
+          "id": "tasklog-332adeb0f9724134",
+          "sequence": 4,
+          "at": "2026-11-15T14:27:56.390+00:00",
+          "kind": "running",
+          "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+        },
+        {
+          "id": "tasklog-a8f7d220471c4b74",
+          "sequence": 5,
+          "at": "2026-11-15T14:28:20.390+00:00",
+          "kind": "completed",
+          "message": "演示 模拟执行完成，已保存结果；风险事件保持原状态，等待人工复核。"
+        }
+      ],
+      "report": {
+        "id": "execution-report-2e6b33e1a2bf42ce",
+        "task_id": "execution-d379c72464d74f7f",
+        "task_code": "TASK-006",
+        "title": "校区区域遥感流程复核 · 演示 执行记录",
+        "incident_id": "inc-temp-10795e72d90d438e",
+        "source_run_id": null,
+        "evidence_snapshot_id": null,
+        "resource_id": "SAT-001",
+        "resource_code": "SAT-001",
+        "started_at": "2026-11-15T14:27:53.390+00:00",
+        "finished_at": "2026-11-15T14:28:20.390+00:00",
+        "generated_at": "2026-11-15T14:28:20.390+00:00",
+        "scope": "物流与航空实训基地 / inc-temp-10795e72d90d438e",
+        "summary": "TASK-006 使用 SAT-001 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+        "findings": [
+          "目标：物流与航空实训基地；关联事件：实训基地单项温度异常（对照场景）（inc-temp-10795e72d90d438e）。",
+          "SAT-001 已完成 区域遥感模拟复核流程，进度 100%；此状态仅表示模拟流程完成。",
+          "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。"
+        ],
+        "recommendations": [
+          "由授权人员核实关联设备及现场情况。",
+          "将人工复核结果另行记录，再决定风险事件后续状态。"
+        ],
+        "limitations": [
+          "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+          "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+          "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。",
+          "未接入卫星、真实覆盖范围或遥感影像；不存在实际飞行路线或影像采集。"
+        ],
+        "verification_status": "requires_human_review",
+        "is_simulated": true
+      },
+      "error": null,
+      "is_simulated": true
+    },
+    {
+      "id": "execution-299d3b78d970494f",
+      "code": "TASK-005",
+      "title": "实训基地地面复核",
+      "task_type": "ground_inspection",
+      "source_kind": "manual_demo",
+      "source_label": "手动创建 · 演示",
+      "source_run_id": null,
+      "evidence_snapshot_id": null,
+      "incident_id": "inc-temp-10795e72d90d438e",
+      "incident_title": "实训基地单项温度异常（对照场景）",
+      "device_ids": [
+        "dev-camera-01",
+        "dev-smoke-01",
+        "dev-temp-01"
+      ],
+      "target_building_id": "loc-training",
+      "target_building_name": "物流与航空实训基地",
+      "priority": "medium",
+      "risk_level": "unassessed",
+      "resource_id": "ROBOT-002",
+      "resource_code": "ROBOT-002",
+      "resource_name": "地面机器人（设备 ROBOT-001）",
+      "status": "completed",
+      "progress": 100,
+      "created_at": "2026-11-15T14:27:51.078+00:00",
+      "updated_at": "2026-11-15T14:28:18.927+00:00",
+      "started_at": "2026-11-15T14:27:51.927+00:00",
+      "finished_at": "2026-11-15T14:28:18.927+00:00",
+      "dispatch_seconds": 3,
+      "duration_seconds": 24,
+      "image_id": "training-2026",
+      "route": [
+        {
+          "x": 0.505,
+          "y": 0.58
+        },
+        {
+          "x": 0.36,
+          "y": 0.545
+        },
+        {
+          "x": 0.5,
+          "y": 0.565
+        },
+        {
+          "x": 0.435,
+          "y": 0.49
+        },
+        {
+          "x": 0.505,
+          "y": 0.58
+        }
+      ],
+      "position": {
+        "x": 0.505,
+        "y": 0.58
+      },
+      "target_point": {
+        "x": 0.435,
+        "y": 0.49
+      },
+      "patrol_id": null,
+      "parent_task_id": null,
+      "attempt": 1,
+      "steps": [
+        {
+          "id": "dispatch",
+          "title": "模拟资源调度",
+          "status": "completed",
+          "started_at": "2026-11-15T14:27:51.927+00:00",
+          "finished_at": "2026-11-15T14:27:54.927+00:00"
+        },
+        {
+          "id": "execute",
+          "title": "模拟巡检 / 区域复核",
+          "status": "completed",
+          "started_at": "2026-11-15T14:27:54.927+00:00",
+          "finished_at": "2026-11-15T14:28:18.927+00:00"
+        },
+        {
+          "id": "report",
+          "title": "保存记录，等待人工复核",
+          "status": "completed",
+          "started_at": "2026-11-15T14:28:18.927+00:00",
+          "finished_at": "2026-11-15T14:28:18.927+00:00"
+        }
+      ],
+      "logs": [
+        {
+          "id": "tasklog-9079b3a613de487b",
+          "sequence": 1,
+          "at": "2026-11-15T14:27:51.078+00:00",
+          "kind": "created",
+          "message": "手动创建 · 演示：已关联事件 inc-temp-10795e72d90d438e，等待选择资源。"
+        },
+        {
+          "id": "tasklog-11bc78f676f24a8c",
+          "sequence": 2,
+          "at": "2026-11-15T14:27:51.636+00:00",
+          "kind": "assigned",
+          "message": "选择 ROBOT-002 · 地面机器人（设备 ROBOT-001）（演示）；启动后才占用资源。"
+        },
+        {
+          "id": "tasklog-6d41a7ab70604cd4",
+          "sequence": 3,
+          "at": "2026-11-15T14:27:51.927+00:00",
+          "kind": "dispatching",
+          "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+        },
+        {
+          "id": "tasklog-faee3b6a2fe640bf",
+          "sequence": 4,
+          "at": "2026-11-15T14:27:54.927+00:00",
+          "kind": "running",
+          "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+        },
+        {
+          "id": "tasklog-a78bb5dab82b4a08",
+          "sequence": 5,
+          "at": "2026-11-15T14:28:18.927+00:00",
+          "kind": "completed",
+          "message": "演示 模拟执行完成，已保存结果；风险事件保持原状态，等待人工复核。"
+        }
+      ],
+      "report": {
+        "id": "execution-report-9a0e78b20975450d",
+        "task_id": "execution-299d3b78d970494f",
+        "task_code": "TASK-005",
+        "title": "实训基地地面复核 · 演示 执行记录",
+        "incident_id": "inc-temp-10795e72d90d438e",
+        "source_run_id": null,
+        "evidence_snapshot_id": null,
+        "resource_id": "ROBOT-002",
+        "resource_code": "ROBOT-002",
+        "started_at": "2026-11-15T14:27:51.927+00:00",
+        "finished_at": "2026-11-15T14:28:18.927+00:00",
+        "generated_at": "2026-11-15T14:28:18.927+00:00",
+        "scope": "物流与航空实训基地 / inc-temp-10795e72d90d438e",
+        "summary": "TASK-005 使用 ROBOT-002 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+        "findings": [
+          "目标：物流与航空实训基地；关联事件：实训基地单项温度异常（对照场景）（inc-temp-10795e72d90d438e）。",
+          "ROBOT-002 已完成 机器人模拟巡检流程，进度 100%；此状态仅表示模拟流程完成。",
+          "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。"
+        ],
+        "recommendations": [
+          "由授权人员核实关联设备及现场情况。",
+          "将人工复核结果另行记录，再决定风险事件后续状态。"
+        ],
+        "limitations": [
+          "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+          "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+          "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。",
+          "机器人路线仅为示意，不包含道路通行、障碍物或避障算法。"
+        ],
+        "verification_status": "requires_human_review",
+        "is_simulated": true
+      },
+      "error": null,
+      "is_simulated": true
+    },
+    {
+      "id": "execution-43ee3372473d47bf",
+      "code": "TASK-004",
+      "title": "实训基地航线与中止验证",
+      "task_type": "aerial_inspection",
+      "source_kind": "manual_demo",
+      "source_label": "手动创建 · 演示",
+      "source_run_id": null,
+      "evidence_snapshot_id": null,
+      "incident_id": "inc-temp-10795e72d90d438e",
+      "incident_title": "实训基地单项温度异常（对照场景）",
+      "device_ids": [
+        "dev-camera-01",
+        "dev-smoke-01",
+        "dev-temp-01"
+      ],
+      "target_building_id": "loc-training",
+      "target_building_name": "物流与航空实训基地",
+      "priority": "medium",
+      "risk_level": "unassessed",
+      "resource_id": "UAV-003",
+      "resource_code": "UAV-003",
+      "resource_name": "巡检无人机（设备 DRONE-001）",
+      "status": "cancelled",
+      "progress": 45.18,
+      "created_at": "2026-11-15T14:25:40.066+00:00",
+      "updated_at": "2026-11-15T14:25:54.752+00:00",
+      "started_at": "2026-11-15T14:25:40.905+00:00",
+      "finished_at": "2026-11-15T14:25:54.752+00:00",
+      "dispatch_seconds": 3,
+      "duration_seconds": 24,
+      "image_id": "training-2026",
+      "route": [
+        {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        },
+        {
+          "x": 0.36,
+          "y": 0.545
+        },
+        {
+          "x": 0.395,
+          "y": 0.415
+        },
+        {
+          "x": 0.51,
+          "y": 0.45
+        },
+        {
+          "x": 0.5,
+          "y": 0.565
+        },
+        {
+          "x": 0.435,
+          "y": 0.49
+        },
+        {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        }
+      ],
+      "position": {
+        "x": 0.4479273292173757,
+        "y": 0.4311083175878969
+      },
+      "target_point": {
+        "x": 0.435,
+        "y": 0.49
+      },
+      "patrol_id": null,
+      "parent_task_id": "execution-a6266b80cd564b94",
+      "attempt": 2,
+      "steps": [
+        {
+          "id": "dispatch",
+          "title": "模拟资源调度",
+          "status": "completed",
+          "started_at": "2026-11-15T14:25:40.905+00:00",
+          "finished_at": "2026-11-15T14:25:43.905+00:00"
+        },
+        {
+          "id": "execute",
+          "title": "模拟巡检 / 区域复核",
+          "status": "cancelled",
+          "started_at": "2026-11-15T14:25:43.905+00:00",
+          "finished_at": "2026-11-15T14:25:54.752+00:00"
+        },
+        {
+          "id": "report",
+          "title": "保存记录，等待人工复核",
+          "status": "cancelled",
+          "started_at": null,
+          "finished_at": "2026-11-15T14:25:54.752+00:00"
+        }
+      ],
+      "logs": [
+        {
+          "id": "tasklog-ea1a7bf67b7949f2",
+          "sequence": 1,
+          "at": "2026-11-15T14:25:40.066+00:00",
+          "kind": "created",
+          "message": "手动创建 · 演示：已关联事件 inc-temp-10795e72d90d438e，等待选择资源。"
+        },
+        {
+          "id": "tasklog-264fba588a5d4e68",
+          "sequence": 2,
+          "at": "2026-11-15T14:25:40.625+00:00",
+          "kind": "assigned",
+          "message": "选择 UAV-003 · 巡检无人机（设备 DRONE-001）（演示）；启动后才占用资源。"
+        },
+        {
+          "id": "tasklog-2cf536225c7249b0",
+          "sequence": 3,
+          "at": "2026-11-15T14:25:40.905+00:00",
+          "kind": "dispatching",
+          "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+        },
+        {
+          "id": "tasklog-91b25fe192174f72",
+          "sequence": 4,
+          "at": "2026-11-15T14:25:43.905+00:00",
+          "kind": "running",
+          "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+        },
+        {
+          "id": "tasklog-f3e3d3c026614bea",
+          "sequence": 5,
+          "at": "2026-11-15T14:25:54.752+00:00",
+          "kind": "cancelled",
+          "message": "已取消模拟执行并释放资源；保留已执行进度和历史记录。"
+        }
+      ],
+      "report": null,
+      "error": null,
+      "is_simulated": true
+    },
+    {
+      "id": "execution-a6266b80cd564b94",
+      "code": "TASK-003",
+      "title": "实训基地航线与中止验证",
+      "task_type": "aerial_inspection",
+      "source_kind": "manual_demo",
+      "source_label": "手动创建 · 演示",
+      "source_run_id": null,
+      "evidence_snapshot_id": null,
+      "incident_id": "inc-temp-10795e72d90d438e",
+      "incident_title": "实训基地单项温度异常（对照场景）",
+      "device_ids": [
+        "dev-camera-01",
+        "dev-smoke-01",
+        "dev-temp-01"
+      ],
+      "target_building_id": "loc-training",
+      "target_building_name": "物流与航空实训基地",
+      "priority": "medium",
+      "risk_level": "unassessed",
+      "resource_id": "UAV-003",
+      "resource_code": "UAV-003",
+      "resource_name": "巡检无人机（设备 DRONE-001）",
+      "status": "completed",
+      "progress": 100,
+      "created_at": "2026-11-15T14:22:39.234+00:00",
+      "updated_at": "2026-11-15T14:23:07.088+00:00",
+      "started_at": "2026-11-15T14:22:40.088+00:00",
+      "finished_at": "2026-11-15T14:23:07.088+00:00",
+      "dispatch_seconds": 3,
+      "duration_seconds": 24,
+      "image_id": "training-2026",
+      "route": [
+        {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        },
+        {
+          "x": 0.36,
+          "y": 0.545
+        },
+        {
+          "x": 0.395,
+          "y": 0.415
+        },
+        {
+          "x": 0.51,
+          "y": 0.45
+        },
+        {
+          "x": 0.5,
+          "y": 0.565
+        },
+        {
+          "x": 0.435,
+          "y": 0.49
+        },
+        {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        }
+      ],
+      "position": {
+        "x": 0.33499999999999996,
+        "y": 0.39
+      },
+      "target_point": {
+        "x": 0.435,
+        "y": 0.49
+      },
+      "patrol_id": null,
+      "parent_task_id": null,
+      "attempt": 1,
+      "steps": [
+        {
+          "id": "dispatch",
+          "title": "模拟资源调度",
+          "status": "completed",
+          "started_at": "2026-11-15T14:22:40.088+00:00",
+          "finished_at": "2026-11-15T14:22:43.088+00:00"
+        },
+        {
+          "id": "execute",
+          "title": "模拟巡检 / 区域复核",
+          "status": "completed",
+          "started_at": "2026-11-15T14:22:43.088+00:00",
+          "finished_at": "2026-11-15T14:23:07.088+00:00"
+        },
+        {
+          "id": "report",
+          "title": "保存记录，等待人工复核",
+          "status": "completed",
+          "started_at": "2026-11-15T14:23:07.088+00:00",
+          "finished_at": "2026-11-15T14:23:07.088+00:00"
+        }
+      ],
+      "logs": [
+        {
+          "id": "tasklog-5089a131fdf84808",
+          "sequence": 1,
+          "at": "2026-11-15T14:22:39.234+00:00",
+          "kind": "created",
+          "message": "手动创建 · 演示：已关联事件 inc-temp-10795e72d90d438e，等待选择资源。"
+        },
+        {
+          "id": "tasklog-1015a50163f04e0e",
+          "sequence": 2,
+          "at": "2026-11-15T14:22:39.823+00:00",
+          "kind": "assigned",
+          "message": "选择 UAV-003 · 巡检无人机（设备 DRONE-001）（演示）；启动后才占用资源。"
+        },
+        {
+          "id": "tasklog-ef797373ce594749",
+          "sequence": 3,
+          "at": "2026-11-15T14:22:40.088+00:00",
+          "kind": "dispatching",
+          "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+        },
+        {
+          "id": "tasklog-6f0949f9f60d474e",
+          "sequence": 4,
+          "at": "2026-11-15T14:22:43.088+00:00",
+          "kind": "running",
+          "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+        },
+        {
+          "id": "tasklog-2b90f3c4ffc14747",
+          "sequence": 5,
+          "at": "2026-11-15T14:23:07.088+00:00",
+          "kind": "completed",
+          "message": "演示 模拟执行完成，已保存结果；风险事件保持原状态，等待人工复核。"
+        }
+      ],
+      "report": {
+        "id": "execution-report-bfd30d030d5f4040",
+        "task_id": "execution-a6266b80cd564b94",
+        "task_code": "TASK-003",
+        "title": "实训基地航线与中止验证 · 演示 执行记录",
+        "incident_id": "inc-temp-10795e72d90d438e",
+        "source_run_id": null,
+        "evidence_snapshot_id": null,
+        "resource_id": "UAV-003",
+        "resource_code": "UAV-003",
+        "started_at": "2026-11-15T14:22:40.088+00:00",
+        "finished_at": "2026-11-15T14:23:07.088+00:00",
+        "generated_at": "2026-11-15T14:23:07.088+00:00",
+        "scope": "物流与航空实训基地 / inc-temp-10795e72d90d438e",
+        "summary": "TASK-003 使用 UAV-003 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+        "findings": [
+          "目标：物流与航空实训基地；关联事件：实训基地单项温度异常（对照场景）（inc-temp-10795e72d90d438e）。",
+          "UAV-003 已完成 无人机模拟巡检流程，进度 100%；此状态仅表示模拟流程完成。",
+          "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。"
+        ],
+        "recommendations": [
+          "由授权人员核实关联设备及现场情况。",
+          "将人工复核结果另行记录，再决定风险事件后续状态。"
+        ],
+        "limitations": [
+          "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+          "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+          "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。"
+        ],
+        "verification_status": "requires_human_review",
+        "is_simulated": true
+      },
+      "error": null,
+      "is_simulated": true
+    },
+    {
+      "id": "execution-59a5e752d00a47bd",
+      "code": "TASK-002",
+      "title": "实训基地单项温度异常（对照场景） · 无人机模拟巡检",
+      "task_type": "aerial_inspection",
+      "source_kind": "rule_assessment",
+      "source_label": "规则核查生成 · 演示（非大模型规划）",
+      "source_run_id": "run-c1b19372dcc2492a",
+      "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+      "incident_id": "inc-temp-6151439068f444c9",
+      "incident_title": "实训基地单项温度异常（对照场景）",
+      "device_ids": [
+        "dev-camera-01",
+        "dev-smoke-01",
+        "dev-temp-01"
+      ],
+      "target_building_id": "loc-training",
+      "target_building_name": "物流与航空实训基地",
+      "priority": "medium",
+      "risk_level": "medium",
+      "resource_id": "UAV-003",
+      "resource_code": "UAV-003",
+      "resource_name": "巡检无人机（设备 DRONE-001）",
+      "status": "completed",
+      "progress": 100,
+      "created_at": "2026-11-15T14:18:46.363+00:00",
+      "updated_at": "2026-11-15T14:19:49.328+00:00",
+      "started_at": "2026-11-15T14:19:22.328+00:00",
+      "finished_at": "2026-11-15T14:19:49.328+00:00",
+      "dispatch_seconds": 3,
+      "duration_seconds": 24,
+      "image_id": "training-2026",
+      "route": [
+        {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        },
+        {
+          "x": 0.36,
+          "y": 0.545
+        },
+        {
+          "x": 0.395,
+          "y": 0.415
+        },
+        {
+          "x": 0.51,
+          "y": 0.45
+        },
+        {
+          "x": 0.5,
+          "y": 0.565
+        },
+        {
+          "x": 0.435,
+          "y": 0.49
+        },
+        {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        }
+      ],
+      "position": {
+        "x": 0.33499999999999996,
+        "y": 0.39
+      },
+      "target_point": {
+        "x": 0.435,
+        "y": 0.49
+      },
+      "patrol_id": null,
+      "parent_task_id": "execution-eb2fde7f25494f58",
+      "attempt": 2,
+      "steps": [
+        {
+          "id": "dispatch",
+          "title": "模拟资源调度",
+          "status": "completed",
+          "started_at": "2026-11-15T14:19:22.328+00:00",
+          "finished_at": "2026-11-15T14:19:25.328+00:00"
+        },
+        {
+          "id": "execute",
+          "title": "模拟巡检 / 区域复核",
+          "status": "completed",
+          "started_at": "2026-11-15T14:19:25.328+00:00",
+          "finished_at": "2026-11-15T14:19:49.328+00:00"
+        },
+        {
+          "id": "report",
+          "title": "保存记录，等待人工复核",
+          "status": "completed",
+          "started_at": "2026-11-15T14:19:49.328+00:00",
+          "finished_at": "2026-11-15T14:19:49.328+00:00"
+        }
+      ],
+      "logs": [
+        {
+          "id": "tasklog-b3fda188118a44f9",
+          "sequence": 1,
+          "at": "2026-11-15T14:18:46.363+00:00",
+          "kind": "created",
+          "message": "规则核查生成 · 演示（非大模型规划）：已关联事件 inc-temp-6151439068f444c9，等待选择资源。"
+        },
+        {
+          "id": "tasklog-1ce86231eec64cd1",
+          "sequence": 2,
+          "at": "2026-11-15T14:19:22.052+00:00",
+          "kind": "assigned",
+          "message": "选择 UAV-003 · 巡检无人机（设备 DRONE-001）（演示）；启动后才占用资源。"
+        },
+        {
+          "id": "tasklog-5aa21fd7cb234732",
+          "sequence": 3,
+          "at": "2026-11-15T14:19:22.328+00:00",
+          "kind": "dispatching",
+          "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+        },
+        {
+          "id": "tasklog-ba3df3c6979c47fb",
+          "sequence": 4,
+          "at": "2026-11-15T14:19:25.328+00:00",
+          "kind": "running",
+          "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+        },
+        {
+          "id": "tasklog-ee5a77400e454ab4",
+          "sequence": 5,
+          "at": "2026-11-15T14:19:49.328+00:00",
+          "kind": "completed",
+          "message": "演示 模拟执行完成，已保存结果；风险事件保持原状态，等待人工复核。"
+        }
+      ],
+      "report": {
+        "id": "execution-report-8bb4efb2f6294071",
+        "task_id": "execution-59a5e752d00a47bd",
+        "task_code": "TASK-002",
+        "title": "实训基地单项温度异常（对照场景） · 无人机模拟巡检 · 演示 执行记录",
+        "incident_id": "inc-temp-6151439068f444c9",
+        "source_run_id": "run-c1b19372dcc2492a",
+        "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+        "resource_id": "UAV-003",
+        "resource_code": "UAV-003",
+        "started_at": "2026-11-15T14:19:22.328+00:00",
+        "finished_at": "2026-11-15T14:19:49.328+00:00",
+        "generated_at": "2026-11-15T14:19:49.328+00:00",
+        "scope": "物流与航空实训基地 / inc-temp-6151439068f444c9",
+        "summary": "TASK-002 使用 UAV-003 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+        "findings": [
+          "目标：物流与航空实训基地；关联事件：实训基地单项温度异常（对照场景）（inc-temp-6151439068f444c9）。",
+          "UAV-003 已完成 无人机模拟巡检流程，进度 100%；此状态仅表示模拟流程完成。",
+          "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+          "来源为确定性规则初评：medium；未调用大模型规划。"
+        ],
+        "recommendations": [
+          "由授权人员核实关联设备及现场情况。",
+          "将人工复核结果另行记录，再决定风险事件后续状态。"
+        ],
+        "limitations": [
+          "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+          "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+          "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。"
+        ],
+        "verification_status": "requires_human_review",
+        "is_simulated": true
+      },
+      "error": null,
+      "is_simulated": true
+    },
+    {
+      "id": "execution-eb2fde7f25494f58",
+      "code": "TASK-001",
+      "title": "实训基地单项温度异常（对照场景） · 无人机模拟巡检",
+      "task_type": "aerial_inspection",
+      "source_kind": "rule_assessment",
+      "source_label": "规则核查生成 · 演示（非大模型规划）",
+      "source_run_id": "run-c1b19372dcc2492a",
+      "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+      "incident_id": "inc-temp-6151439068f444c9",
+      "incident_title": "实训基地单项温度异常（对照场景）",
+      "device_ids": [
+        "dev-camera-01",
+        "dev-smoke-01",
+        "dev-temp-01"
+      ],
+      "target_building_id": "loc-training",
+      "target_building_name": "物流与航空实训基地",
+      "priority": "medium",
+      "risk_level": "medium",
+      "resource_id": "UAV-003",
+      "resource_code": "UAV-003",
+      "resource_name": "巡检无人机（设备 DRONE-001）",
+      "status": "completed",
+      "progress": 100,
+      "created_at": "2026-11-15T14:03:04.383+00:00",
+      "updated_at": "2026-11-15T14:05:52.603+00:00",
+      "started_at": "2026-11-15T14:05:25.603+00:00",
+      "finished_at": "2026-11-15T14:05:52.603+00:00",
+      "dispatch_seconds": 3,
+      "duration_seconds": 24,
+      "image_id": "training-2026",
+      "route": [
+        {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        },
+        {
+          "x": 0.36,
+          "y": 0.545
+        },
+        {
+          "x": 0.395,
+          "y": 0.415
+        },
+        {
+          "x": 0.51,
+          "y": 0.45
+        },
+        {
+          "x": 0.5,
+          "y": 0.565
+        },
+        {
+          "x": 0.435,
+          "y": 0.49
+        },
+        {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        }
+      ],
+      "position": {
+        "x": 0.33499999999999996,
+        "y": 0.39
+      },
+      "target_point": {
+        "x": 0.435,
+        "y": 0.49
+      },
+      "patrol_id": null,
+      "parent_task_id": null,
+      "attempt": 1,
+      "steps": [
+        {
+          "id": "dispatch",
+          "title": "模拟资源调度",
+          "status": "completed",
+          "started_at": "2026-11-15T14:05:25.603+00:00",
+          "finished_at": "2026-11-15T14:05:28.603+00:00"
+        },
+        {
+          "id": "execute",
+          "title": "模拟巡检 / 区域复核",
+          "status": "completed",
+          "started_at": "2026-11-15T14:05:28.603+00:00",
+          "finished_at": "2026-11-15T14:05:52.603+00:00"
+        },
+        {
+          "id": "report",
+          "title": "保存记录，等待人工复核",
+          "status": "completed",
+          "started_at": "2026-11-15T14:05:52.603+00:00",
+          "finished_at": "2026-11-15T14:05:52.603+00:00"
+        }
+      ],
+      "logs": [
+        {
+          "id": "tasklog-82ae8dd13ed04eb4",
+          "sequence": 1,
+          "at": "2026-11-15T14:03:04.383+00:00",
+          "kind": "created",
+          "message": "规则核查生成 · 演示（非大模型规划）：已关联事件 inc-temp-6151439068f444c9，等待选择资源。"
+        },
+        {
+          "id": "tasklog-8605d29ca6f14b1f",
+          "sequence": 2,
+          "at": "2026-11-15T14:04:08.166+00:00",
+          "kind": "assigned",
+          "message": "选择 UAV-003 · 巡检无人机（设备 DRONE-001）（演示）；启动后才占用资源。"
+        },
+        {
+          "id": "tasklog-14140bc225474c4c",
+          "sequence": 3,
+          "at": "2026-11-15T14:05:25.603+00:00",
+          "kind": "dispatching",
+          "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+        },
+        {
+          "id": "tasklog-1ec0947956004f58",
+          "sequence": 4,
+          "at": "2026-11-15T14:05:28.603+00:00",
+          "kind": "running",
+          "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+        },
+        {
+          "id": "tasklog-bb646fc61c7a4a1c",
+          "sequence": 5,
+          "at": "2026-11-15T14:05:52.603+00:00",
+          "kind": "completed",
+          "message": "演示 模拟执行完成，已保存结果；风险事件保持原状态，等待人工复核。"
+        }
+      ],
+      "report": {
+        "id": "execution-report-34b63a9945c5457c",
+        "task_id": "execution-eb2fde7f25494f58",
+        "task_code": "TASK-001",
+        "title": "实训基地单项温度异常（对照场景） · 无人机模拟巡检 · 演示 执行记录",
+        "incident_id": "inc-temp-6151439068f444c9",
+        "source_run_id": "run-c1b19372dcc2492a",
+        "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+        "resource_id": "UAV-003",
+        "resource_code": "UAV-003",
+        "started_at": "2026-11-15T14:05:25.603+00:00",
+        "finished_at": "2026-11-15T14:05:52.603+00:00",
+        "generated_at": "2026-11-15T14:05:52.603+00:00",
+        "scope": "物流与航空实训基地 / inc-temp-6151439068f444c9",
+        "summary": "TASK-001 使用 UAV-003 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+        "findings": [
+          "目标：物流与航空实训基地；关联事件：实训基地单项温度异常（对照场景）（inc-temp-6151439068f444c9）。",
+          "UAV-003 已完成 无人机模拟巡检流程，进度 100%；此状态仅表示模拟流程完成。",
+          "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+          "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+          "来源为确定性规则初评：medium；未调用大模型规划。"
+        ],
+        "recommendations": [
+          "由授权人员核实关联设备及现场情况。",
+          "将人工复核结果另行记录，再决定风险事件后续状态。"
+        ],
+        "limitations": [
+          "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+          "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+          "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。"
+        ],
+        "verification_status": "requires_human_review",
+        "is_simulated": true
+      },
+      "error": null,
+      "is_simulated": true
+    }
+  ],
+  "situation": {
+    "campus_name": "浙江交通职业技术学院杭州校区",
+    "mode": "DEMO",
+    "updated_at": "2026-11-15T15:12:11.027+00:00",
+    "images": [
+      {
+        "id": "training-2026",
+        "title": "实训基地片区",
+        "url": "/references/campus/02_杭州校区_实训基地_鸟瞰图.jpg",
+        "width": 2400,
+        "height": 1500,
+        "description": "校园基础设施建设项目规划效果图 · 图片底图，非实时影像 / 非真实三维模型",
+        "source_url": null
+      },
+      {
+        "id": "east-2023",
+        "title": "东区学生公寓片区",
+        "url": "/references/campus/03_杭州校区_东校区公寓_鸟瞰图.jpg",
+        "width": 2332,
+        "height": 1651,
+        "description": "2023 高层学生公寓项目规划效果图 · 图片底图，非实时影像 / 非真实三维模型",
+        "source_url": "https://www.yuhang.gov.cn/art/2023/3/20/art_1229179811_4149516.html"
+      }
+    ],
+    "spaces": [
+      {
+        "id": "loc-training",
+        "name": "物流与航空实训基地",
+        "usage": "物流与航空教学实训（规划项目）",
+        "area_sqm": 6520,
+        "floors_note": "实际楼层待核实；二层空间仅为 DEMO 示意",
+        "verification": "图像主体与提供的项目总平面图对应；现状待核实",
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.435,
+          "y": 0.49,
+          "note": "按规划效果图人工对应的图像锚点，不是测绘坐标"
+        },
+        "polygon": [
+          {
+            "x": 0.252,
+            "y": 0.399
+          },
+          {
+            "x": 0.434,
+            "y": 0.31
+          },
+          {
+            "x": 0.64,
+            "y": 0.471
+          },
+          {
+            "x": 0.436,
+            "y": 0.681
+          }
+        ],
+        "detail_image": "/references/campus/01_杭州校区_实训基地_透视图.jpg",
+        "source_note": "用户图集及 yh_zongpingmian.pdf；面积表为6520㎡，规划资料不证明当前建成状态。"
+      },
+      {
+        "id": "loc-canopy",
+        "name": "运动场及雨棚",
+        "usage": "体育活动空间与光伏雨棚（规划项目）",
+        "area_sqm": 3030,
+        "floors_note": "雨棚覆盖范围，不设真实楼层",
+        "verification": "总平面图标注新建运动场雨棚；设备位置均为 DEMO",
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.646,
+          "y": 0.356,
+          "note": "效果图雨棚图像锚点；巡检线路仅为模拟"
+        },
+        "polygon": [
+          {
+            "x": 0.527,
+            "y": 0.376
+          },
+          {
+            "x": 0.677,
+            "y": 0.275
+          },
+          {
+            "x": 0.752,
+            "y": 0.319
+          },
+          {
+            "x": 0.608,
+            "y": 0.447
+          }
+        ],
+        "detail_image": null,
+        "source_note": "用户图集及 yh_zongpingmian.pdf；面积3030㎡，图示屋顶光伏；实际运维状态待核实。"
+      },
+      {
+        "id": "loc-dorm",
+        "name": "高层学生公寓",
+        "usage": "学生住宿（2023规划项目）",
+        "area_sqm": null,
+        "floors_note": "待核实：图集称14层，总平面图局部标15F/16F",
+        "verification": "对应2023公寓项目鸟瞰；实际楼层、现状待核实",
+        "anchor": {
+          "image_id": "east-2023",
+          "x": 0.498,
+          "y": 0.553,
+          "note": "公寓在东区效果图中的图像锚点，不能与实训片区坐标混用"
+        },
+        "polygon": [
+          {
+            "x": 0.388,
+            "y": 0.46
+          },
+          {
+            "x": 0.565,
+            "y": 0.426
+          },
+          {
+            "x": 0.607,
+            "y": 0.639
+          },
+          {
+            "x": 0.494,
+            "y": 0.733
+          },
+          {
+            "x": 0.389,
+            "y": 0.649
+          }
+        ],
+        "detail_image": "/references/campus/04_杭州校区_公寓_透视图.jpg",
+        "source_note": "用户图集 gy_futu.pdf（4页）及余杭区2023-03-20规划公示。公示是方案展示。"
+      },
+      {
+        "id": "loc-library",
+        "name": "教学建筑群（待核实）",
+        "usage": "周边教学建筑用途与名称待校方确认",
+        "area_sqm": null,
+        "floors_note": "未提供可确认的楼层资料",
+        "verification": "待核实，不配置建筑热点",
+        "anchor": null,
+        "polygon": [],
+        "detail_image": null,
+        "source_note": "东区效果图可见建筑群，尚不能可靠逐栋对应正式名称和位置。保留旧演示ID用于历史兼容。"
+      }
+    ],
+    "devices": [
+      {
+        "id": "dev-camera-01",
+        "code": "CAM-021",
+        "name": "实训楼走廊摄像机",
+        "type": "camera",
+        "building_id": "loc-training",
+        "floor": "二层（DEMO，真实楼层待核实）",
+        "status": "alarm",
+        "last_seen": "2026-11-15T14:57:58.632+00:00",
+        "alarm": true,
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.483,
+          "y": 0.505,
+          "note": "DEMO 布点，非学校真实部署"
+        },
+        "metrics": [
+          {
+            "kind": "camera_event",
+            "label": "异常记录",
+            "value": 1.0,
+            "unit": "",
+            "observation_id": "obs-4a4b0f38857249d0",
+            "observed_at": "2026-11-15T14:57:58.632+00:00",
+            "incident_id": "inc-b95fceb429634ad6",
+            "quality": "alarm",
+            "data_scope": "current_device_state"
+          },
+          {
+            "kind": "connectivity",
+            "label": "通信状态",
+            "value": "在线",
+            "unit": "",
+            "observation_id": "obs-ef8ac1fdcab34080",
+            "observed_at": "2026-11-15T12:50:01.326+00:00",
+            "incident_id": "inc-temp-10795e72d90d438e",
+            "quality": "good",
+            "data_scope": "current_device_state"
+          }
+        ],
+        "trend": [
+          {
+            "time": "2026-11-15T09:41:46.721+00:00",
+            "value": 1.0
+          },
+          {
+            "time": "2026-11-15T09:44:46.721+00:00",
+            "value": 1.0
+          },
+          {
+            "time": "2026-11-15T09:47:46.721+00:00",
+            "value": 1.0
+          },
+          {
+            "time": "2026-11-15T09:50:46.721+00:00",
+            "value": 0.0
+          },
+          {
+            "time": "2026-11-15T09:53:46.721+00:00",
+            "value": 0.0
+          },
+          {
+            "time": "2026-11-15T09:56:46.721+00:00",
+            "value": 0.0
+          },
+          {
+            "time": "2026-11-15T12:21:16.231+00:00",
+            "value": 1.0
+          },
+          {
+            "time": "2026-11-15T12:50:01.326+00:00",
+            "value": 1.0
+          }
+        ],
+        "related_device_ids": [
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-temp-01",
+          "dev-water-01"
+        ],
+        "incident_ids": [
+          "inc-b95fceb429634ad6",
+          "inc-temp-10795e72d90d438e",
+          "inc-temp-6151439068f444c9",
+          "inc-84854a2c5b254f19",
+          "inc-demo-001",
+          "inc-demo-offline"
+        ],
+        "battery": null,
+        "is_simulated": true
+      },
+      {
+        "id": "dev-camera-02",
+        "code": "CAM-022",
+        "name": "图书馆入口摄像机",
+        "type": "camera",
+        "building_id": "loc-library",
+        "floor": "待核实 / DEMO 布点",
+        "status": "online",
+        "last_seen": "2026-11-15T14:57:58.632+00:00",
+        "alarm": false,
+        "anchor": null,
+        "metrics": [
+          {
+            "kind": "connectivity",
+            "label": "通信状态",
+            "value": "在线",
+            "unit": "",
+            "observation_id": "obs-c8feeed119414c23",
+            "observed_at": "2026-11-15T14:57:58.632+00:00",
+            "incident_id": "inc-b95fceb429634ad6",
+            "quality": "good",
+            "data_scope": "current_device_state"
+          }
+        ],
+        "trend": [
+          {
+            "time": "2026-11-15T08:37:20.883+00:00",
+            "value": 1.0
+          },
+          {
+            "time": "2026-11-15T09:03:15.223+00:00",
+            "value": 1.0
+          },
+          {
+            "time": "2026-11-15T14:57:58.632+00:00",
+            "value": 1.0
+          }
+        ],
+        "related_device_ids": [
+          "dev-temp-02"
+        ],
+        "incident_ids": [],
+        "battery": null,
+        "is_simulated": true
+      },
+      {
+        "id": "dev-drone-01",
+        "code": "DRONE-001",
+        "name": "模拟巡检无人机",
+        "type": "drone",
+        "building_id": null,
+        "floor": "室外（DEMO 位置）",
+        "status": "online",
+        "last_seen": "2026-11-15T09:56:46.721+00:00",
+        "alarm": false,
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.33499999999999996,
+          "y": 0.39,
+          "note": "DEMO 布点，非学校真实部署"
+        },
+        "metrics": [
+          {
+            "kind": "connectivity",
+            "label": "通信状态",
+            "value": "在线",
+            "unit": "",
+            "observation_id": "obs-c042e168d5c14916",
+            "observed_at": "2026-11-15T09:56:46.721+00:00",
+            "incident_id": "inc-demo-offline",
+            "quality": "good",
+            "data_scope": "current_device_state"
+          },
+          {
+            "kind": "battery",
+            "label": "电量",
+            "value": 86.0,
+            "unit": "%",
+            "observation_id": "obs-375370887c6e4443",
+            "observed_at": "2026-11-15T09:56:46.721+00:00",
+            "incident_id": "inc-demo-offline",
+            "quality": "good",
+            "data_scope": "current_device_state"
+          }
+        ],
+        "trend": [
+          {
+            "time": "2026-11-15T09:56:46.721+00:00",
+            "value": 86.0
+          }
+        ],
+        "related_device_ids": [],
+        "incident_ids": [],
+        "battery": 86.0,
+        "is_simulated": true
+      },
+      {
+        "id": "dev-robot-01",
+        "code": "ROBOT-001",
+        "name": "校园巡检机器人",
+        "type": "robot",
+        "building_id": "loc-training",
+        "floor": "室外（DEMO 位置）",
+        "status": "offline",
+        "last_seen": "2026-11-15T14:57:58.632+00:00",
+        "alarm": true,
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.505,
+          "y": 0.58,
+          "note": "DEMO 布点，非学校真实部署"
+        },
+        "metrics": [
+          {
+            "kind": "connectivity",
+            "label": "通信状态",
+            "value": "离线",
+            "unit": "",
+            "observation_id": "obs-b7c8fa58bcf1405b",
+            "observed_at": "2026-11-15T14:57:58.632+00:00",
+            "incident_id": "inc-b95fceb429634ad6",
+            "quality": "offline",
+            "data_scope": "current_device_state"
+          },
+          {
+            "kind": "battery",
+            "label": "电量",
+            "value": 76.0,
+            "unit": "%",
+            "observation_id": "obs-14889b7233c44317",
+            "observed_at": "2026-11-15T09:56:46.721+00:00",
+            "incident_id": "inc-demo-offline",
+            "quality": "good",
+            "data_scope": "current_device_state"
+          }
+        ],
+        "trend": [
+          {
+            "time": "2026-11-15T09:56:46.721+00:00",
+            "value": 76.0
+          }
+        ],
+        "related_device_ids": [
+          "dev-camera-01",
+          "dev-smoke-01",
+          "dev-temp-01",
+          "dev-water-01"
+        ],
+        "incident_ids": [
+          "inc-b95fceb429634ad6",
+          "inc-84854a2c5b254f19",
+          "inc-demo-001"
+        ],
+        "battery": 76.0,
+        "is_simulated": true
+      },
+      {
+        "id": "dev-smoke-01",
+        "code": "SMOKE-012",
+        "name": "实训楼烟雾传感器",
+        "type": "smoke",
+        "building_id": "loc-training",
+        "floor": "二层（DEMO，真实楼层待核实）",
+        "status": "alarm",
+        "last_seen": "2026-11-15T14:57:58.632+00:00",
+        "alarm": true,
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.461,
+          "y": 0.45499999999999996,
+          "note": "DEMO 布点，非学校真实部署"
+        },
+        "metrics": [
+          {
+            "kind": "smoke_alarm",
+            "label": "烟雾告警",
+            "value": "告警",
+            "unit": "",
+            "observation_id": "obs-6cc10b6fcd344ad3",
+            "observed_at": "2026-11-15T14:57:58.632+00:00",
+            "incident_id": "inc-b95fceb429634ad6",
+            "quality": "alarm",
+            "data_scope": "current_device_state"
+          }
+        ],
+        "trend": [
+          {
+            "time": "2026-11-15T08:37:20.883+00:00",
+            "value": 1.0
+          },
+          {
+            "time": "2026-11-15T09:03:15.223+00:00",
+            "value": 1.0
+          },
+          {
+            "time": "2026-11-15T12:21:16.231+00:00",
+            "value": 0.0
+          },
+          {
+            "time": "2026-11-15T12:50:01.326+00:00",
+            "value": 0.0
+          },
+          {
+            "time": "2026-11-15T14:57:58.632+00:00",
+            "value": 1.0
+          }
+        ],
+        "related_device_ids": [
+          "dev-camera-01",
+          "dev-robot-01",
+          "dev-temp-01",
+          "dev-water-01"
+        ],
+        "incident_ids": [
+          "inc-b95fceb429634ad6",
+          "inc-temp-10795e72d90d438e",
+          "inc-temp-6151439068f444c9",
+          "inc-84854a2c5b254f19",
+          "inc-demo-001"
+        ],
+        "battery": null,
+        "is_simulated": true
+      },
+      {
+        "id": "dev-smoke-02",
+        "code": "SMOKE-013",
+        "name": "学生公寓烟雾传感器",
+        "type": "smoke",
+        "building_id": "loc-dorm",
+        "floor": "待核实 / DEMO 布点",
+        "status": "online",
+        "last_seen": "2026-11-15T14:57:58.632+00:00",
+        "alarm": false,
+        "anchor": {
+          "image_id": "east-2023",
+          "x": 0.513,
+          "y": 0.5630000000000001,
+          "note": "DEMO 布点，非学校真实部署"
+        },
+        "metrics": [
+          {
+            "kind": "smoke_alarm",
+            "label": "烟雾告警",
+            "value": "未触发",
+            "unit": "",
+            "observation_id": "obs-7a1bd1fd97b54e1e",
+            "observed_at": "2026-11-15T14:57:58.632+00:00",
+            "incident_id": "inc-b95fceb429634ad6",
+            "quality": "good",
+            "data_scope": "current_device_state"
+          }
+        ],
+        "trend": [
+          {
+            "time": "2026-11-15T08:37:20.883+00:00",
+            "value": 0.0
+          },
+          {
+            "time": "2026-11-15T09:03:15.223+00:00",
+            "value": 0.0
+          },
+          {
+            "time": "2026-11-15T14:57:58.632+00:00",
+            "value": 0.0
+          }
+        ],
+        "related_device_ids": [],
+        "incident_ids": [],
+        "battery": null,
+        "is_simulated": true
+      },
+      {
+        "id": "dev-temp-01",
+        "code": "TEMP-008",
+        "name": "实训楼温度传感器",
+        "type": "temperature",
+        "building_id": "loc-training",
+        "floor": "二层（DEMO，真实楼层待核实）",
+        "status": "alarm",
+        "last_seen": "2026-11-15T14:57:58.632+00:00",
+        "alarm": true,
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.403,
+          "y": 0.46499999999999997,
+          "note": "DEMO 布点，非学校真实部署"
+        },
+        "metrics": [
+          {
+            "kind": "temperature",
+            "label": "温度",
+            "value": 78.0,
+            "unit": "°C",
+            "observation_id": "obs-0e73c9115c584c57",
+            "observed_at": "2026-11-15T14:57:58.632+00:00",
+            "incident_id": "inc-b95fceb429634ad6",
+            "quality": "alarm",
+            "data_scope": "current_device_state"
+          }
+        ],
+        "trend": [
+          {
+            "time": "2026-11-15T12:15:16.231+00:00",
+            "value": 30.0
+          },
+          {
+            "time": "2026-11-15T12:18:16.231+00:00",
+            "value": 49.0
+          },
+          {
+            "time": "2026-11-15T12:21:16.231+00:00",
+            "value": 68.5
+          },
+          {
+            "time": "2026-11-15T12:44:01.326+00:00",
+            "value": 30.0
+          },
+          {
+            "time": "2026-11-15T12:47:01.326+00:00",
+            "value": 49.0
+          },
+          {
+            "time": "2026-11-15T12:50:01.326+00:00",
+            "value": 68.5
+          },
+          {
+            "time": "2026-11-15T14:42:58.632+00:00",
+            "value": 26.0
+          },
+          {
+            "time": "2026-11-15T14:45:58.632+00:00",
+            "value": 27.0
+          },
+          {
+            "time": "2026-11-15T14:48:58.632+00:00",
+            "value": 31.0
+          },
+          {
+            "time": "2026-11-15T14:51:58.632+00:00",
+            "value": 42.0
+          },
+          {
+            "time": "2026-11-15T14:54:58.632+00:00",
+            "value": 61.0
+          },
+          {
+            "time": "2026-11-15T14:57:58.632+00:00",
+            "value": 78.0
+          }
+        ],
+        "related_device_ids": [
+          "dev-camera-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-water-01"
+        ],
+        "incident_ids": [
+          "inc-b95fceb429634ad6",
+          "inc-temp-10795e72d90d438e",
+          "inc-temp-6151439068f444c9",
+          "inc-84854a2c5b254f19",
+          "inc-demo-001"
+        ],
+        "battery": null,
+        "is_simulated": true
+      },
+      {
+        "id": "dev-temp-02",
+        "code": "TEMP-009",
+        "name": "图书馆温度传感器",
+        "type": "temperature",
+        "building_id": "loc-library",
+        "floor": "待核实 / DEMO 布点",
+        "status": "online",
+        "last_seen": "2026-11-15T14:57:58.632+00:00",
+        "alarm": false,
+        "anchor": null,
+        "metrics": [
+          {
+            "kind": "temperature",
+            "label": "温度",
+            "value": 25.0,
+            "unit": "°C",
+            "observation_id": "obs-39f193c24a564bea",
+            "observed_at": "2026-11-15T14:57:58.632+00:00",
+            "incident_id": "inc-b95fceb429634ad6",
+            "quality": "good",
+            "data_scope": "current_device_state"
+          }
+        ],
+        "trend": [
+          {
+            "time": "2026-11-15T08:37:20.883+00:00",
+            "value": 25.0
+          },
+          {
+            "time": "2026-11-15T09:03:15.223+00:00",
+            "value": 25.0
+          },
+          {
+            "time": "2026-11-15T14:57:58.632+00:00",
+            "value": 25.0
+          }
+        ],
+        "related_device_ids": [
+          "dev-camera-02"
+        ],
+        "incident_ids": [],
+        "battery": null,
+        "is_simulated": true
+      },
+      {
+        "id": "dev-water-01",
+        "code": "FIRE-003",
+        "name": "实训楼消防水压监测",
+        "type": "fire",
+        "building_id": "loc-training",
+        "floor": "二层（DEMO，真实楼层待核实）",
+        "status": "online",
+        "last_seen": "2026-11-15T14:57:58.632+00:00",
+        "alarm": false,
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.395,
+          "y": 0.525,
+          "note": "DEMO 布点，非学校真实部署"
+        },
+        "metrics": [
+          {
+            "kind": "water_pressure",
+            "label": "消防水压",
+            "value": 0.35,
+            "unit": "MPa",
+            "observation_id": "obs-1aa18bcf4f7d476e",
+            "observed_at": "2026-11-15T14:57:58.632+00:00",
+            "incident_id": "inc-b95fceb429634ad6",
+            "quality": "good",
+            "data_scope": "current_device_state"
+          }
+        ],
+        "trend": [
+          {
+            "time": "2026-11-15T08:37:20.883+00:00",
+            "value": 0.35
+          },
+          {
+            "time": "2026-11-15T09:03:15.223+00:00",
+            "value": 0.35
+          },
+          {
+            "time": "2026-11-15T09:41:46.721+00:00",
+            "value": 0.35
+          },
+          {
+            "time": "2026-11-15T09:44:46.721+00:00",
+            "value": 0.31
+          },
+          {
+            "time": "2026-11-15T09:47:46.721+00:00",
+            "value": 0.26
+          },
+          {
+            "time": "2026-11-15T09:50:46.721+00:00",
+            "value": 0.18
+          },
+          {
+            "time": "2026-11-15T09:53:46.721+00:00",
+            "value": 0.12
+          },
+          {
+            "time": "2026-11-15T09:56:46.721+00:00",
+            "value": 0.08
+          },
+          {
+            "time": "2026-11-15T14:57:58.632+00:00",
+            "value": 0.35
+          }
+        ],
+        "related_device_ids": [
+          "dev-camera-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-temp-01"
+        ],
+        "incident_ids": [
+          "inc-b95fceb429634ad6",
+          "inc-84854a2c5b254f19",
+          "inc-demo-001",
+          "inc-demo-fire"
+        ],
+        "battery": null,
+        "is_simulated": true
+      }
+    ],
+    "incidents": [
+      {
+        "id": "inc-b95fceb429634ad6",
+        "title": "实训楼二层疑似火情",
+        "location_id": "loc-training-2f",
+        "event_type": "suspected_fire",
+        "status": "open",
+        "risk_level": "high",
+        "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+        "triggered_at": "2026-11-15T14:57:58.632+00:00",
+        "is_simulated": true,
+        "location_name": "实训基地二层（DEMO 楼层）",
+        "building_id": "loc-training",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-temp-01",
+          "dev-water-01"
+        ],
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.435,
+          "y": 0.415,
+          "note": "DEMO 风险位置，非现场定位"
+        }
+      },
+      {
+        "id": "inc-temp-10795e72d90d438e",
+        "title": "实训基地单项温度异常（对照场景）",
+        "location_id": "loc-training-2f",
+        "event_type": "temperature_anomaly",
+        "status": "open",
+        "risk_level": "unassessed",
+        "summary": "DEMO：温度68.5℃、烟雾未触发、摄像机在线；温度异常不等于火灾。",
+        "triggered_at": "2026-11-15T12:50:01.326+00:00",
+        "is_simulated": true,
+        "location_name": "实训基地二层（DEMO 楼层）",
+        "building_id": "loc-training",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-smoke-01",
+          "dev-temp-01"
+        ],
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.435,
+          "y": 0.415,
+          "note": "DEMO 风险位置，非现场定位"
+        }
+      },
+      {
+        "id": "inc-temp-6151439068f444c9",
+        "title": "实训基地单项温度异常（对照场景）",
+        "location_id": "loc-training-2f",
+        "event_type": "temperature_anomaly",
+        "status": "open",
+        "risk_level": "medium",
+        "summary": "基础数据核查完成。存在单项异常，需要补充核查；这不是已批准的处置方案。",
+        "triggered_at": "2026-11-15T12:21:16.231+00:00",
+        "is_simulated": true,
+        "location_name": "实训基地二层（DEMO 楼层）",
+        "building_id": "loc-training",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-smoke-01",
+          "dev-temp-01"
+        ],
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.435,
+          "y": 0.415,
+          "note": "DEMO 风险位置，非现场定位"
+        }
+      },
+      {
+        "id": "inc-84854a2c5b254f19",
+        "title": "实训楼二层疑似火情",
+        "location_id": "loc-training-2f",
+        "event_type": "suspected_fire",
+        "status": "open",
+        "risk_level": "high",
+        "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+        "triggered_at": "2026-11-15T09:03:15.223+00:00",
+        "is_simulated": true,
+        "location_name": "实训基地二层（DEMO 楼层）",
+        "building_id": "loc-training",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-temp-01",
+          "dev-water-01"
+        ],
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.435,
+          "y": 0.415,
+          "note": "DEMO 风险位置，非现场定位"
+        }
+      },
+      {
+        "id": "inc-demo-001",
+        "title": "实训基地温度异常",
+        "location_id": "loc-training-2f",
+        "event_type": "suspected_fire",
+        "status": "open",
+        "risk_level": "high",
+        "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+        "triggered_at": "2026-11-15T08:37:20.883+00:00",
+        "is_simulated": true,
+        "location_name": "实训基地二层（DEMO 楼层）",
+        "building_id": "loc-training",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-temp-01",
+          "dev-water-01"
+        ],
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.435,
+          "y": 0.415,
+          "note": "DEMO 风险位置，非现场定位"
+        }
+      },
+      {
+        "id": "inc-demo-fire",
+        "title": "校园区域消防设备异常",
+        "location_id": "loc-training-2f",
+        "event_type": "fire_equipment",
+        "status": "open",
+        "risk_level": "high",
+        "summary": "DEMO：FIRE-003 水压记录异常，需要人工核验。",
+        "triggered_at": "2026-11-15T08:37:19.883+00:00",
+        "is_simulated": true,
+        "location_name": "实训基地二层（DEMO 楼层）",
+        "building_id": "loc-training",
+        "device_ids": [
+          "dev-water-01"
+        ],
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.345,
+          "y": 0.525,
+          "note": "DEMO 风险位置，非现场定位"
+        }
+      },
+      {
+        "id": "inc-demo-offline",
+        "title": "实验空间设备离线",
+        "location_id": "loc-training-2f",
+        "event_type": "device_offline",
+        "status": "open",
+        "risk_level": "medium",
+        "summary": "DEMO：CAM-021 通信中断；真实实验空间与楼层待核实。",
+        "triggered_at": "2026-11-15T08:37:18.883+00:00",
+        "is_simulated": true,
+        "location_name": "实训基地二层（DEMO 楼层）",
+        "building_id": "loc-training",
+        "device_ids": [
+          "dev-camera-01"
+        ],
+        "anchor": {
+          "image_id": "training-2026",
+          "x": 0.53,
+          "y": 0.45499999999999996,
+          "note": "DEMO 风险位置，非现场定位"
+        }
+      }
+    ],
+    "patrols": [
+      {
+        "id": "patrol-bb69957ba2b24232",
+        "device_id": "dev-drone-01",
+        "target_building_id": "loc-dorm",
+        "image_id": "east-2023",
+        "route": [
+          {
+            "x": 0.378,
+            "y": 0.673
+          },
+          {
+            "x": 0.423,
+            "y": 0.6080000000000001
+          },
+          {
+            "x": 0.458,
+            "y": 0.47800000000000004
+          },
+          {
+            "x": 0.573,
+            "y": 0.513
+          },
+          {
+            "x": 0.563,
+            "y": 0.628
+          },
+          {
+            "x": 0.498,
+            "y": 0.553
+          },
+          {
+            "x": 0.378,
+            "y": 0.673
+          }
+        ],
+        "status": "completed",
+        "progress": 100,
+        "created_at": "2026-11-15T10:40:26.828+00:00",
+        "started_at": "2026-11-15T10:41:48.637+00:00",
+        "duration_seconds": 12,
+        "result": "DEMO 巡检完成：已沿确认路线完成动画并记录目标区域。未采集真实视频或遥测，不能据此判定风险已消除。",
+        "is_simulated": true
+      },
+      {
+        "id": "patrol-41d7af4f55fd459c",
+        "device_id": "dev-drone-01",
+        "target_building_id": "loc-canopy",
+        "image_id": "training-2026",
+        "route": [
+          {
+            "x": 0.33499999999999996,
+            "y": 0.39
+          },
+          {
+            "x": 0.5710000000000001,
+            "y": 0.411
+          },
+          {
+            "x": 0.606,
+            "y": 0.28099999999999997
+          },
+          {
+            "x": 0.721,
+            "y": 0.316
+          },
+          {
+            "x": 0.7110000000000001,
+            "y": 0.431
+          },
+          {
+            "x": 0.646,
+            "y": 0.356
+          },
+          {
+            "x": 0.33499999999999996,
+            "y": 0.39
+          }
+        ],
+        "status": "completed",
+        "progress": 100,
+        "created_at": "2026-11-15T10:11:19.404+00:00",
+        "started_at": "2026-11-15T10:11:20.283+00:00",
+        "duration_seconds": 12,
+        "result": "DEMO 巡检完成：已沿确认路线完成动画并记录目标区域。未采集真实视频或遥测，不能据此判定风险已消除。",
+        "is_simulated": true
+      }
+    ],
+    "tasks": [
+      {
+        "source_selection": null,
+        "id": "maptask-598b763895774bf7",
+        "instruction": "分析当前杭州校区安全态势，核查全部演示风险与设备。",
+        "action": "campus",
+        "source_view": "overview",
+        "image_id": "training-2026",
+        "building_id": null,
+        "device_ids": [
+          "dev-camera-01",
+          "dev-camera-02",
+          "dev-drone-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-smoke-02",
+          "dev-temp-01",
+          "dev-temp-02",
+          "dev-water-01"
+        ],
+        "incident_ids": [
+          "inc-temp-10795e72d90d438e",
+          "inc-temp-6151439068f444c9",
+          "inc-84854a2c5b254f19",
+          "inc-demo-001",
+          "inc-demo-fire",
+          "inc-demo-offline"
+        ],
+        "created_at": "2026-11-15T12:50:05.693+00:00",
+        "status": "completed",
+        "result": {
+          "title": "校园安全态势分析 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 9 台设备，发现 2 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：9 台关联设备，2 台告警、离线或未知，6 项关联事件。",
+            "CAM-021 · 实训楼走廊摄像机 · online · 异常记录 0.0；通信状态 在线",
+            "CAM-022 · 图书馆入口摄像机 · online · 通信状态 在线",
+            "DRONE-001 · 模拟巡检无人机 · online · 通信状态 在线；电量 86.0%",
+            "ROBOT-001 · 校园巡检机器人 · online · 通信状态 在线；电量 76.0%",
+            "SMOKE-012 · 实训楼烟雾传感器 · online · 烟雾告警 未触发",
+            "SMOKE-013 · 学生公寓烟雾传感器 · online · 烟雾告警 未触发",
+            "TEMP-008 · 实训楼温度传感器 · alarm · 温度 68.5°C",
+            "TEMP-009 · 图书馆温度传感器 · online · 温度 25.0°C",
+            "FIRE-003 · 实训楼消防水压监测 · alarm · 消防水压 0.08MPa",
+            "事件 inc-temp-10795e72d90d438e：实训基地单项温度异常（对照场景） / unassessed / open",
+            "事件 inc-temp-6151439068f444c9：实训基地单项温度异常（对照场景） / medium / open",
+            "事件 inc-84854a2c5b254f19：实训楼二层疑似火情 / high / open",
+            "事件 inc-demo-001：实训基地温度异常 / high / open",
+            "事件 inc-demo-fire：校园区域消防设备异常 / high / open",
+            "事件 inc-demo-offline：实验空间设备离线 / medium / open"
+          ],
+          "recommendations": [
+            "先核对告警设备与离线设备的演示证据，再由授权人员依据正式预案复核。",
+            "空间名称、楼层与设备位置待核实项不能作为真实现场定位依据。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      },
+      {
+        "source_selection": null,
+        "id": "maptask-e9d136a886b24b01",
+        "instruction": "检查当前校园异常及离线设备，说明证据和待核实项。",
+        "action": "anomalies",
+        "source_view": "overview",
+        "image_id": "east-2023",
+        "building_id": null,
+        "device_ids": [
+          "dev-camera-01",
+          "dev-camera-02",
+          "dev-drone-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-smoke-02",
+          "dev-temp-01",
+          "dev-temp-02",
+          "dev-water-01"
+        ],
+        "incident_ids": [
+          "inc-84854a2c5b254f19",
+          "inc-demo-001",
+          "inc-demo-fire",
+          "inc-demo-offline"
+        ],
+        "created_at": "2026-11-15T11:39:51.424+00:00",
+        "status": "completed",
+        "result": {
+          "title": "异常设备核查 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 9 台设备，发现 4 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：9 台关联设备，4 台告警、离线或未知，4 项关联事件。",
+            "CAM-021 · 实训楼走廊摄像机 · offline · 异常记录 1.0；通信状态 离线",
+            "SMOKE-012 · 实训楼烟雾传感器 · alarm · 烟雾告警 告警",
+            "TEMP-008 · 实训楼温度传感器 · alarm · 温度 78.0°C",
+            "FIRE-003 · 实训楼消防水压监测 · alarm · 消防水压 0.08MPa",
+            "事件 inc-84854a2c5b254f19：实训楼二层疑似火情 / high / open",
+            "事件 inc-demo-001：实训基地温度异常 / high / open",
+            "事件 inc-demo-fire：校园区域消防设备异常 / high / open",
+            "事件 inc-demo-offline：实验空间设备离线 / medium / open"
+          ],
+          "recommendations": [
+            "先核对告警设备与离线设备的演示证据，再由授权人员依据正式预案复核。",
+            "空间名称、楼层与设备位置待核实项不能作为真实现场定位依据。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      },
+      {
+        "source_selection": null,
+        "id": "maptask-f282e885a8204172",
+        "instruction": "分析当前杭州校区安全态势，核查全部演示风险与设备。",
+        "action": "campus",
+        "source_view": "overview",
+        "image_id": "east-2023",
+        "building_id": null,
+        "device_ids": [
+          "dev-camera-01",
+          "dev-camera-02",
+          "dev-drone-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-smoke-02",
+          "dev-temp-01",
+          "dev-temp-02",
+          "dev-water-01"
+        ],
+        "incident_ids": [
+          "inc-84854a2c5b254f19",
+          "inc-demo-001",
+          "inc-demo-fire",
+          "inc-demo-offline"
+        ],
+        "created_at": "2026-11-15T11:38:45.790+00:00",
+        "status": "completed",
+        "result": {
+          "title": "校园安全态势分析 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 9 台设备，发现 4 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：9 台关联设备，4 台告警、离线或未知，4 项关联事件。",
+            "CAM-021 · 实训楼走廊摄像机 · offline · 异常记录 1.0；通信状态 离线",
+            "CAM-022 · 图书馆入口摄像机 · online · 通信状态 在线",
+            "DRONE-001 · 模拟巡检无人机 · online · 通信状态 在线；电量 86.0%",
+            "ROBOT-001 · 校园巡检机器人 · online · 通信状态 在线；电量 76.0%",
+            "SMOKE-012 · 实训楼烟雾传感器 · alarm · 烟雾告警 告警",
+            "SMOKE-013 · 学生公寓烟雾传感器 · online · 烟雾告警 未触发",
+            "TEMP-008 · 实训楼温度传感器 · alarm · 温度 78.0°C",
+            "TEMP-009 · 图书馆温度传感器 · online · 温度 25.0°C",
+            "FIRE-003 · 实训楼消防水压监测 · alarm · 消防水压 0.08MPa",
+            "事件 inc-84854a2c5b254f19：实训楼二层疑似火情 / high / open",
+            "事件 inc-demo-001：实训基地温度异常 / high / open",
+            "事件 inc-demo-fire：校园区域消防设备异常 / high / open",
+            "事件 inc-demo-offline：实验空间设备离线 / medium / open"
+          ],
+          "recommendations": [
+            "先核对告警设备与离线设备的演示证据，再由授权人员依据正式预案复核。",
+            "空间名称、楼层与设备位置待核实项不能作为真实现场定位依据。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      },
+      {
+        "source_selection": null,
+        "id": "maptask-3b232179437f4f64",
+        "instruction": "生成杭州校区安全报告摘要（DEMO）。",
+        "action": "report",
+        "source_view": "coordination",
+        "image_id": "training-2026",
+        "building_id": null,
+        "device_ids": [
+          "dev-camera-01",
+          "dev-camera-02",
+          "dev-drone-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-smoke-02",
+          "dev-temp-01",
+          "dev-temp-02",
+          "dev-water-01"
+        ],
+        "incident_ids": [
+          "inc-84854a2c5b254f19",
+          "inc-demo-001",
+          "inc-demo-fire",
+          "inc-demo-offline"
+        ],
+        "created_at": "2026-11-15T10:53:21.240+00:00",
+        "status": "completed",
+        "result": {
+          "title": "区域安全报告摘要 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 9 台设备，发现 4 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：9 台关联设备，4 台告警、离线或未知，4 项关联事件。",
+            "CAM-021 · 实训楼走廊摄像机 · offline · 异常记录 1.0；通信状态 离线",
+            "CAM-022 · 图书馆入口摄像机 · online · 通信状态 在线",
+            "DRONE-001 · 模拟巡检无人机 · online · 通信状态 在线；电量 86.0%",
+            "ROBOT-001 · 校园巡检机器人 · online · 通信状态 在线；电量 76.0%",
+            "SMOKE-012 · 实训楼烟雾传感器 · alarm · 烟雾告警 告警",
+            "SMOKE-013 · 学生公寓烟雾传感器 · online · 烟雾告警 未触发",
+            "TEMP-008 · 实训楼温度传感器 · alarm · 温度 78.0°C",
+            "TEMP-009 · 图书馆温度传感器 · online · 温度 25.0°C",
+            "FIRE-003 · 实训楼消防水压监测 · alarm · 消防水压 0.08MPa",
+            "事件 inc-84854a2c5b254f19：实训楼二层疑似火情 / high / open",
+            "事件 inc-demo-001：实训基地温度异常 / high / open",
+            "事件 inc-demo-fire：校园区域消防设备异常 / high / open",
+            "事件 inc-demo-offline：实验空间设备离线 / medium / open"
+          ],
+          "recommendations": [
+            "先核对告警设备与离线设备的演示证据，再由授权人员依据正式预案复核。",
+            "空间名称、楼层与设备位置待核实项不能作为真实现场定位依据。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      },
+      {
+        "source_selection": null,
+        "id": "maptask-d8c0786d1d3b404a",
+        "instruction": "检查当前校园异常及离线设备，说明证据和待核实项。",
+        "action": "anomalies",
+        "source_view": "coordination",
+        "image_id": "training-2026",
+        "building_id": null,
+        "device_ids": [
+          "dev-camera-01",
+          "dev-camera-02",
+          "dev-drone-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-smoke-02",
+          "dev-temp-01",
+          "dev-temp-02",
+          "dev-water-01"
+        ],
+        "incident_ids": [
+          "inc-84854a2c5b254f19",
+          "inc-demo-001",
+          "inc-demo-fire",
+          "inc-demo-offline"
+        ],
+        "created_at": "2026-11-15T10:52:37.356+00:00",
+        "status": "completed",
+        "result": {
+          "title": "异常设备核查 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 9 台设备，发现 4 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：9 台关联设备，4 台告警、离线或未知，4 项关联事件。",
+            "CAM-021 · 实训楼走廊摄像机 · offline · 异常记录 1.0；通信状态 离线",
+            "SMOKE-012 · 实训楼烟雾传感器 · alarm · 烟雾告警 告警",
+            "TEMP-008 · 实训楼温度传感器 · alarm · 温度 78.0°C",
+            "FIRE-003 · 实训楼消防水压监测 · alarm · 消防水压 0.08MPa",
+            "事件 inc-84854a2c5b254f19：实训楼二层疑似火情 / high / open",
+            "事件 inc-demo-001：实训基地温度异常 / high / open",
+            "事件 inc-demo-fire：校园区域消防设备异常 / high / open",
+            "事件 inc-demo-offline：实验空间设备离线 / medium / open"
+          ],
+          "recommendations": [
+            "先核对告警设备与离线设备的演示证据，再由授权人员依据正式预案复核。",
+            "空间名称、楼层与设备位置待核实项不能作为真实现场定位依据。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      },
+      {
+        "source_selection": {
+          "kind": "device",
+          "id": "dev-drone-01"
+        },
+        "id": "maptask-ec63830378674ec1",
+        "instruction": "分析模拟巡检无人机风险，核查关联设备与事件。",
+        "action": "report",
+        "source_view": "coordination",
+        "image_id": "training-2026",
+        "building_id": null,
+        "device_ids": [
+          "dev-drone-01"
+        ],
+        "incident_ids": [],
+        "created_at": "2026-11-15T10:52:36.793+00:00",
+        "status": "completed",
+        "result": {
+          "title": "区域安全报告摘要 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 1 台设备，发现 0 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：1 台关联设备，0 台告警、离线或未知，0 项关联事件。",
+            "DRONE-001 · 模拟巡检无人机 · online · 通信状态 在线；电量 86.0%"
+          ],
+          "recommendations": [
+            "先核对告警设备与离线设备的演示证据，再由授权人员依据正式预案复核。",
+            "空间名称、楼层与设备位置待核实项不能作为真实现场定位依据。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      },
+      {
+        "source_selection": {
+          "kind": "device",
+          "id": "dev-temp-01"
+        },
+        "id": "maptask-05c138fdee3a4020",
+        "instruction": "分析实训楼温度传感器风险，核查关联设备与事件。",
+        "action": "building",
+        "source_view": "coordination",
+        "image_id": "training-2026",
+        "building_id": "loc-training",
+        "device_ids": [
+          "dev-temp-01"
+        ],
+        "incident_ids": [
+          "inc-84854a2c5b254f19",
+          "inc-demo-001"
+        ],
+        "created_at": "2026-11-15T10:51:53.695+00:00",
+        "status": "completed",
+        "result": {
+          "title": "建筑风险分析 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 1 台设备，发现 1 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：1 台关联设备，1 台告警、离线或未知，2 项关联事件。",
+            "TEMP-008 · 实训楼温度传感器 · alarm · 温度 78.0°C",
+            "事件 inc-84854a2c5b254f19：实训楼二层疑似火情 / high / open",
+            "事件 inc-demo-001：实训基地温度异常 / high / open"
+          ],
+          "recommendations": [
+            "先核对告警设备与离线设备的演示证据，再由授权人员依据正式预案复核。",
+            "空间名称、楼层与设备位置待核实项不能作为真实现场定位依据。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      },
+      {
+        "source_selection": {
+          "kind": "building",
+          "id": "loc-dorm"
+        },
+        "id": "maptask-dbd67fe9dd5642ba",
+        "instruction": "规划无人机巡检：高层学生公寓，核查任务条件。",
+        "action": "patrol",
+        "source_view": "coordination",
+        "image_id": "east-2023",
+        "building_id": "loc-dorm",
+        "device_ids": [
+          "dev-drone-01"
+        ],
+        "incident_ids": [],
+        "created_at": "2026-11-15T10:50:58.274+00:00",
+        "status": "completed",
+        "result": {
+          "title": "无人机巡检规划建议 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 1 台设备，发现 0 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：1 台关联设备，0 台告警、离线或未知，0 项关联事件。",
+            "DRONE-001 · 模拟巡检无人机 · online · 通信状态 在线；电量 86.0%"
+          ],
+          "recommendations": [
+            "前往空天地协同视图，选择 DRONE-001 与目标建筑生成路线。",
+            "确认 DEMO 巡检任务后才启动动画；本分析不会自动派发或控制设备。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      },
+      {
+        "source_selection": null,
+        "id": "maptask-95df28384efa4526",
+        "instruction": "分析高层学生公寓风险，核查关联设备与事件。",
+        "action": "building",
+        "source_view": "coordination",
+        "image_id": "east-2023",
+        "building_id": "loc-dorm",
+        "device_ids": [
+          "dev-smoke-02"
+        ],
+        "incident_ids": [],
+        "created_at": "2026-11-15T10:20:42.467+00:00",
+        "status": "completed",
+        "result": {
+          "title": "建筑风险分析 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 1 台设备，发现 0 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：1 台关联设备，0 台告警、离线或未知，0 项关联事件。",
+            "SMOKE-013 · 学生公寓烟雾传感器 · online · 烟雾告警 未触发"
+          ],
+          "recommendations": [
+            "先核对告警设备与离线设备的演示证据，再由授权人员依据正式预案复核。",
+            "空间名称、楼层与设备位置待核实项不能作为真实现场定位依据。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      },
+      {
+        "source_selection": null,
+        "id": "maptask-eb05c702024843b6",
+        "instruction": "分析物流与航空实训基地风险，核查关联设备与事件。",
+        "action": "building",
+        "source_view": "map",
+        "image_id": "training-2026",
+        "building_id": "loc-training",
+        "device_ids": [
+          "dev-temp-01"
+        ],
+        "incident_ids": [
+          "inc-84854a2c5b254f19",
+          "inc-demo-001"
+        ],
+        "created_at": "2026-11-15T10:07:32.100+00:00",
+        "status": "completed",
+        "result": {
+          "title": "建筑风险分析 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 1 台设备，发现 1 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：1 台关联设备，1 台告警、离线或未知，2 项关联事件。",
+            "TEMP-008 · 实训楼温度传感器 · alarm · 温度 78.0°C",
+            "事件 inc-84854a2c5b254f19：实训楼二层疑似火情 / high / open",
+            "事件 inc-demo-001：实训基地温度异常 / high / open"
+          ],
+          "recommendations": [
+            "先核对告警设备与离线设备的演示证据，再由授权人员依据正式预案复核。",
+            "空间名称、楼层与设备位置待核实项不能作为真实现场定位依据。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      },
+      {
+        "source_selection": null,
+        "id": "maptask-d9323407788449e2",
+        "instruction": "分析当前杭州校区安全态势，核查全部演示风险与设备。",
+        "action": "campus",
+        "source_view": "overview",
+        "image_id": "training-2026",
+        "building_id": null,
+        "device_ids": [
+          "dev-camera-01",
+          "dev-camera-02",
+          "dev-drone-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-smoke-02",
+          "dev-temp-01",
+          "dev-temp-02",
+          "dev-water-01"
+        ],
+        "incident_ids": [
+          "inc-84854a2c5b254f19",
+          "inc-demo-001",
+          "inc-demo-fire",
+          "inc-demo-offline"
+        ],
+        "created_at": "2026-11-15T10:06:13.764+00:00",
+        "status": "completed",
+        "result": {
+          "title": "校园安全态势分析 · DEMO",
+          "summary": "DEMO 规则分析已完成：范围内 9 台设备，发现 4 台告警、离线或未知设备。",
+          "evidence": [
+            "统一数据快照：9 台关联设备，4 台告警、离线或未知，4 项关联事件。",
+            "CAM-021 · 实训楼走廊摄像机 · offline · 异常记录 1.0；通信状态 离线",
+            "CAM-022 · 图书馆入口摄像机 · online · 通信状态 在线",
+            "DRONE-001 · 模拟巡检无人机 · online · 通信状态 在线；电量 86.0%",
+            "ROBOT-001 · 校园巡检机器人 · online · 通信状态 在线；电量 76.0%",
+            "SMOKE-012 · 实训楼烟雾传感器 · alarm · 烟雾告警 告警",
+            "SMOKE-013 · 学生公寓烟雾传感器 · online · 烟雾告警 未触发",
+            "TEMP-008 · 实训楼温度传感器 · alarm · 温度 78.0°C",
+            "TEMP-009 · 图书馆温度传感器 · online · 温度 25.0°C",
+            "FIRE-003 · 实训楼消防水压监测 · alarm · 消防水压 0.08MPa",
+            "事件 inc-84854a2c5b254f19：实训楼二层疑似火情 / high / open",
+            "事件 inc-demo-001：实训基地温度异常 / high / open",
+            "事件 inc-demo-fire：校园区域消防设备异常 / high / open",
+            "事件 inc-demo-offline：实验空间设备离线 / medium / open"
+          ],
+          "recommendations": [
+            "先核对告警设备与离线设备的演示证据，再由授权人员依据正式预案复核。",
+            "空间名称、楼层与设备位置待核实项不能作为真实现场定位依据。"
+          ],
+          "limitations": [
+            "使用同一数据库快照生成的确定性规则摘要，未调用大模型。",
+            "所有设备、事件与巡检均为模拟；校园图片为规划效果图。",
+            "本摘要不是正式安全报告、审批或真实处置指令。"
+          ]
+        },
+        "is_simulated": true
+      }
+    ],
+    "evidence_checks": [
+      {
+        "id": "run-c1b19372dcc2492a",
+        "incident_id": "inc-temp-6151439068f444c9",
+        "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+        "status": "completed",
+        "created_at": "2026-11-15T12:32:52.945+00:00",
+        "updated_at": "2026-11-15T12:32:53.033+00:00",
+        "error": null
+      },
+      {
+        "id": "run-b1e1bc9feab5400d",
+        "incident_id": "inc-temp-6151439068f444c9",
+        "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+        "status": "completed",
+        "created_at": "2026-11-15T12:22:41.462+00:00",
+        "updated_at": "2026-11-15T12:22:41.563+00:00",
+        "error": null
+      },
+      {
+        "id": "run-3b454709f0cb41f8",
+        "incident_id": "inc-demo-001",
+        "evidence_snapshot_id": "evidence-4c1a5d6df753402e",
+        "status": "completed",
+        "created_at": "2026-11-15T12:17:35.540+00:00",
+        "updated_at": "2026-11-15T12:17:35.649+00:00",
+        "error": null
+      }
+    ],
+    "execution_tasks": [
+      {
+        "id": "execution-d379c72464d74f7f",
+        "code": "TASK-006",
+        "title": "校区区域遥感流程复核",
+        "task_type": "remote_sensing",
+        "source_kind": "manual_demo",
+        "source_label": "手动创建 · 演示",
+        "source_run_id": null,
+        "evidence_snapshot_id": null,
+        "incident_id": "inc-temp-10795e72d90d438e",
+        "incident_title": "实训基地单项温度异常（对照场景）",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-smoke-01",
+          "dev-temp-01"
+        ],
+        "target_building_id": "loc-training",
+        "target_building_name": "物流与航空实训基地",
+        "priority": "medium",
+        "risk_level": "unassessed",
+        "resource_id": "SAT-001",
+        "resource_code": "SAT-001",
+        "resource_name": "区域遥感复核（纯模拟）",
+        "status": "completed",
+        "progress": 100,
+        "created_at": "2026-11-15T14:27:52.556+00:00",
+        "updated_at": "2026-11-15T14:28:20.390+00:00",
+        "started_at": "2026-11-15T14:27:53.390+00:00",
+        "finished_at": "2026-11-15T14:28:20.390+00:00",
+        "dispatch_seconds": 3,
+        "duration_seconds": 24,
+        "image_id": "training-2026",
+        "route": [],
+        "position": null,
+        "target_point": {
+          "x": 0.435,
+          "y": 0.49
+        },
+        "patrol_id": null,
+        "parent_task_id": null,
+        "attempt": 1,
+        "steps": [
+          {
+            "id": "dispatch",
+            "title": "模拟资源调度",
+            "status": "completed",
+            "started_at": "2026-11-15T14:27:53.390+00:00",
+            "finished_at": "2026-11-15T14:27:56.390+00:00"
+          },
+          {
+            "id": "execute",
+            "title": "模拟巡检 / 区域复核",
+            "status": "completed",
+            "started_at": "2026-11-15T14:27:56.390+00:00",
+            "finished_at": "2026-11-15T14:28:20.390+00:00"
+          },
+          {
+            "id": "report",
+            "title": "保存记录，等待人工复核",
+            "status": "completed",
+            "started_at": "2026-11-15T14:28:20.390+00:00",
+            "finished_at": "2026-11-15T14:28:20.390+00:00"
+          }
+        ],
+        "logs": [
+          {
+            "id": "tasklog-91bd45a27d9e41fd",
+            "sequence": 1,
+            "at": "2026-11-15T14:27:52.556+00:00",
+            "kind": "created",
+            "message": "手动创建 · 演示：已关联事件 inc-temp-10795e72d90d438e，等待选择资源。"
+          },
+          {
+            "id": "tasklog-37e7fe7d9bde4791",
+            "sequence": 2,
+            "at": "2026-11-15T14:27:53.115+00:00",
+            "kind": "assigned",
+            "message": "选择 SAT-001 · 区域遥感复核（纯模拟）（演示）；启动后才占用资源。"
+          },
+          {
+            "id": "tasklog-85e4c43d14864704",
+            "sequence": 3,
+            "at": "2026-11-15T14:27:53.390+00:00",
+            "kind": "dispatching",
+            "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+          },
+          {
+            "id": "tasklog-332adeb0f9724134",
+            "sequence": 4,
+            "at": "2026-11-15T14:27:56.390+00:00",
+            "kind": "running",
+            "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+          },
+          {
+            "id": "tasklog-a8f7d220471c4b74",
+            "sequence": 5,
+            "at": "2026-11-15T14:28:20.390+00:00",
+            "kind": "completed",
+            "message": "演示 模拟执行完成，已保存结果；风险事件保持原状态，等待人工复核。"
+          }
+        ],
+        "report": {
+          "id": "execution-report-2e6b33e1a2bf42ce",
+          "task_id": "execution-d379c72464d74f7f",
+          "task_code": "TASK-006",
+          "title": "校区区域遥感流程复核 · 演示 执行记录",
+          "incident_id": "inc-temp-10795e72d90d438e",
+          "source_run_id": null,
+          "evidence_snapshot_id": null,
+          "resource_id": "SAT-001",
+          "resource_code": "SAT-001",
+          "started_at": "2026-11-15T14:27:53.390+00:00",
+          "finished_at": "2026-11-15T14:28:20.390+00:00",
+          "generated_at": "2026-11-15T14:28:20.390+00:00",
+          "scope": "物流与航空实训基地 / inc-temp-10795e72d90d438e",
+          "summary": "TASK-006 使用 SAT-001 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+          "findings": [
+            "目标：物流与航空实训基地；关联事件：实训基地单项温度异常（对照场景）（inc-temp-10795e72d90d438e）。",
+            "SAT-001 已完成 区域遥感模拟复核流程，进度 100%；此状态仅表示模拟流程完成。",
+            "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。"
+          ],
+          "recommendations": [
+            "由授权人员核实关联设备及现场情况。",
+            "将人工复核结果另行记录，再决定风险事件后续状态。"
+          ],
+          "limitations": [
+            "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+            "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+            "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。",
+            "未接入卫星、真实覆盖范围或遥感影像；不存在实际飞行路线或影像采集。"
+          ],
+          "verification_status": "requires_human_review",
+          "is_simulated": true
+        },
+        "error": null,
+        "is_simulated": true
+      },
+      {
+        "id": "execution-299d3b78d970494f",
+        "code": "TASK-005",
+        "title": "实训基地地面复核",
+        "task_type": "ground_inspection",
+        "source_kind": "manual_demo",
+        "source_label": "手动创建 · 演示",
+        "source_run_id": null,
+        "evidence_snapshot_id": null,
+        "incident_id": "inc-temp-10795e72d90d438e",
+        "incident_title": "实训基地单项温度异常（对照场景）",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-smoke-01",
+          "dev-temp-01"
+        ],
+        "target_building_id": "loc-training",
+        "target_building_name": "物流与航空实训基地",
+        "priority": "medium",
+        "risk_level": "unassessed",
+        "resource_id": "ROBOT-002",
+        "resource_code": "ROBOT-002",
+        "resource_name": "地面机器人（设备 ROBOT-001）",
+        "status": "completed",
+        "progress": 100,
+        "created_at": "2026-11-15T14:27:51.078+00:00",
+        "updated_at": "2026-11-15T14:28:18.927+00:00",
+        "started_at": "2026-11-15T14:27:51.927+00:00",
+        "finished_at": "2026-11-15T14:28:18.927+00:00",
+        "dispatch_seconds": 3,
+        "duration_seconds": 24,
+        "image_id": "training-2026",
+        "route": [
+          {
+            "x": 0.505,
+            "y": 0.58
+          },
+          {
+            "x": 0.36,
+            "y": 0.545
+          },
+          {
+            "x": 0.5,
+            "y": 0.565
+          },
+          {
+            "x": 0.435,
+            "y": 0.49
+          },
+          {
+            "x": 0.505,
+            "y": 0.58
+          }
+        ],
+        "position": {
+          "x": 0.505,
+          "y": 0.58
+        },
+        "target_point": {
+          "x": 0.435,
+          "y": 0.49
+        },
+        "patrol_id": null,
+        "parent_task_id": null,
+        "attempt": 1,
+        "steps": [
+          {
+            "id": "dispatch",
+            "title": "模拟资源调度",
+            "status": "completed",
+            "started_at": "2026-11-15T14:27:51.927+00:00",
+            "finished_at": "2026-11-15T14:27:54.927+00:00"
+          },
+          {
+            "id": "execute",
+            "title": "模拟巡检 / 区域复核",
+            "status": "completed",
+            "started_at": "2026-11-15T14:27:54.927+00:00",
+            "finished_at": "2026-11-15T14:28:18.927+00:00"
+          },
+          {
+            "id": "report",
+            "title": "保存记录，等待人工复核",
+            "status": "completed",
+            "started_at": "2026-11-15T14:28:18.927+00:00",
+            "finished_at": "2026-11-15T14:28:18.927+00:00"
+          }
+        ],
+        "logs": [
+          {
+            "id": "tasklog-9079b3a613de487b",
+            "sequence": 1,
+            "at": "2026-11-15T14:27:51.078+00:00",
+            "kind": "created",
+            "message": "手动创建 · 演示：已关联事件 inc-temp-10795e72d90d438e，等待选择资源。"
+          },
+          {
+            "id": "tasklog-11bc78f676f24a8c",
+            "sequence": 2,
+            "at": "2026-11-15T14:27:51.636+00:00",
+            "kind": "assigned",
+            "message": "选择 ROBOT-002 · 地面机器人（设备 ROBOT-001）（演示）；启动后才占用资源。"
+          },
+          {
+            "id": "tasklog-6d41a7ab70604cd4",
+            "sequence": 3,
+            "at": "2026-11-15T14:27:51.927+00:00",
+            "kind": "dispatching",
+            "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+          },
+          {
+            "id": "tasklog-faee3b6a2fe640bf",
+            "sequence": 4,
+            "at": "2026-11-15T14:27:54.927+00:00",
+            "kind": "running",
+            "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+          },
+          {
+            "id": "tasklog-a78bb5dab82b4a08",
+            "sequence": 5,
+            "at": "2026-11-15T14:28:18.927+00:00",
+            "kind": "completed",
+            "message": "演示 模拟执行完成，已保存结果；风险事件保持原状态，等待人工复核。"
+          }
+        ],
+        "report": {
+          "id": "execution-report-9a0e78b20975450d",
+          "task_id": "execution-299d3b78d970494f",
+          "task_code": "TASK-005",
+          "title": "实训基地地面复核 · 演示 执行记录",
+          "incident_id": "inc-temp-10795e72d90d438e",
+          "source_run_id": null,
+          "evidence_snapshot_id": null,
+          "resource_id": "ROBOT-002",
+          "resource_code": "ROBOT-002",
+          "started_at": "2026-11-15T14:27:51.927+00:00",
+          "finished_at": "2026-11-15T14:28:18.927+00:00",
+          "generated_at": "2026-11-15T14:28:18.927+00:00",
+          "scope": "物流与航空实训基地 / inc-temp-10795e72d90d438e",
+          "summary": "TASK-005 使用 ROBOT-002 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+          "findings": [
+            "目标：物流与航空实训基地；关联事件：实训基地单项温度异常（对照场景）（inc-temp-10795e72d90d438e）。",
+            "ROBOT-002 已完成 机器人模拟巡检流程，进度 100%；此状态仅表示模拟流程完成。",
+            "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。"
+          ],
+          "recommendations": [
+            "由授权人员核实关联设备及现场情况。",
+            "将人工复核结果另行记录，再决定风险事件后续状态。"
+          ],
+          "limitations": [
+            "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+            "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+            "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。",
+            "机器人路线仅为示意，不包含道路通行、障碍物或避障算法。"
+          ],
+          "verification_status": "requires_human_review",
+          "is_simulated": true
+        },
+        "error": null,
+        "is_simulated": true
+      },
+      {
+        "id": "execution-43ee3372473d47bf",
+        "code": "TASK-004",
+        "title": "实训基地航线与中止验证",
+        "task_type": "aerial_inspection",
+        "source_kind": "manual_demo",
+        "source_label": "手动创建 · 演示",
+        "source_run_id": null,
+        "evidence_snapshot_id": null,
+        "incident_id": "inc-temp-10795e72d90d438e",
+        "incident_title": "实训基地单项温度异常（对照场景）",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-smoke-01",
+          "dev-temp-01"
+        ],
+        "target_building_id": "loc-training",
+        "target_building_name": "物流与航空实训基地",
+        "priority": "medium",
+        "risk_level": "unassessed",
+        "resource_id": "UAV-003",
+        "resource_code": "UAV-003",
+        "resource_name": "巡检无人机（设备 DRONE-001）",
+        "status": "cancelled",
+        "progress": 45.18,
+        "created_at": "2026-11-15T14:25:40.066+00:00",
+        "updated_at": "2026-11-15T14:25:54.752+00:00",
+        "started_at": "2026-11-15T14:25:40.905+00:00",
+        "finished_at": "2026-11-15T14:25:54.752+00:00",
+        "dispatch_seconds": 3,
+        "duration_seconds": 24,
+        "image_id": "training-2026",
+        "route": [
+          {
+            "x": 0.33499999999999996,
+            "y": 0.39
+          },
+          {
+            "x": 0.36,
+            "y": 0.545
+          },
+          {
+            "x": 0.395,
+            "y": 0.415
+          },
+          {
+            "x": 0.51,
+            "y": 0.45
+          },
+          {
+            "x": 0.5,
+            "y": 0.565
+          },
+          {
+            "x": 0.435,
+            "y": 0.49
+          },
+          {
+            "x": 0.33499999999999996,
+            "y": 0.39
+          }
+        ],
+        "position": {
+          "x": 0.4479273292173757,
+          "y": 0.4311083175878969
+        },
+        "target_point": {
+          "x": 0.435,
+          "y": 0.49
+        },
+        "patrol_id": null,
+        "parent_task_id": "execution-a6266b80cd564b94",
+        "attempt": 2,
+        "steps": [
+          {
+            "id": "dispatch",
+            "title": "模拟资源调度",
+            "status": "completed",
+            "started_at": "2026-11-15T14:25:40.905+00:00",
+            "finished_at": "2026-11-15T14:25:43.905+00:00"
+          },
+          {
+            "id": "execute",
+            "title": "模拟巡检 / 区域复核",
+            "status": "cancelled",
+            "started_at": "2026-11-15T14:25:43.905+00:00",
+            "finished_at": "2026-11-15T14:25:54.752+00:00"
+          },
+          {
+            "id": "report",
+            "title": "保存记录，等待人工复核",
+            "status": "cancelled",
+            "started_at": null,
+            "finished_at": "2026-11-15T14:25:54.752+00:00"
+          }
+        ],
+        "logs": [
+          {
+            "id": "tasklog-ea1a7bf67b7949f2",
+            "sequence": 1,
+            "at": "2026-11-15T14:25:40.066+00:00",
+            "kind": "created",
+            "message": "手动创建 · 演示：已关联事件 inc-temp-10795e72d90d438e，等待选择资源。"
+          },
+          {
+            "id": "tasklog-264fba588a5d4e68",
+            "sequence": 2,
+            "at": "2026-11-15T14:25:40.625+00:00",
+            "kind": "assigned",
+            "message": "选择 UAV-003 · 巡检无人机（设备 DRONE-001）（演示）；启动后才占用资源。"
+          },
+          {
+            "id": "tasklog-2cf536225c7249b0",
+            "sequence": 3,
+            "at": "2026-11-15T14:25:40.905+00:00",
+            "kind": "dispatching",
+            "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+          },
+          {
+            "id": "tasklog-91b25fe192174f72",
+            "sequence": 4,
+            "at": "2026-11-15T14:25:43.905+00:00",
+            "kind": "running",
+            "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+          },
+          {
+            "id": "tasklog-f3e3d3c026614bea",
+            "sequence": 5,
+            "at": "2026-11-15T14:25:54.752+00:00",
+            "kind": "cancelled",
+            "message": "已取消模拟执行并释放资源；保留已执行进度和历史记录。"
+          }
+        ],
+        "report": null,
+        "error": null,
+        "is_simulated": true
+      },
+      {
+        "id": "execution-a6266b80cd564b94",
+        "code": "TASK-003",
+        "title": "实训基地航线与中止验证",
+        "task_type": "aerial_inspection",
+        "source_kind": "manual_demo",
+        "source_label": "手动创建 · 演示",
+        "source_run_id": null,
+        "evidence_snapshot_id": null,
+        "incident_id": "inc-temp-10795e72d90d438e",
+        "incident_title": "实训基地单项温度异常（对照场景）",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-smoke-01",
+          "dev-temp-01"
+        ],
+        "target_building_id": "loc-training",
+        "target_building_name": "物流与航空实训基地",
+        "priority": "medium",
+        "risk_level": "unassessed",
+        "resource_id": "UAV-003",
+        "resource_code": "UAV-003",
+        "resource_name": "巡检无人机（设备 DRONE-001）",
+        "status": "completed",
+        "progress": 100,
+        "created_at": "2026-11-15T14:22:39.234+00:00",
+        "updated_at": "2026-11-15T14:23:07.088+00:00",
+        "started_at": "2026-11-15T14:22:40.088+00:00",
+        "finished_at": "2026-11-15T14:23:07.088+00:00",
+        "dispatch_seconds": 3,
+        "duration_seconds": 24,
+        "image_id": "training-2026",
+        "route": [
+          {
+            "x": 0.33499999999999996,
+            "y": 0.39
+          },
+          {
+            "x": 0.36,
+            "y": 0.545
+          },
+          {
+            "x": 0.395,
+            "y": 0.415
+          },
+          {
+            "x": 0.51,
+            "y": 0.45
+          },
+          {
+            "x": 0.5,
+            "y": 0.565
+          },
+          {
+            "x": 0.435,
+            "y": 0.49
+          },
+          {
+            "x": 0.33499999999999996,
+            "y": 0.39
+          }
+        ],
+        "position": {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        },
+        "target_point": {
+          "x": 0.435,
+          "y": 0.49
+        },
+        "patrol_id": null,
+        "parent_task_id": null,
+        "attempt": 1,
+        "steps": [
+          {
+            "id": "dispatch",
+            "title": "模拟资源调度",
+            "status": "completed",
+            "started_at": "2026-11-15T14:22:40.088+00:00",
+            "finished_at": "2026-11-15T14:22:43.088+00:00"
+          },
+          {
+            "id": "execute",
+            "title": "模拟巡检 / 区域复核",
+            "status": "completed",
+            "started_at": "2026-11-15T14:22:43.088+00:00",
+            "finished_at": "2026-11-15T14:23:07.088+00:00"
+          },
+          {
+            "id": "report",
+            "title": "保存记录，等待人工复核",
+            "status": "completed",
+            "started_at": "2026-11-15T14:23:07.088+00:00",
+            "finished_at": "2026-11-15T14:23:07.088+00:00"
+          }
+        ],
+        "logs": [
+          {
+            "id": "tasklog-5089a131fdf84808",
+            "sequence": 1,
+            "at": "2026-11-15T14:22:39.234+00:00",
+            "kind": "created",
+            "message": "手动创建 · 演示：已关联事件 inc-temp-10795e72d90d438e，等待选择资源。"
+          },
+          {
+            "id": "tasklog-1015a50163f04e0e",
+            "sequence": 2,
+            "at": "2026-11-15T14:22:39.823+00:00",
+            "kind": "assigned",
+            "message": "选择 UAV-003 · 巡检无人机（设备 DRONE-001）（演示）；启动后才占用资源。"
+          },
+          {
+            "id": "tasklog-ef797373ce594749",
+            "sequence": 3,
+            "at": "2026-11-15T14:22:40.088+00:00",
+            "kind": "dispatching",
+            "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+          },
+          {
+            "id": "tasklog-6f0949f9f60d474e",
+            "sequence": 4,
+            "at": "2026-11-15T14:22:43.088+00:00",
+            "kind": "running",
+            "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+          },
+          {
+            "id": "tasklog-2b90f3c4ffc14747",
+            "sequence": 5,
+            "at": "2026-11-15T14:23:07.088+00:00",
+            "kind": "completed",
+            "message": "演示 模拟执行完成，已保存结果；风险事件保持原状态，等待人工复核。"
+          }
+        ],
+        "report": {
+          "id": "execution-report-bfd30d030d5f4040",
+          "task_id": "execution-a6266b80cd564b94",
+          "task_code": "TASK-003",
+          "title": "实训基地航线与中止验证 · 演示 执行记录",
+          "incident_id": "inc-temp-10795e72d90d438e",
+          "source_run_id": null,
+          "evidence_snapshot_id": null,
+          "resource_id": "UAV-003",
+          "resource_code": "UAV-003",
+          "started_at": "2026-11-15T14:22:40.088+00:00",
+          "finished_at": "2026-11-15T14:23:07.088+00:00",
+          "generated_at": "2026-11-15T14:23:07.088+00:00",
+          "scope": "物流与航空实训基地 / inc-temp-10795e72d90d438e",
+          "summary": "TASK-003 使用 UAV-003 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+          "findings": [
+            "目标：物流与航空实训基地；关联事件：实训基地单项温度异常（对照场景）（inc-temp-10795e72d90d438e）。",
+            "UAV-003 已完成 无人机模拟巡检流程，进度 100%；此状态仅表示模拟流程完成。",
+            "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T12:50:01.326+00:00；不是本次巡检新采集数据。"
+          ],
+          "recommendations": [
+            "由授权人员核实关联设备及现场情况。",
+            "将人工复核结果另行记录，再决定风险事件后续状态。"
+          ],
+          "limitations": [
+            "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+            "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+            "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。"
+          ],
+          "verification_status": "requires_human_review",
+          "is_simulated": true
+        },
+        "error": null,
+        "is_simulated": true
+      },
+      {
+        "id": "execution-59a5e752d00a47bd",
+        "code": "TASK-002",
+        "title": "实训基地单项温度异常（对照场景） · 无人机模拟巡检",
+        "task_type": "aerial_inspection",
+        "source_kind": "rule_assessment",
+        "source_label": "规则核查生成 · 演示（非大模型规划）",
+        "source_run_id": "run-c1b19372dcc2492a",
+        "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+        "incident_id": "inc-temp-6151439068f444c9",
+        "incident_title": "实训基地单项温度异常（对照场景）",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-smoke-01",
+          "dev-temp-01"
+        ],
+        "target_building_id": "loc-training",
+        "target_building_name": "物流与航空实训基地",
+        "priority": "medium",
+        "risk_level": "medium",
+        "resource_id": "UAV-003",
+        "resource_code": "UAV-003",
+        "resource_name": "巡检无人机（设备 DRONE-001）",
+        "status": "completed",
+        "progress": 100,
+        "created_at": "2026-11-15T14:18:46.363+00:00",
+        "updated_at": "2026-11-15T14:19:49.328+00:00",
+        "started_at": "2026-11-15T14:19:22.328+00:00",
+        "finished_at": "2026-11-15T14:19:49.328+00:00",
+        "dispatch_seconds": 3,
+        "duration_seconds": 24,
+        "image_id": "training-2026",
+        "route": [
+          {
+            "x": 0.33499999999999996,
+            "y": 0.39
+          },
+          {
+            "x": 0.36,
+            "y": 0.545
+          },
+          {
+            "x": 0.395,
+            "y": 0.415
+          },
+          {
+            "x": 0.51,
+            "y": 0.45
+          },
+          {
+            "x": 0.5,
+            "y": 0.565
+          },
+          {
+            "x": 0.435,
+            "y": 0.49
+          },
+          {
+            "x": 0.33499999999999996,
+            "y": 0.39
+          }
+        ],
+        "position": {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        },
+        "target_point": {
+          "x": 0.435,
+          "y": 0.49
+        },
+        "patrol_id": null,
+        "parent_task_id": "execution-eb2fde7f25494f58",
+        "attempt": 2,
+        "steps": [
+          {
+            "id": "dispatch",
+            "title": "模拟资源调度",
+            "status": "completed",
+            "started_at": "2026-11-15T14:19:22.328+00:00",
+            "finished_at": "2026-11-15T14:19:25.328+00:00"
+          },
+          {
+            "id": "execute",
+            "title": "模拟巡检 / 区域复核",
+            "status": "completed",
+            "started_at": "2026-11-15T14:19:25.328+00:00",
+            "finished_at": "2026-11-15T14:19:49.328+00:00"
+          },
+          {
+            "id": "report",
+            "title": "保存记录，等待人工复核",
+            "status": "completed",
+            "started_at": "2026-11-15T14:19:49.328+00:00",
+            "finished_at": "2026-11-15T14:19:49.328+00:00"
+          }
+        ],
+        "logs": [
+          {
+            "id": "tasklog-b3fda188118a44f9",
+            "sequence": 1,
+            "at": "2026-11-15T14:18:46.363+00:00",
+            "kind": "created",
+            "message": "规则核查生成 · 演示（非大模型规划）：已关联事件 inc-temp-6151439068f444c9，等待选择资源。"
+          },
+          {
+            "id": "tasklog-1ce86231eec64cd1",
+            "sequence": 2,
+            "at": "2026-11-15T14:19:22.052+00:00",
+            "kind": "assigned",
+            "message": "选择 UAV-003 · 巡检无人机（设备 DRONE-001）（演示）；启动后才占用资源。"
+          },
+          {
+            "id": "tasklog-5aa21fd7cb234732",
+            "sequence": 3,
+            "at": "2026-11-15T14:19:22.328+00:00",
+            "kind": "dispatching",
+            "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+          },
+          {
+            "id": "tasklog-ba3df3c6979c47fb",
+            "sequence": 4,
+            "at": "2026-11-15T14:19:25.328+00:00",
+            "kind": "running",
+            "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+          },
+          {
+            "id": "tasklog-ee5a77400e454ab4",
+            "sequence": 5,
+            "at": "2026-11-15T14:19:49.328+00:00",
+            "kind": "completed",
+            "message": "演示 模拟执行完成，已保存结果；风险事件保持原状态，等待人工复核。"
+          }
+        ],
+        "report": {
+          "id": "execution-report-8bb4efb2f6294071",
+          "task_id": "execution-59a5e752d00a47bd",
+          "task_code": "TASK-002",
+          "title": "实训基地单项温度异常（对照场景） · 无人机模拟巡检 · 演示 执行记录",
+          "incident_id": "inc-temp-6151439068f444c9",
+          "source_run_id": "run-c1b19372dcc2492a",
+          "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+          "resource_id": "UAV-003",
+          "resource_code": "UAV-003",
+          "started_at": "2026-11-15T14:19:22.328+00:00",
+          "finished_at": "2026-11-15T14:19:49.328+00:00",
+          "generated_at": "2026-11-15T14:19:49.328+00:00",
+          "scope": "物流与航空实训基地 / inc-temp-6151439068f444c9",
+          "summary": "TASK-002 使用 UAV-003 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+          "findings": [
+            "目标：物流与航空实训基地；关联事件：实训基地单项温度异常（对照场景）（inc-temp-6151439068f444c9）。",
+            "UAV-003 已完成 无人机模拟巡检流程，进度 100%；此状态仅表示模拟流程完成。",
+            "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+            "来源为确定性规则初评：medium；未调用大模型规划。"
+          ],
+          "recommendations": [
+            "由授权人员核实关联设备及现场情况。",
+            "将人工复核结果另行记录，再决定风险事件后续状态。"
+          ],
+          "limitations": [
+            "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+            "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+            "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。"
+          ],
+          "verification_status": "requires_human_review",
+          "is_simulated": true
+        },
+        "error": null,
+        "is_simulated": true
+      },
+      {
+        "id": "execution-eb2fde7f25494f58",
+        "code": "TASK-001",
+        "title": "实训基地单项温度异常（对照场景） · 无人机模拟巡检",
+        "task_type": "aerial_inspection",
+        "source_kind": "rule_assessment",
+        "source_label": "规则核查生成 · 演示（非大模型规划）",
+        "source_run_id": "run-c1b19372dcc2492a",
+        "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+        "incident_id": "inc-temp-6151439068f444c9",
+        "incident_title": "实训基地单项温度异常（对照场景）",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-smoke-01",
+          "dev-temp-01"
+        ],
+        "target_building_id": "loc-training",
+        "target_building_name": "物流与航空实训基地",
+        "priority": "medium",
+        "risk_level": "medium",
+        "resource_id": "UAV-003",
+        "resource_code": "UAV-003",
+        "resource_name": "巡检无人机（设备 DRONE-001）",
+        "status": "completed",
+        "progress": 100,
+        "created_at": "2026-11-15T14:03:04.383+00:00",
+        "updated_at": "2026-11-15T14:05:52.603+00:00",
+        "started_at": "2026-11-15T14:05:25.603+00:00",
+        "finished_at": "2026-11-15T14:05:52.603+00:00",
+        "dispatch_seconds": 3,
+        "duration_seconds": 24,
+        "image_id": "training-2026",
+        "route": [
+          {
+            "x": 0.33499999999999996,
+            "y": 0.39
+          },
+          {
+            "x": 0.36,
+            "y": 0.545
+          },
+          {
+            "x": 0.395,
+            "y": 0.415
+          },
+          {
+            "x": 0.51,
+            "y": 0.45
+          },
+          {
+            "x": 0.5,
+            "y": 0.565
+          },
+          {
+            "x": 0.435,
+            "y": 0.49
+          },
+          {
+            "x": 0.33499999999999996,
+            "y": 0.39
+          }
+        ],
+        "position": {
+          "x": 0.33499999999999996,
+          "y": 0.39
+        },
+        "target_point": {
+          "x": 0.435,
+          "y": 0.49
+        },
+        "patrol_id": null,
+        "parent_task_id": null,
+        "attempt": 1,
+        "steps": [
+          {
+            "id": "dispatch",
+            "title": "模拟资源调度",
+            "status": "completed",
+            "started_at": "2026-11-15T14:05:25.603+00:00",
+            "finished_at": "2026-11-15T14:05:28.603+00:00"
+          },
+          {
+            "id": "execute",
+            "title": "模拟巡检 / 区域复核",
+            "status": "completed",
+            "started_at": "2026-11-15T14:05:28.603+00:00",
+            "finished_at": "2026-11-15T14:05:52.603+00:00"
+          },
+          {
+            "id": "report",
+            "title": "保存记录，等待人工复核",
+            "status": "completed",
+            "started_at": "2026-11-15T14:05:52.603+00:00",
+            "finished_at": "2026-11-15T14:05:52.603+00:00"
+          }
+        ],
+        "logs": [
+          {
+            "id": "tasklog-82ae8dd13ed04eb4",
+            "sequence": 1,
+            "at": "2026-11-15T14:03:04.383+00:00",
+            "kind": "created",
+            "message": "规则核查生成 · 演示（非大模型规划）：已关联事件 inc-temp-6151439068f444c9，等待选择资源。"
+          },
+          {
+            "id": "tasklog-8605d29ca6f14b1f",
+            "sequence": 2,
+            "at": "2026-11-15T14:04:08.166+00:00",
+            "kind": "assigned",
+            "message": "选择 UAV-003 · 巡检无人机（设备 DRONE-001）（演示）；启动后才占用资源。"
+          },
+          {
+            "id": "tasklog-14140bc225474c4c",
+            "sequence": 3,
+            "at": "2026-11-15T14:05:25.603+00:00",
+            "kind": "dispatching",
+            "message": "已原子预留 演示 资源，开始 3 秒模拟调度；随后执行 24 秒演示流程。"
+          },
+          {
+            "id": "tasklog-1ec0947956004f58",
+            "sequence": 4,
+            "at": "2026-11-15T14:05:28.603+00:00",
+            "kind": "running",
+            "message": "演示 资源调度完成，开始模拟执行；计时不代表实际作业时长。"
+          },
+          {
+            "id": "tasklog-bb646fc61c7a4a1c",
+            "sequence": 5,
+            "at": "2026-11-15T14:05:52.603+00:00",
+            "kind": "completed",
+            "message": "演示 模拟执行完成，已保存结果；风险事件保持原状态，等待人工复核。"
+          }
+        ],
+        "report": {
+          "id": "execution-report-34b63a9945c5457c",
+          "task_id": "execution-eb2fde7f25494f58",
+          "task_code": "TASK-001",
+          "title": "实训基地单项温度异常（对照场景） · 无人机模拟巡检 · 演示 执行记录",
+          "incident_id": "inc-temp-6151439068f444c9",
+          "source_run_id": "run-c1b19372dcc2492a",
+          "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+          "resource_id": "UAV-003",
+          "resource_code": "UAV-003",
+          "started_at": "2026-11-15T14:05:25.603+00:00",
+          "finished_at": "2026-11-15T14:05:52.603+00:00",
+          "generated_at": "2026-11-15T14:05:52.603+00:00",
+          "scope": "物流与航空实训基地 / inc-temp-6151439068f444c9",
+          "summary": "TASK-001 使用 UAV-003 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+          "findings": [
+            "目标：物流与航空实训基地；关联事件：实训基地单项温度异常（对照场景）（inc-temp-6151439068f444c9）。",
+            "UAV-003 已完成 无人机模拟巡检流程，进度 100%；此状态仅表示模拟流程完成。",
+            "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+            "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T12:21:16.231+00:00；不是本次巡检新采集数据。",
+            "来源为确定性规则初评：medium；未调用大模型规划。"
+          ],
+          "recommendations": [
+            "由授权人员核实关联设备及现场情况。",
+            "将人工复核结果另行记录，再决定风险事件后续状态。"
+          ],
+          "limitations": [
+            "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+            "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+            "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。"
+          ],
+          "verification_status": "requires_human_review",
+          "is_simulated": true
+        },
+        "error": null,
+        "is_simulated": true
+      }
+    ],
+    "execution_resources": [
+      {
+        "id": "UAV-003",
+        "code": "UAV-003",
+        "name": "巡检无人机（设备 DRONE-001）",
+        "type": "drone",
+        "device_id": "dev-drone-01",
+        "area": "杭州校区 · 演示",
+        "capabilities": [
+          "模拟空中巡检",
+          "规划效果图归一化路线；未采集真实视频"
+        ],
+        "status": "available",
+        "online": true,
+        "current_task_id": null,
+        "current_task_code": null,
+        "battery": 86.0,
+        "eligible": true,
+        "reason": null,
+        "is_simulated": true
+      },
+      {
+        "id": "ROBOT-002",
+        "code": "ROBOT-002",
+        "name": "地面机器人（设备 ROBOT-001）",
+        "type": "robot",
+        "device_id": "dev-robot-01",
+        "area": "杭州校区 · 演示",
+        "capabilities": [
+          "模拟地面巡检",
+          "示意路线；不具备真实避障导航"
+        ],
+        "status": "offline",
+        "online": false,
+        "current_task_id": null,
+        "current_task_code": null,
+        "battery": 76.0,
+        "eligible": false,
+        "reason": "资源当前离线或状态不可用，请先核实最新观测",
+        "is_simulated": true
+      },
+      {
+        "id": "SAT-001",
+        "code": "SAT-001",
+        "name": "区域遥感复核（纯模拟）",
+        "type": "satellite",
+        "device_id": null,
+        "area": "杭州校区演示范围；无真实遥感覆盖",
+        "capabilities": [
+          "模拟区域复核流程",
+          "未接入卫星设备或遥感影像"
+        ],
+        "status": "available",
+        "online": true,
+        "current_task_id": null,
+        "current_task_code": null,
+        "battery": null,
+        "eligible": true,
+        "reason": null,
+        "is_simulated": true
+      }
+    ],
+    "robot_task": {
+      "id": "robot-task-demo-001",
+      "name": "实训基地周边地面巡检（DEMO 待命任务）",
+      "device_id": "dev-robot-01",
+      "target_building_id": "loc-training",
+      "status": "standby",
+      "progress": 0,
+      "is_simulated": true
+    },
+    "satellite": {
+      "status": "模拟任务待命",
+      "coverage": "杭州校区演示范围（无真实遥感覆盖数据）",
+      "updated_at": null,
+      "note": "未接入卫星遥感影像。校园规划效果图不代表遥感影像，影像更新时间待核实。"
+    }
+  },
+  "snapshots": {
+    "evidence-99d4647d2f3544ba": {
+      "incident": {
+        "id": "inc-temp-6151439068f444c9",
+        "title": "实训基地单项温度异常（对照场景）",
+        "location_id": "loc-training-2f",
+        "event_type": "temperature_anomaly",
+        "status": "open",
+        "risk_level": "unassessed",
+        "summary": "DEMO：温度68.5℃、烟雾未触发、摄像机在线；温度异常不等于火灾。",
+        "triggered_at": "2026-11-15T12:21:16.231+00:00",
+        "is_simulated": true,
+        "location_name": "实训基地二层（DEMO 楼层）",
+        "source": {
+          "kind": "demo_fixture",
+          "label": "预置演示场景 · DEMO"
+        },
+        "building_id": "loc-training",
+        "building_name": "物流与航空实训基地",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-smoke-01",
+          "dev-temp-01"
+        ]
+      },
+      "data_scope": "event_snapshot",
+      "devices": [
+        {
+          "id": "dev-camera-01",
+          "code": "CAM-021",
+          "name": "实训楼走廊摄像机",
+          "type": "camera",
+          "location_id": "loc-training-2f",
+          "status": "online",
+          "last_seen": "2026-11-15T12:21:16.231+00:00",
+          "metrics": [
+            {
+              "kind": "connectivity",
+              "label": "通信状态",
+              "value": "在线",
+              "unit": "",
+              "observation_id": "obs-abad427c1da34a7a",
+              "observed_at": "2026-11-15T12:21:16.231+00:00",
+              "incident_id": "inc-temp-6151439068f444c9",
+              "quality": "good",
+              "data_scope": "event_snapshot"
+            },
+            {
+              "kind": "camera_event",
+              "label": "异常记录",
+              "value": 0.0,
+              "unit": "",
+              "observation_id": "obs-d72ec0637ebd472c",
+              "observed_at": "2026-11-15T12:21:16.231+00:00",
+              "incident_id": "inc-temp-6151439068f444c9",
+              "quality": "good",
+              "data_scope": "event_snapshot"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-smoke-01",
+          "code": "SMOKE-012",
+          "name": "实训楼烟雾传感器",
+          "type": "smoke",
+          "location_id": "loc-training-2f",
+          "status": "online",
+          "last_seen": "2026-11-15T12:21:16.231+00:00",
+          "metrics": [
+            {
+              "kind": "smoke_alarm",
+              "label": "烟雾告警",
+              "value": "未触发",
+              "unit": "",
+              "observation_id": "obs-156be92b42f045c6",
+              "observed_at": "2026-11-15T12:21:16.231+00:00",
+              "incident_id": "inc-temp-6151439068f444c9",
+              "quality": "good",
+              "data_scope": "event_snapshot"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-temp-01",
+          "code": "TEMP-008",
+          "name": "实训楼温度传感器",
+          "type": "temperature",
+          "location_id": "loc-training-2f",
+          "status": "alarm",
+          "last_seen": "2026-11-15T12:21:16.231+00:00",
+          "metrics": [
+            {
+              "kind": "temperature",
+              "label": "温度",
+              "value": 68.5,
+              "unit": "°C",
+              "observation_id": "obs-f82274a358694bd0",
+              "observed_at": "2026-11-15T12:21:16.231+00:00",
+              "incident_id": "inc-temp-6151439068f444c9",
+              "quality": "alarm",
+              "data_scope": "event_snapshot"
+            }
+          ],
+          "is_simulated": true
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs-ed40fcabbd164293",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-temp-6151439068f444c9",
+          "kind": "temperature",
+          "value": 30.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T12:15:16.231+00:00",
+          "quality": "good",
+          "description": "DEMO 单项温度异常对照记录",
+          "observation_id": "obs-ed40fcabbd164293",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-89c82bfe536d41f2",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-temp-6151439068f444c9",
+          "kind": "temperature",
+          "value": 49.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T12:18:16.231+00:00",
+          "quality": "good",
+          "description": "DEMO 单项温度异常对照记录",
+          "observation_id": "obs-89c82bfe536d41f2",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-f82274a358694bd0",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-temp-6151439068f444c9",
+          "kind": "temperature",
+          "value": 68.5,
+          "unit": "°C",
+          "observed_at": "2026-11-15T12:21:16.231+00:00",
+          "quality": "alarm",
+          "description": "DEMO 单项温度异常对照记录",
+          "observation_id": "obs-f82274a358694bd0",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-156be92b42f045c6",
+          "device_id": "dev-smoke-01",
+          "incident_id": "inc-temp-6151439068f444c9",
+          "kind": "smoke_alarm",
+          "value": 0.0,
+          "unit": "",
+          "observed_at": "2026-11-15T12:21:16.231+00:00",
+          "quality": "good",
+          "description": "DEMO 烟雾未触发",
+          "observation_id": "obs-156be92b42f045c6",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-abad427c1da34a7a",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-temp-6151439068f444c9",
+          "kind": "connectivity",
+          "value": 1.0,
+          "unit": "",
+          "observed_at": "2026-11-15T12:21:16.231+00:00",
+          "quality": "good",
+          "description": "DEMO 摄像机在线",
+          "observation_id": "obs-abad427c1da34a7a",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-d72ec0637ebd472c",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-temp-6151439068f444c9",
+          "kind": "camera_event",
+          "value": 0.0,
+          "unit": "",
+          "observed_at": "2026-11-15T12:21:16.231+00:00",
+          "quality": "good",
+          "description": "DEMO 无摄像机异常记录；未进行视频识别",
+          "observation_id": "obs-d72ec0637ebd472c",
+          "data_scope": "event_snapshot"
+        }
+      ],
+      "current_devices": [
+        {
+          "id": "dev-camera-01",
+          "code": "CAM-021",
+          "name": "实训楼走廊摄像机",
+          "type": "camera",
+          "location_id": "loc-training-2f",
+          "status": "online",
+          "last_seen": "2026-11-15T12:21:16.231+00:00",
+          "metrics": [
+            {
+              "kind": "camera_event",
+              "label": "异常记录",
+              "value": 0.0,
+              "unit": "",
+              "observation_id": "obs-d72ec0637ebd472c",
+              "observed_at": "2026-11-15T12:21:16.231+00:00",
+              "incident_id": "inc-temp-6151439068f444c9",
+              "quality": "good",
+              "data_scope": "current_device_state"
+            },
+            {
+              "kind": "connectivity",
+              "label": "通信状态",
+              "value": "在线",
+              "unit": "",
+              "observation_id": "obs-abad427c1da34a7a",
+              "observed_at": "2026-11-15T12:21:16.231+00:00",
+              "incident_id": "inc-temp-6151439068f444c9",
+              "quality": "good",
+              "data_scope": "current_device_state"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-smoke-01",
+          "code": "SMOKE-012",
+          "name": "实训楼烟雾传感器",
+          "type": "smoke",
+          "location_id": "loc-training-2f",
+          "status": "online",
+          "last_seen": "2026-11-15T12:21:16.231+00:00",
+          "metrics": [
+            {
+              "kind": "smoke_alarm",
+              "label": "烟雾告警",
+              "value": "未触发",
+              "unit": "",
+              "observation_id": "obs-156be92b42f045c6",
+              "observed_at": "2026-11-15T12:21:16.231+00:00",
+              "incident_id": "inc-temp-6151439068f444c9",
+              "quality": "good",
+              "data_scope": "current_device_state"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-temp-01",
+          "code": "TEMP-008",
+          "name": "实训楼温度传感器",
+          "type": "temperature",
+          "location_id": "loc-training-2f",
+          "status": "alarm",
+          "last_seen": "2026-11-15T12:21:16.231+00:00",
+          "metrics": [
+            {
+              "kind": "temperature",
+              "label": "温度",
+              "value": 68.5,
+              "unit": "°C",
+              "observation_id": "obs-f82274a358694bd0",
+              "observed_at": "2026-11-15T12:21:16.231+00:00",
+              "incident_id": "inc-temp-6151439068f444c9",
+              "quality": "alarm",
+              "data_scope": "current_device_state"
+            }
+          ],
+          "is_simulated": true
+        }
+      ],
+      "history": [
+        {
+          "id": "inc-84854a2c5b254f19",
+          "title": "实训楼二层疑似火情",
+          "location_id": "loc-training-2f",
+          "event_type": "suspected_fire",
+          "status": "open",
+          "risk_level": "high",
+          "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+          "triggered_at": "2026-11-15T09:03:15.223+00:00",
+          "is_simulated": true,
+          "location_name": "实训基地二层（DEMO 楼层）"
+        },
+        {
+          "id": "inc-demo-001",
+          "title": "实训基地温度异常",
+          "location_id": "loc-training-2f",
+          "event_type": "suspected_fire",
+          "status": "open",
+          "risk_level": "high",
+          "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+          "triggered_at": "2026-11-15T08:37:20.883+00:00",
+          "is_simulated": true,
+          "location_name": "实训基地二层（DEMO 楼层）"
+        },
+        {
+          "id": "inc-demo-fire",
+          "title": "校园区域消防设备异常",
+          "location_id": "loc-training-2f",
+          "event_type": "fire_equipment",
+          "status": "open",
+          "risk_level": "high",
+          "summary": "DEMO：FIRE-003 水压记录异常，需要人工核验。",
+          "triggered_at": "2026-11-15T08:37:19.883+00:00",
+          "is_simulated": true,
+          "location_name": "实训基地二层（DEMO 楼层）"
+        },
+        {
+          "id": "inc-demo-offline",
+          "title": "实验空间设备离线",
+          "location_id": "loc-training-2f",
+          "event_type": "device_offline",
+          "status": "open",
+          "risk_level": "medium",
+          "summary": "DEMO：CAM-021 通信中断；真实实验空间与楼层待核实。",
+          "triggered_at": "2026-11-15T08:37:18.883+00:00",
+          "is_simulated": true,
+          "location_name": "实训基地二层（DEMO 楼层）"
+        }
+      ],
+      "source_context": {
+        "source_view": "map",
+        "image_id": "training-2026",
+        "selection": {
+          "kind": "incident",
+          "id": "inc-temp-6151439068f444c9"
+        }
+      },
+      "is_simulated": true,
+      "snapshot_id": "evidence-99d4647d2f3544ba",
+      "captured_at": "2026-11-15T12:22:14.669+00:00",
+      "checksum": "b21047ef3be76a37f707440a140399bd5265f90f78865b17c333bf4530baab04"
+    },
+    "evidence-4c1a5d6df753402e": {
+      "incident": {
+        "id": "inc-demo-001",
+        "title": "实训基地温度异常",
+        "location_id": "loc-training-2f",
+        "event_type": "suspected_fire",
+        "status": "open",
+        "risk_level": "high",
+        "summary": "基础数据核查完成。多源异常需要优先人工复核；这不是已批准的处置方案。",
+        "triggered_at": "2026-11-15T08:37:20.883+00:00",
+        "is_simulated": true,
+        "location_name": "实训基地二层（DEMO 楼层）",
+        "source": {
+          "kind": "demo_fixture",
+          "label": "预置演示场景 · DEMO"
+        },
+        "building_id": "loc-training",
+        "building_name": "物流与航空实训基地",
+        "device_ids": [
+          "dev-camera-01",
+          "dev-robot-01",
+          "dev-smoke-01",
+          "dev-temp-01",
+          "dev-water-01"
+        ]
+      },
+      "data_scope": "event_snapshot",
+      "devices": [
+        {
+          "id": "dev-camera-01",
+          "code": "CAM-021",
+          "name": "实训楼走廊摄像机",
+          "type": "camera",
+          "location_id": "loc-training-2f",
+          "status": "alarm",
+          "last_seen": "2026-11-15T08:37:20.883+00:00",
+          "metrics": [
+            {
+              "kind": "camera_event",
+              "label": "异常记录",
+              "value": 1.0,
+              "unit": "",
+              "observation_id": "obs-3452374af8a84692",
+              "observed_at": "2026-11-15T08:37:20.883+00:00",
+              "incident_id": "inc-demo-001",
+              "quality": "alarm",
+              "data_scope": "event_snapshot"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-robot-01",
+          "code": "ROBOT-001",
+          "name": "校园巡检机器人",
+          "type": "robot",
+          "location_id": "loc-training-2f",
+          "status": "offline",
+          "last_seen": "2026-11-15T08:37:20.883+00:00",
+          "metrics": [
+            {
+              "kind": "connectivity",
+              "label": "通信状态",
+              "value": "离线",
+              "unit": "",
+              "observation_id": "obs-1cb60dcb447c459e",
+              "observed_at": "2026-11-15T08:37:20.883+00:00",
+              "incident_id": "inc-demo-001",
+              "quality": "offline",
+              "data_scope": "event_snapshot"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-smoke-01",
+          "code": "SMOKE-012",
+          "name": "实训楼烟雾传感器",
+          "type": "smoke",
+          "location_id": "loc-training-2f",
+          "status": "alarm",
+          "last_seen": "2026-11-15T08:37:20.883+00:00",
+          "metrics": [
+            {
+              "kind": "smoke_alarm",
+              "label": "烟雾告警",
+              "value": "告警",
+              "unit": "",
+              "observation_id": "obs-d5fb1e7e258b4ca4",
+              "observed_at": "2026-11-15T08:37:20.883+00:00",
+              "incident_id": "inc-demo-001",
+              "quality": "alarm",
+              "data_scope": "event_snapshot"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-temp-01",
+          "code": "TEMP-008",
+          "name": "实训楼温度传感器",
+          "type": "temperature",
+          "location_id": "loc-training-2f",
+          "status": "alarm",
+          "last_seen": "2026-11-15T08:37:20.883+00:00",
+          "metrics": [
+            {
+              "kind": "temperature",
+              "label": "温度",
+              "value": 78.0,
+              "unit": "°C",
+              "observation_id": "obs-af1200e1d7bc413b",
+              "observed_at": "2026-11-15T08:37:20.883+00:00",
+              "incident_id": "inc-demo-001",
+              "quality": "alarm",
+              "data_scope": "event_snapshot"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-water-01",
+          "code": "FIRE-003",
+          "name": "实训楼消防水压监测",
+          "type": "water_pressure",
+          "location_id": "loc-training-2f",
+          "status": "online",
+          "last_seen": "2026-11-15T08:37:20.883+00:00",
+          "metrics": [
+            {
+              "kind": "water_pressure",
+              "label": "消防水压",
+              "value": 0.35,
+              "unit": "MPa",
+              "observation_id": "obs-df0ed7d6f33b475c",
+              "observed_at": "2026-11-15T08:37:20.883+00:00",
+              "incident_id": "inc-demo-001",
+              "quality": "good",
+              "data_scope": "event_snapshot"
+            }
+          ],
+          "is_simulated": true
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs-aa56d71ddc88488e",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 26.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:22:20.883+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录",
+          "observation_id": "obs-aa56d71ddc88488e",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-b8fce2ef7daf4db2",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 27.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:25:20.883+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录",
+          "observation_id": "obs-b8fce2ef7daf4db2",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-db545fea80824326",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 31.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:28:20.883+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录",
+          "observation_id": "obs-db545fea80824326",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-b87e09c44f3c4b2e",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 42.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:31:20.883+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录",
+          "observation_id": "obs-b87e09c44f3c4b2e",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-5bbad6e5c6bc4e55",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 61.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:34:20.883+00:00",
+          "quality": "alarm",
+          "description": "预置模拟温度记录",
+          "observation_id": "obs-5bbad6e5c6bc4e55",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-af1200e1d7bc413b",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 78.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:37:20.883+00:00",
+          "quality": "alarm",
+          "description": "预置模拟温度记录",
+          "observation_id": "obs-af1200e1d7bc413b",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-d5fb1e7e258b4ca4",
+          "device_id": "dev-smoke-01",
+          "incident_id": "inc-demo-001",
+          "kind": "smoke_alarm",
+          "value": 1.0,
+          "unit": "",
+          "observed_at": "2026-11-15T08:37:20.883+00:00",
+          "quality": "alarm",
+          "description": "预置模拟烟雾告警",
+          "observation_id": "obs-d5fb1e7e258b4ca4",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-3452374af8a84692",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-demo-001",
+          "kind": "camera_event",
+          "value": 1.0,
+          "unit": "",
+          "observed_at": "2026-11-15T08:37:20.883+00:00",
+          "quality": "alarm",
+          "description": "模拟异常事件记录，未进行视频识别或现场确认",
+          "observation_id": "obs-3452374af8a84692",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-df0ed7d6f33b475c",
+          "device_id": "dev-water-01",
+          "incident_id": "inc-demo-001",
+          "kind": "water_pressure",
+          "value": 0.35,
+          "unit": "MPa",
+          "observed_at": "2026-11-15T08:37:20.883+00:00",
+          "quality": "good",
+          "description": "预置模拟消防水压记录",
+          "observation_id": "obs-df0ed7d6f33b475c",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "id": "obs-1cb60dcb447c459e",
+          "device_id": "dev-robot-01",
+          "incident_id": "inc-demo-001",
+          "kind": "connectivity",
+          "value": 0.0,
+          "unit": "",
+          "observed_at": "2026-11-15T08:37:20.883+00:00",
+          "quality": "offline",
+          "description": "模拟设备离线",
+          "observation_id": "obs-1cb60dcb447c459e",
+          "data_scope": "event_snapshot"
+        }
+      ],
+      "current_devices": [
+        {
+          "id": "dev-camera-01",
+          "code": "CAM-021",
+          "name": "实训楼走廊摄像机",
+          "type": "camera",
+          "location_id": "loc-training-2f",
+          "status": "offline",
+          "last_seen": "2026-11-15T09:56:46.721+00:00",
+          "metrics": [
+            {
+              "kind": "camera_event",
+              "label": "异常记录",
+              "value": 1.0,
+              "unit": "",
+              "observation_id": "obs-2f700148150546f3",
+              "observed_at": "2026-11-15T09:03:15.223+00:00",
+              "incident_id": "inc-84854a2c5b254f19",
+              "quality": "alarm",
+              "data_scope": "current_device_state"
+            },
+            {
+              "kind": "connectivity",
+              "label": "通信状态",
+              "value": "离线",
+              "unit": "",
+              "observation_id": "obs-3af0d77648f943e5",
+              "observed_at": "2026-11-15T09:56:46.721+00:00",
+              "incident_id": "inc-demo-offline",
+              "quality": "offline",
+              "data_scope": "current_device_state"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-robot-01",
+          "code": "ROBOT-001",
+          "name": "校园巡检机器人",
+          "type": "robot",
+          "location_id": "loc-training-2f",
+          "status": "online",
+          "last_seen": "2026-11-15T09:56:46.721+00:00",
+          "metrics": [
+            {
+              "kind": "connectivity",
+              "label": "通信状态",
+              "value": "在线",
+              "unit": "",
+              "observation_id": "obs-c9513997b10e40d1",
+              "observed_at": "2026-11-15T09:56:46.721+00:00",
+              "incident_id": "inc-demo-offline",
+              "quality": "good",
+              "data_scope": "current_device_state"
+            },
+            {
+              "kind": "battery",
+              "label": "电量",
+              "value": 76.0,
+              "unit": "%",
+              "observation_id": "obs-14889b7233c44317",
+              "observed_at": "2026-11-15T09:56:46.721+00:00",
+              "incident_id": "inc-demo-offline",
+              "quality": "good",
+              "data_scope": "current_device_state"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-smoke-01",
+          "code": "SMOKE-012",
+          "name": "实训楼烟雾传感器",
+          "type": "smoke",
+          "location_id": "loc-training-2f",
+          "status": "alarm",
+          "last_seen": "2026-11-15T09:03:15.223+00:00",
+          "metrics": [
+            {
+              "kind": "smoke_alarm",
+              "label": "烟雾告警",
+              "value": "告警",
+              "unit": "",
+              "observation_id": "obs-4bfcae7f156a44b6",
+              "observed_at": "2026-11-15T09:03:15.223+00:00",
+              "incident_id": "inc-84854a2c5b254f19",
+              "quality": "alarm",
+              "data_scope": "current_device_state"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-temp-01",
+          "code": "TEMP-008",
+          "name": "实训楼温度传感器",
+          "type": "temperature",
+          "location_id": "loc-training-2f",
+          "status": "alarm",
+          "last_seen": "2026-11-15T09:03:15.223+00:00",
+          "metrics": [
+            {
+              "kind": "temperature",
+              "label": "温度",
+              "value": 78.0,
+              "unit": "°C",
+              "observation_id": "obs-536f85d792cc49cf",
+              "observed_at": "2026-11-15T09:03:15.223+00:00",
+              "incident_id": "inc-84854a2c5b254f19",
+              "quality": "alarm",
+              "data_scope": "current_device_state"
+            }
+          ],
+          "is_simulated": true
+        },
+        {
+          "id": "dev-water-01",
+          "code": "FIRE-003",
+          "name": "实训楼消防水压监测",
+          "type": "water_pressure",
+          "location_id": "loc-training-2f",
+          "status": "alarm",
+          "last_seen": "2026-11-15T09:56:46.721+00:00",
+          "metrics": [
+            {
+              "kind": "water_pressure",
+              "label": "消防水压",
+              "value": 0.08,
+              "unit": "MPa",
+              "observation_id": "obs-2386b09065a84adb",
+              "observed_at": "2026-11-15T09:56:46.721+00:00",
+              "incident_id": "inc-demo-fire",
+              "quality": "alarm",
+              "data_scope": "current_device_state"
+            }
+          ],
+          "is_simulated": true
+        }
+      ],
+      "history": [
+        {
+          "id": "inc-demo-fire",
+          "title": "校园区域消防设备异常",
+          "location_id": "loc-training-2f",
+          "event_type": "fire_equipment",
+          "status": "open",
+          "risk_level": "high",
+          "summary": "DEMO：FIRE-003 水压记录异常，需要人工核验。",
+          "triggered_at": "2026-11-15T08:37:19.883+00:00",
+          "is_simulated": true,
+          "location_name": "实训基地二层（DEMO 楼层）"
+        },
+        {
+          "id": "inc-demo-offline",
+          "title": "实验空间设备离线",
+          "location_id": "loc-training-2f",
+          "event_type": "device_offline",
+          "status": "open",
+          "risk_level": "medium",
+          "summary": "DEMO：CAM-021 通信中断；真实实验空间与楼层待核实。",
+          "triggered_at": "2026-11-15T08:37:18.883+00:00",
+          "is_simulated": true,
+          "location_name": "实训基地二层（DEMO 楼层）"
+        }
+      ],
+      "source_context": {
+        "source_view": "map",
+        "image_id": "training-2026",
+        "selection": {
+          "kind": "incident",
+          "id": "inc-demo-001"
+        }
+      },
+      "is_simulated": true,
+      "snapshot_id": "evidence-4c1a5d6df753402e",
+      "captured_at": "2026-11-15T12:16:57.238+00:00",
+      "checksum": "3e04823e4bb33d0582c896353b132f4e7234c2985f6f0393621b911ba5cb0549"
+    }
+  }
+}

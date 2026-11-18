@@ -1,0 +1,194 @@
+[
+  {
+    "file": "visual/00_你发的参考图_数字孪生校园.jpg",
+    "source": "用户提供的学校图集 / img/00_你发的参考图_数字孪生校园.jpg",
+    "width": 510,
+    "height": 327,
+    "ratio": 1.56,
+    "bytes": 59362
+  },
+  {
+    "file": "campus/01_杭州校区_实训基地_透视图.jpg",
+    "source": "用户提供的学校图集 / img/01_杭州校区_实训基地_透视图.jpg",
+    "width": 2400,
+    "height": 1350,
+    "ratio": 1.778,
+    "bytes": 829720
+  },
+  {
+    "file": "campus/02_杭州校区_实训基地_鸟瞰图.jpg",
+    "source": "用户提供的学校图集 / img/02_杭州校区_实训基地_鸟瞰图.jpg",
+    "width": 2400,
+    "height": 1500,
+    "ratio": 1.6,
+    "bytes": 743457
+  },
+  {
+    "file": "campus/03_杭州校区_东校区公寓_鸟瞰图.jpg",
+    "source": "用户提供的学校图集 / img/03_杭州校区_东校区公寓_鸟瞰图.jpg",
+    "width": 2332,
+    "height": 1651,
+    "ratio": 1.412,
+    "bytes": 996911
+  },
+  {
+    "file": "campus/04_杭州校区_公寓_透视图.jpg",
+    "source": "用户提供的学校图集 / img/04_杭州校区_公寓_透视图.jpg",
+    "width": 2331,
+    "height": 1651,
+    "ratio": 1.412,
+    "bytes": 951796
+  },
+  {
+    "file": "campus/05_长兴校区_东南日景鸟瞰.jpg",
+    "source": "用户提供的学校图集 / img/05_长兴校区_东南日景鸟瞰.jpg",
+    "width": 1080,
+    "height": 764,
+    "ratio": 1.414,
+    "bytes": 163663
+  },
+  {
+    "file": "campus/06_长兴校区_实景_主入口.jpg",
+    "source": "用户提供的学校图集 / img/06_长兴校区_实景_主入口.jpg",
+    "width": 1920,
+    "height": 500,
+    "ratio": 3.84,
+    "bytes": 310612
+  },
+  {
+    "file": "campus/07_长兴校区_实景_综合主楼图书馆.jpg",
+    "source": "用户提供的学校图集 / img/07_长兴校区_实景_综合主楼图书馆.jpg",
+    "width": 1920,
+    "height": 500,
+    "ratio": 3.84,
+    "bytes": 307987
+  },
+  {
+    "file": "campus/08_长兴校区_实景_教学实训楼群.jpg",
+    "source": "用户提供的学校图集 / img/08_长兴校区_实景_教学实训楼群.jpg",
+    "width": 1920,
+    "height": 500,
+    "ratio": 3.84,
+    "bytes": 280588
+  },
+  {
+    "file": "campus/09_长兴校区_实景_学林湖.jpg",
+    "source": "用户提供的学校图集 / img/09_长兴校区_实景_学林湖.jpg",
+    "width": 1920,
+    "height": 500,
+    "ratio": 3.84,
+    "bytes": 368732
+  },
+  {
+    "file": "campus/10_学校官方抖音二维码.jpg",
+    "source": "用户提供的学校图集 / img/10_学校官方抖音二维码.jpg",
+    "width": 100,
+    "height": 100,
+    "ratio": 1.0,
+    "bytes": 6186
+  },
+  {
+    "file": "ui/01_day1_reference.png",
+    "source": "用户提供的参考截图 / 01_day1_reference.png",
+    "width": 1162,
+    "height": 683,
+    "ratio": 1.701,
+    "bytes": 1046313
+  },
+  {
+    "file": "campus/11_changxing_annotated.png",
+    "source": "用户提供的参考截图 / 11_changxing_annotated.png",
+    "width": 798,
+    "height": 496,
+    "ratio": 1.609,
+    "bytes": 715388
+  },
+  {
+    "file": "visual/01_digital_twin_lighting.png",
+    "source": "用户提供的参考截图 / 01_digital_twin_lighting.png",
+    "width": 1477,
+    "height": 787,
+    "ratio": 1.877,
+    "bytes": 1449640
+  },
+  {
+    "file": "visual/02_multidomain_dashboard.png",
+    "source": "用户提供的参考截图 / 02_multidomain_dashboard.png",
+    "width": 1440,
+    "height": 802,
+    "ratio": 1.796,
+    "bytes": 1197087
+  },
+  {
+    "file": "interaction/01_sensor_map_panel.png",
+    "source": "用户提供的参考截图 / 01_sensor_map_panel.png",
+    "width": 1365,
+    "height": 787,
+    "ratio": 1.734,
+    "bytes": 1411578
+  },
+  {
+    "file": "interaction/02_incident_routes.png",
+    "source": "用户提供的参考截图 / 02_incident_routes.png",
+    "width": 1367,
+    "height": 778,
+    "ratio": 1.757,
+    "bytes": 1161256
+  },
+  {
+    "file": "ui/02_situation_layout.png",
+    "source": "用户提供的参考截图 / 02_situation_layout.png",
+    "width": 925,
+    "height": 710,
+    "ratio": 1.303,
+    "bytes": 300361
+  },
+  {
+    "file": "visual/03_campus_dashboard.png",
+    "source": "用户提供的参考截图 / 03_campus_dashboard.png",
+    "width": 1400,
+    "height": 763,
+    "ratio": 1.835,
+    "bytes": 1379534
+  },
+  {
+    "file": "ui/03_day1_actual.jpg",
+    "source": "本项目验收截图 / docs/screenshots/day1-workbench.jpg",
+    "width": 1440,
+    "height": 900,
+    "ratio": 1.6,
+    "bytes": 102242
+  },
+  {
+    "file": "ui/04_task_command_reference.png",
+    "source": "用户提供的参考截图 / 04_task_command_reference.png",
+    "width": 1422,
+    "height": 816,
+    "ratio": 1.743,
+    "bytes": 555570
+  },
+  {
+    "file": "interaction/03_air_ground_dispatch.png",
+    "source": "用户提供的参考截图 / 03_air_ground_dispatch.png",
+    "width": 1385,
+    "height": 747,
+    "ratio": 1.854,
+    "bytes": 2015367
+  },
+  {
+    "file": "interaction/04_patrol_route_dashboard.png",
+    "source": "用户提供的参考截图 / 04_patrol_route_dashboard.png",
+    "width": 1482,
+    "height": 816,
+    "ratio": 1.816,
+    "bytes": 1767093
+  },
+  {
+    "file": "visual/04_campus_command_cockpit.png",
+    "source": "用户提供的参考截图 / 04_campus_command_cockpit.png",
+    "width": 1253,
+    "height": 747,
+    "ratio": 1.677,
+    "bytes": 1558024
+  }
+]

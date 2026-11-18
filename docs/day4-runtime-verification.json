@@ -1,0 +1,87 @@
+{
+  "checked_at": "2026-11-15T14:29:42.0776947Z",
+  "task_ids_preserved": true,
+  "baseline_runs_preserved": true,
+  "all_resources_available": true,
+  "immutable_snapshot_unchanged": true,
+  "baseline_map_tasks_preserved": true,
+  "report_ids": [
+    "execution-report-2e6b33e1a2bf42ce",
+    "execution-report-9a0e78b20975450d",
+    "execution-report-bfd30d030d5f4040",
+    "execution-report-8bb4efb2f6294071",
+    "execution-report-34b63a9945c5457c"
+  ],
+  "baseline_incidents_preserved": true,
+  "satellite_no_route": true,
+  "related_incident_status": "open",
+  "baseline_patrols_preserved": true,
+  "tasks": [
+    {
+      "id": "execution-d379c72464d74f7f",
+      "code": "TASK-006",
+      "status": "completed",
+      "progress": 100,
+      "parent_task_id": null,
+      "source_run_id": null,
+      "evidence_snapshot_id": null,
+      "resource_code": "SAT-001",
+      "incident_id": "inc-temp-10795e72d90d438e"
+    },
+    {
+      "id": "execution-299d3b78d970494f",
+      "code": "TASK-005",
+      "status": "completed",
+      "progress": 100,
+      "parent_task_id": null,
+      "source_run_id": null,
+      "evidence_snapshot_id": null,
+      "resource_code": "ROBOT-002",
+      "incident_id": "inc-temp-10795e72d90d438e"
+    },
+    {
+      "id": "execution-43ee3372473d47bf",
+      "code": "TASK-004",
+      "status": "cancelled",
+      "progress": 45.18,
+      "parent_task_id": "execution-a6266b80cd564b94",
+      "source_run_id": null,
+      "evidence_snapshot_id": null,
+      "resource_code": "UAV-003",
+      "incident_id": "inc-temp-10795e72d90d438e"
+    },
+    {
+      "id": "execution-a6266b80cd564b94",
+      "code": "TASK-003",
+      "status": "completed",
+      "progress": 100,
+      "parent_task_id": null,
+      "source_run_id": null,
+      "evidence_snapshot_id": null,
+      "resource_code": "UAV-003",
+      "incident_id": "inc-temp-10795e72d90d438e"
+    },
+    {
+      "id": "execution-59a5e752d00a47bd",
+      "code": "TASK-002",
+      "status": "completed",
+      "progress": 100,
+      "parent_task_id": "execution-eb2fde7f25494f58",
+      "source_run_id": "run-c1b19372dcc2492a",
+      "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+      "resource_code": "UAV-003",
+      "incident_id": "inc-temp-6151439068f444c9"
+    },
+    {
+      "id": "execution-eb2fde7f25494f58",
+      "code": "TASK-001",
+      "status": "completed",
+      "progress": 100,
+      "parent_task_id": null,
+      "source_run_id": "run-c1b19372dcc2492a",
+      "evidence_snapshot_id": "evidence-99d4647d2f3544ba",
+      "resource_code": "UAV-003",
+      "incident_id": "inc-temp-6151439068f444c9"
+    }
+  ]
+}

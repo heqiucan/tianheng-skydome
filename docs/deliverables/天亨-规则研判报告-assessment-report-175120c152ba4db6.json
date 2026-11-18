@@ -1,0 +1,501 @@
+{
+  "id": "assessment-report-175120c152ba4db6",
+  "run_id": "run-c0b91e91cc904c32",
+  "incident_id": "inc-demo-evt-008",
+  "incident_code": "EVT-008",
+  "evidence_snapshot_id": "evidence-9224add6a3ac4197",
+  "title": "实训基地温度异常 · 规则研判报告",
+  "created_at": "2026-11-15T15:46:46.444+00:00",
+  "analysis_kind": "rule_based",
+  "rule_version": "demo-risk-v2",
+  "incident": {
+    "id": "inc-demo-evt-008",
+    "title": "实训基地温度异常",
+    "location_id": "loc-training-2f",
+    "event_type": "temperature_anomaly",
+    "status": "open",
+    "risk_level": "unassessed",
+    "summary": "模拟温度升至68.5℃；烟雾未触发、摄像机在线。温度异常不等于火灾，等待证据核查。",
+    "triggered_at": "2026-11-15T15:34:00.554+00:00",
+    "is_simulated": true,
+    "location_name": "实训基地二层（DEMO 楼层）",
+    "code": "EVT-008",
+    "source": {
+      "kind": "demo_fixture",
+      "label": "预置模拟场景"
+    },
+    "building_id": "loc-training",
+    "building_name": "物流与航空实训基地",
+    "device_ids": [
+      "dev-camera-01",
+      "dev-smoke-01",
+      "dev-temp-01"
+    ]
+  },
+  "devices": [
+    {
+      "id": "dev-camera-01",
+      "code": "CAM-021",
+      "name": "实训楼走廊摄像机",
+      "type": "camera",
+      "location_id": "loc-training-2f",
+      "status": "online",
+      "last_seen": "2026-11-15T15:34:00.554+00:00",
+      "metrics": [
+        {
+          "kind": "connectivity",
+          "label": "通信状态",
+          "value": "在线",
+          "unit": "",
+          "observation_id": "obs-788d91e6eb1f4153",
+          "observed_at": "2026-11-15T15:34:00.554+00:00",
+          "incident_id": "inc-demo-evt-008",
+          "quality": "good",
+          "data_scope": "event_snapshot"
+        },
+        {
+          "kind": "camera_event",
+          "label": "异常记录",
+          "value": 0,
+          "unit": "",
+          "observation_id": "obs-dfacd677e79e4f26",
+          "observed_at": "2026-11-15T15:34:00.554+00:00",
+          "incident_id": "inc-demo-evt-008",
+          "quality": "good",
+          "data_scope": "event_snapshot"
+        }
+      ],
+      "references": [
+        {
+          "kind": "connectivity",
+          "rule_id": "demo-connectivity",
+          "rule_version": "demo-risk-v2",
+          "reference_label": "1 表示模拟在线，0 表示模拟离线；在线不证明现场安全",
+          "normal_condition": {
+            "operator": "eq",
+            "value": 1
+          },
+          "warning_condition": {
+            "operator": "eq",
+            "value": 0
+          },
+          "unit": "",
+          "source_kind": "demo_rule",
+          "source_label": "演示规则参考，不是设备规范或安全认证标准",
+          "is_simulated": true
+        },
+        {
+          "kind": "camera_event",
+          "rule_id": "demo-camera_event",
+          "rule_version": "demo-risk-v2",
+          "reference_label": "0 表示无模拟异常记录，1 表示有模拟异常记录；未进行视频识别",
+          "normal_condition": {
+            "operator": "eq",
+            "value": 0
+          },
+          "warning_condition": {
+            "operator": "eq",
+            "value": 1
+          },
+          "unit": "",
+          "source_kind": "demo_rule",
+          "source_label": "演示规则参考，不是设备规范或安全认证标准",
+          "is_simulated": true
+        }
+      ],
+      "is_simulated": true
+    },
+    {
+      "id": "dev-smoke-01",
+      "code": "SMOKE-012",
+      "name": "实训楼烟雾传感器",
+      "type": "smoke",
+      "location_id": "loc-training-2f",
+      "status": "online",
+      "last_seen": "2026-11-15T15:34:00.554+00:00",
+      "metrics": [
+        {
+          "kind": "smoke_alarm",
+          "label": "烟雾告警",
+          "value": "未触发",
+          "unit": "",
+          "observation_id": "obs-6c7c586148a84494",
+          "observed_at": "2026-11-15T15:34:00.554+00:00",
+          "incident_id": "inc-demo-evt-008",
+          "quality": "good",
+          "data_scope": "event_snapshot"
+        }
+      ],
+      "references": [
+        {
+          "kind": "smoke_alarm",
+          "rule_id": "demo-smoke_alarm",
+          "rule_version": "demo-risk-v2",
+          "reference_label": "0 表示模拟未触发，1 表示模拟告警；未触发不能排除现场风险",
+          "normal_condition": {
+            "operator": "eq",
+            "value": 0
+          },
+          "warning_condition": {
+            "operator": "eq",
+            "value": 1
+          },
+          "unit": "",
+          "source_kind": "demo_rule",
+          "source_label": "演示规则参考，不是设备规范或安全认证标准",
+          "is_simulated": true
+        }
+      ],
+      "is_simulated": true
+    },
+    {
+      "id": "dev-temp-01",
+      "code": "TEMP-008",
+      "name": "实训楼温度传感器",
+      "type": "temperature",
+      "location_id": "loc-training-2f",
+      "status": "alarm",
+      "last_seen": "2026-11-15T15:34:00.554+00:00",
+      "metrics": [
+        {
+          "kind": "temperature",
+          "label": "温度",
+          "value": 68.5,
+          "unit": "°C",
+          "observation_id": "obs-6cb232b51efd460f",
+          "observed_at": "2026-11-15T15:34:00.554+00:00",
+          "incident_id": "inc-demo-evt-008",
+          "quality": "alarm",
+          "data_scope": "event_snapshot"
+        }
+      ],
+      "references": [
+        {
+          "kind": "temperature",
+          "rule_id": "demo-temperature",
+          "rule_version": "demo-risk-v2",
+          "reference_label": "低于 60℃未命中本演示规则；≥60℃触发演示异常",
+          "normal_condition": {
+            "operator": "lt",
+            "value": 60
+          },
+          "warning_condition": {
+            "operator": "gte",
+            "value": 60
+          },
+          "unit": "°C",
+          "source_kind": "demo_rule",
+          "source_label": "演示规则参考，不是设备规范或安全认证标准",
+          "is_simulated": true
+        }
+      ],
+      "is_simulated": true
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-e71f66a5ced34859",
+      "device_id": "dev-temp-01",
+      "incident_id": "inc-demo-evt-008",
+      "kind": "temperature",
+      "value": 30,
+      "unit": "°C",
+      "observed_at": "2026-11-15T15:28:00.554+00:00",
+      "quality": "good",
+      "description": "固定演示场景的模拟温度记录",
+      "observation_id": "obs-e71f66a5ced34859",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-04729123a57a4913",
+      "device_id": "dev-temp-01",
+      "incident_id": "inc-demo-evt-008",
+      "kind": "temperature",
+      "value": 49,
+      "unit": "°C",
+      "observed_at": "2026-11-15T15:31:00.554+00:00",
+      "quality": "good",
+      "description": "固定演示场景的模拟温度记录",
+      "observation_id": "obs-04729123a57a4913",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-6cb232b51efd460f",
+      "device_id": "dev-temp-01",
+      "incident_id": "inc-demo-evt-008",
+      "kind": "temperature",
+      "value": 68.5,
+      "unit": "°C",
+      "observed_at": "2026-11-15T15:34:00.554+00:00",
+      "quality": "alarm",
+      "description": "固定演示场景的模拟温度记录",
+      "observation_id": "obs-6cb232b51efd460f",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-6c7c586148a84494",
+      "device_id": "dev-smoke-01",
+      "incident_id": "inc-demo-evt-008",
+      "kind": "smoke_alarm",
+      "value": 0,
+      "unit": "",
+      "observed_at": "2026-11-15T15:34:00.554+00:00",
+      "quality": "good",
+      "description": "模拟烟雾未触发",
+      "observation_id": "obs-6c7c586148a84494",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-788d91e6eb1f4153",
+      "device_id": "dev-camera-01",
+      "incident_id": "inc-demo-evt-008",
+      "kind": "connectivity",
+      "value": 1,
+      "unit": "",
+      "observed_at": "2026-11-15T15:34:00.554+00:00",
+      "quality": "good",
+      "description": "模拟摄像机在线",
+      "observation_id": "obs-788d91e6eb1f4153",
+      "data_scope": "event_snapshot"
+    },
+    {
+      "id": "obs-dfacd677e79e4f26",
+      "device_id": "dev-camera-01",
+      "incident_id": "inc-demo-evt-008",
+      "kind": "camera_event",
+      "value": 0,
+      "unit": "",
+      "observed_at": "2026-11-15T15:34:00.554+00:00",
+      "quality": "good",
+      "description": "无模拟视频异常记录，未进行真实视频识别",
+      "observation_id": "obs-dfacd677e79e4f26",
+      "data_scope": "event_snapshot"
+    }
+  ],
+  "references": [
+    {
+      "kind": "temperature",
+      "rule_id": "demo-temperature",
+      "rule_version": "demo-risk-v2",
+      "reference_label": "低于 60℃未命中本演示规则；≥60℃触发演示异常",
+      "normal_condition": {
+        "operator": "lt",
+        "value": 60
+      },
+      "warning_condition": {
+        "operator": "gte",
+        "value": 60
+      },
+      "unit": "°C",
+      "source_kind": "demo_rule",
+      "source_label": "演示规则参考，不是设备规范或安全认证标准",
+      "is_simulated": true
+    },
+    {
+      "kind": "smoke_alarm",
+      "rule_id": "demo-smoke_alarm",
+      "rule_version": "demo-risk-v2",
+      "reference_label": "0 表示模拟未触发，1 表示模拟告警；未触发不能排除现场风险",
+      "normal_condition": {
+        "operator": "eq",
+        "value": 0
+      },
+      "warning_condition": {
+        "operator": "eq",
+        "value": 1
+      },
+      "unit": "",
+      "source_kind": "demo_rule",
+      "source_label": "演示规则参考，不是设备规范或安全认证标准",
+      "is_simulated": true
+    },
+    {
+      "kind": "connectivity",
+      "rule_id": "demo-connectivity",
+      "rule_version": "demo-risk-v2",
+      "reference_label": "1 表示模拟在线，0 表示模拟离线；在线不证明现场安全",
+      "normal_condition": {
+        "operator": "eq",
+        "value": 1
+      },
+      "warning_condition": {
+        "operator": "eq",
+        "value": 0
+      },
+      "unit": "",
+      "source_kind": "demo_rule",
+      "source_label": "演示规则参考，不是设备规范或安全认证标准",
+      "is_simulated": true
+    },
+    {
+      "kind": "camera_event",
+      "rule_id": "demo-camera_event",
+      "rule_version": "demo-risk-v2",
+      "reference_label": "0 表示无模拟异常记录，1 表示有模拟异常记录；未进行视频识别",
+      "normal_condition": {
+        "operator": "eq",
+        "value": 0
+      },
+      "warning_condition": {
+        "operator": "eq",
+        "value": 1
+      },
+      "unit": "",
+      "source_kind": "demo_rule",
+      "source_label": "演示规则参考，不是设备规范或安全认证标准",
+      "is_simulated": true
+    },
+    {
+      "kind": "water_pressure",
+      "rule_id": "demo-water_pressure",
+      "rule_version": "demo-risk-v2",
+      "reference_label": "未配置参考范围，需核实设备规范与实际工况",
+      "normal_condition": null,
+      "warning_condition": null,
+      "unit": "MPa",
+      "source_kind": "demo_rule",
+      "source_label": "演示规则参考，不是设备规范或安全认证标准",
+      "is_simulated": true
+    },
+    {
+      "kind": "battery",
+      "rule_id": "demo-battery",
+      "rule_version": "demo-risk-v2",
+      "reference_label": "仅展示模拟电量，未配置执行安全阈值",
+      "normal_condition": null,
+      "warning_condition": null,
+      "unit": "%",
+      "source_kind": "demo_rule",
+      "source_label": "演示规则参考，不是设备规范或安全认证标准",
+      "is_simulated": true
+    }
+  ],
+  "assessment": {
+    "level": "medium",
+    "title": "存在单项异常，需要补充核查",
+    "evidence": [
+      {
+        "label": "温度",
+        "value": "68.5°C",
+        "source_id": "obs-6cb232b51efd460f"
+      },
+      {
+        "label": "烟雾告警",
+        "value": "未触发",
+        "source_id": "obs-6c7c586148a84494"
+      }
+    ],
+    "reasons": [
+      "温度记录命中 ≥60°C 的演示阈值；此阈值不是消防认证标准。",
+      "TEMP-008 在 6 分钟内由 30℃升至 68.5℃，增加 38.5℃；仅反映所存模拟样本的变化。"
+    ],
+    "analysis_kind": "rule_based",
+    "temperature_trends": [
+      {
+        "device_id": "dev-temp-01",
+        "device_code": "TEMP-008",
+        "sample_count": 3,
+        "started_at": "2026-11-15T15:28:00.554+00:00",
+        "ended_at": "2026-11-15T15:34:00.554+00:00",
+        "first_value": 30,
+        "latest_value": 68.5,
+        "delta": 38.5,
+        "duration_minutes": 6,
+        "slope_per_minute": 6.4167,
+        "direction": "rising",
+        "observation_ids": [
+          "obs-e71f66a5ced34859",
+          "obs-04729123a57a4913",
+          "obs-6cb232b51efd460f"
+        ]
+      }
+    ],
+    "regional_evidence": [
+      {
+        "device_id": "dev-temp-01",
+        "device_code": "TEMP-008",
+        "kind": "temperature",
+        "observation_id": "obs-6cb232b51efd460f",
+        "observed_at": "2026-11-15T15:34:00.554+00:00",
+        "value": 68.5,
+        "unit": "°C",
+        "quality": "alarm",
+        "interpretation": "温度观测，需结合变化趋势与同事件其他证据判断",
+        "data_scope": "event_snapshot"
+      },
+      {
+        "device_id": "dev-smoke-01",
+        "device_code": "SMOKE-012",
+        "kind": "smoke_alarm",
+        "observation_id": "obs-6c7c586148a84494",
+        "observed_at": "2026-11-15T15:34:00.554+00:00",
+        "value": 0,
+        "unit": "",
+        "quality": "good",
+        "interpretation": "模拟烟雾未触发；不能单独排除现场风险",
+        "data_scope": "event_snapshot"
+      },
+      {
+        "device_id": "dev-camera-01",
+        "device_code": "CAM-021",
+        "kind": "connectivity",
+        "observation_id": "obs-788d91e6eb1f4153",
+        "observed_at": "2026-11-15T15:34:00.554+00:00",
+        "value": 1,
+        "unit": "",
+        "quality": "good",
+        "interpretation": "模拟通信在线，仅代表连接状态，不证明现场安全",
+        "data_scope": "event_snapshot"
+      },
+      {
+        "device_id": "dev-camera-01",
+        "device_code": "CAM-021",
+        "kind": "camera_event",
+        "observation_id": "obs-dfacd677e79e4f26",
+        "observed_at": "2026-11-15T15:34:00.554+00:00",
+        "value": 0,
+        "unit": "",
+        "quality": "good",
+        "interpretation": "无模拟摄像机异常记录；未执行视频识别，不能确认现场无异常",
+        "data_scope": "event_snapshot"
+      }
+    ],
+    "risk_judgment": "存在单项异常，需要补充核查。温度异常不等于火灾；需要补充现场核验，不能根据模拟记录确认或排除火情。",
+    "possible_causes": [
+      "可能存在局部热源或设备运行升温，需结合实际工况核实。",
+      "传感器误差或采样环境变化也可能影响读数，需补充校准记录与现场复测。"
+    ],
+    "uncertainties": [
+      "所有设备记录均为预置模拟数据；未核实现场情况。",
+      "当前为规则初步核查，未经过真实模型综合研判或人工审批。",
+      "无现场视频核验、设备校准记录及实际工况资料，无法确定异常原因。",
+      "同区域关联仅限保存的同事件设备记录，不代表已覆盖区域所有风险。"
+    ],
+    "recommendations": [
+      "由授权人员依据正式校园预案复核现场信息。",
+      "核对关联设备的通信状态和数据质量。",
+      "保存研判报告后，可单独创建模拟巡检任务；需选择资源并确认启动。"
+    ],
+    "rule_version": "demo-risk-v2",
+    "is_demo": true,
+    "scope": "preliminary_demo_assessment",
+    "evidence_snapshot_id": "evidence-9224add6a3ac4197",
+    "data_scope": "event_snapshot",
+    "report_id": "assessment-report-175120c152ba4db6"
+  },
+  "source_context": {
+    "source_view": "map",
+    "image_id": "training-2026",
+    "selection": {
+      "kind": "device",
+      "id": "dev-temp-01"
+    }
+  },
+  "limitations": [
+    "本报告由已保存的模拟证据和确定性规则生成，未调用大模型。",
+    "温度异常不等于火灾；规则阈值不是设备规范或经审定的安全标准。",
+    "摄像机在线或无异常记录不代表已完成视频识别或现场核验。",
+    "报告生成不代表事件已处置或风险已消除，后续模拟执行仍需单独确认。"
+  ],
+  "is_simulated": true
+}

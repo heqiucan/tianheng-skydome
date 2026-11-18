@@ -1,0 +1,42 @@
+{
+  "patrol_ids": [
+    "patrol-bb69957ba2b24232",
+    "patrol-41d7af4f55fd459c"
+  ],
+  "snapshot_ids": [
+    "evidence-99d4647d2f3544ba",
+    "evidence-99d4647d2f3544ba",
+    "evidence-4c1a5d6df753402e"
+  ],
+  "captured_at": "2026-11-15T21:34:31.7233475+08:00",
+  "incident_ids": [
+    "inc-temp-10795e72d90d438e",
+    "inc-temp-6151439068f444c9",
+    "inc-84854a2c5b254f19",
+    "inc-demo-001",
+    "inc-demo-fire",
+    "inc-demo-offline"
+  ],
+  "map_task_ids": [
+    "maptask-598b763895774bf7",
+    "maptask-e9d136a886b24b01",
+    "maptask-f282e885a8204172",
+    "maptask-3b232179437f4f64",
+    "maptask-d8c0786d1d3b404a",
+    "maptask-ec63830378674ec1",
+    "maptask-05c138fdee3a4020",
+    "maptask-dbd67fe9dd5642ba",
+    "maptask-95df28384efa4526",
+    "maptask-eb05c702024843b6",
+    "maptask-d9323407788449e2"
+  ],
+  "run_ids": [
+    "run-c1b19372dcc2492a",
+    "run-b1e1bc9feab5400d",
+    "run-3b454709f0cb41f8",
+    "run-fd9f6bb111ed48c0",
+    "run-0412a232d9474405",
+    "run-907093b4901c4d76",
+    "run-9b92343b35d644f5"
+  ]
+}

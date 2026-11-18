@@ -1,0 +1,15 @@
+{
+  "map_context_mismatches": [],
+  "baseline_patrols_preserved": true,
+  "checked_at": "2026-11-15T21:04:58.7091523+08:00",
+  "old_observations_checked": 32,
+  "counts": {
+    "incidents": 6,
+    "evidence_checks": 3,
+    "map_tasks": 11,
+    "patrols": 2,
+    "devices": 9
+  },
+  "snapshot_checksum_unchanged": true,
+  "changed_old_observations": []
+}

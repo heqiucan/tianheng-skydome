@@ -1,0 +1,36 @@
+{
+  "id": "execution-report-c9c40a67f3f343d6",
+  "task_id": "execution-1e2dff31881b4fd3",
+  "task_code": "TASK-008",
+  "title": "实训基地温度异常 · 无人机模拟巡检 · 演示 执行记录",
+  "incident_id": "inc-demo-evt-008",
+  "source_run_id": "run-c0b91e91cc904c32",
+  "evidence_snapshot_id": "evidence-9224add6a3ac4197",
+  "resource_id": "UAV-003",
+  "resource_code": "UAV-003",
+  "started_at": "2026-11-15T15:59:54.005+00:00",
+  "finished_at": "2026-11-15T16:00:21.005+00:00",
+  "generated_at": "2026-11-15T16:00:21.005+00:00",
+  "scope": "物流与航空实训基地 / inc-demo-evt-008",
+  "summary": "TASK-008 使用 UAV-003 完成对 物流与航空实训基地 的模拟执行流程；结果待人工复核。",
+  "findings": [
+    "目标：物流与航空实训基地；关联事件：实训基地温度异常（inc-demo-evt-008）。",
+    "UAV-003 已完成 无人机模拟巡检流程，进度 100%；此状态仅表示模拟流程完成。",
+    "任务来源证据 dev-temp-01 / temperature：68.5 °C，记录时间 2026-11-15T15:34:00.554+00:00；不是本次巡检新采集数据。",
+    "任务来源证据 dev-smoke-01 / smoke_alarm：0.0 ，记录时间 2026-11-15T15:34:00.554+00:00；不是本次巡检新采集数据。",
+    "任务来源证据 dev-camera-01 / connectivity：1.0 ，记录时间 2026-11-15T15:34:00.554+00:00；不是本次巡检新采集数据。",
+    "任务来源证据 dev-camera-01 / camera_event：0.0 ，记录时间 2026-11-15T15:34:00.554+00:00；不是本次巡检新采集数据。",
+    "来源为确定性规则初评：medium；未调用大模型规划。"
+  ],
+  "recommendations": [
+    "由授权人员核实关联设备及现场情况。",
+    "将人工复核结果另行记录，再决定风险事件后续状态。"
+  ],
+  "limitations": [
+    "本报告为 演示 模拟执行记录，未采集真实传感器、视频或遥测数据。",
+    "校园底图为规划效果图，位置和路线为图像归一化示意；不代表真实调度或可通行路线。",
+    "模拟完成不等于风险消除，原风险事件未自动关闭；需要人工复核。"
+  ],
+  "verification_status": "requires_human_review",
+  "is_simulated": true
+}

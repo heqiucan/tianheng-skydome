@@ -1,0 +1,422 @@
+{
+  "incident_ids": [
+    "inc-84854a2c5b254f19",
+    "inc-demo-001",
+    "inc-demo-fire",
+    "inc-demo-offline"
+  ],
+  "task_ids": [
+    "maptask-e9d136a886b24b01",
+    "maptask-f282e885a8204172",
+    "maptask-3b232179437f4f64",
+    "maptask-d8c0786d1d3b404a",
+    "maptask-ec63830378674ec1",
+    "maptask-05c138fdee3a4020",
+    "maptask-dbd67fe9dd5642ba",
+    "maptask-95df28384efa4526",
+    "maptask-eb05c702024843b6",
+    "maptask-d9323407788449e2"
+  ],
+  "patrol_ids": [
+    "patrol-bb69957ba2b24232",
+    "patrol-41d7af4f55fd459c"
+  ],
+  "run_ids": [
+    "run-fd9f6bb111ed48c0",
+    "run-0412a232d9474405",
+    "run-907093b4901c4d76",
+    "run-9b92343b35d644f5"
+  ],
+  "evidence_sha256": {
+    "inc-84854a2c5b254f19": "2f93f0126d81a8a47f896dd4d5ebe307e193922425e33680d938457e0c288c1c",
+    "inc-demo-001": "819992b70bb389b401a00f02afe4bbeadc93170b08808807d419ce7fd264af13",
+    "inc-demo-fire": "f8e982ed3a91c516c3f4776ec11c1943c679f86f960bee0fde088b9a02afec58",
+    "inc-demo-offline": "19e2d3613bd5af4707f1d2733c228d83d07d7a1ad5ed743c699c78c09b2aad79"
+  },
+  "evidence": {
+    "inc-84854a2c5b254f19": [
+      [
+        {
+          "id": "obs-2f700148150546f3",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-84854a2c5b254f19",
+          "kind": "camera_event",
+          "value": 1.0,
+          "unit": "",
+          "observed_at": "2026-11-15T09:03:15.223+00:00",
+          "quality": "alarm",
+          "description": "模拟异常事件记录，未进行视频识别或现场确认"
+        }
+      ],
+      [
+        {
+          "id": "obs-c2009e48c61c4e39",
+          "device_id": "dev-robot-01",
+          "incident_id": "inc-84854a2c5b254f19",
+          "kind": "connectivity",
+          "value": 0.0,
+          "unit": "",
+          "observed_at": "2026-11-15T09:03:15.223+00:00",
+          "quality": "offline",
+          "description": "模拟设备离线"
+        }
+      ],
+      [
+        {
+          "id": "obs-4bfcae7f156a44b6",
+          "device_id": "dev-smoke-01",
+          "incident_id": "inc-84854a2c5b254f19",
+          "kind": "smoke_alarm",
+          "value": 1.0,
+          "unit": "",
+          "observed_at": "2026-11-15T09:03:15.223+00:00",
+          "quality": "alarm",
+          "description": "预置模拟烟雾告警"
+        }
+      ],
+      [
+        {
+          "id": "obs-18bf8c8f468f4472",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-84854a2c5b254f19",
+          "kind": "temperature",
+          "value": 26.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:48:15.223+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录"
+        },
+        {
+          "id": "obs-f865b77f70954330",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-84854a2c5b254f19",
+          "kind": "temperature",
+          "value": 27.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:51:15.223+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录"
+        },
+        {
+          "id": "obs-2ebfaac7fc984863",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-84854a2c5b254f19",
+          "kind": "temperature",
+          "value": 31.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:54:15.223+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录"
+        },
+        {
+          "id": "obs-028dbd8967d943b4",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-84854a2c5b254f19",
+          "kind": "temperature",
+          "value": 42.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:57:15.223+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录"
+        },
+        {
+          "id": "obs-2e1c4fc1fe5940f5",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-84854a2c5b254f19",
+          "kind": "temperature",
+          "value": 61.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T09:00:15.223+00:00",
+          "quality": "alarm",
+          "description": "预置模拟温度记录"
+        },
+        {
+          "id": "obs-536f85d792cc49cf",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-84854a2c5b254f19",
+          "kind": "temperature",
+          "value": 78.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T09:03:15.223+00:00",
+          "quality": "alarm",
+          "description": "预置模拟温度记录"
+        }
+      ],
+      [
+        {
+          "id": "obs-9dd924062a9447cc",
+          "device_id": "dev-water-01",
+          "incident_id": "inc-84854a2c5b254f19",
+          "kind": "water_pressure",
+          "value": 0.35,
+          "unit": "MPa",
+          "observed_at": "2026-11-15T09:03:15.223+00:00",
+          "quality": "good",
+          "description": "预置模拟消防水压记录"
+        }
+      ]
+    ],
+    "inc-demo-001": [
+      [
+        {
+          "id": "obs-3452374af8a84692",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-demo-001",
+          "kind": "camera_event",
+          "value": 1.0,
+          "unit": "",
+          "observed_at": "2026-11-15T08:37:20.883+00:00",
+          "quality": "alarm",
+          "description": "模拟异常事件记录，未进行视频识别或现场确认"
+        }
+      ],
+      [
+        {
+          "id": "obs-1cb60dcb447c459e",
+          "device_id": "dev-robot-01",
+          "incident_id": "inc-demo-001",
+          "kind": "connectivity",
+          "value": 0.0,
+          "unit": "",
+          "observed_at": "2026-11-15T08:37:20.883+00:00",
+          "quality": "offline",
+          "description": "模拟设备离线"
+        }
+      ],
+      [
+        {
+          "id": "obs-d5fb1e7e258b4ca4",
+          "device_id": "dev-smoke-01",
+          "incident_id": "inc-demo-001",
+          "kind": "smoke_alarm",
+          "value": 1.0,
+          "unit": "",
+          "observed_at": "2026-11-15T08:37:20.883+00:00",
+          "quality": "alarm",
+          "description": "预置模拟烟雾告警"
+        }
+      ],
+      [
+        {
+          "id": "obs-aa56d71ddc88488e",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 26.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:22:20.883+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录"
+        },
+        {
+          "id": "obs-b8fce2ef7daf4db2",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 27.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:25:20.883+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录"
+        },
+        {
+          "id": "obs-db545fea80824326",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 31.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:28:20.883+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录"
+        },
+        {
+          "id": "obs-b87e09c44f3c4b2e",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 42.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:31:20.883+00:00",
+          "quality": "good",
+          "description": "预置模拟温度记录"
+        },
+        {
+          "id": "obs-5bbad6e5c6bc4e55",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 61.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:34:20.883+00:00",
+          "quality": "alarm",
+          "description": "预置模拟温度记录"
+        },
+        {
+          "id": "obs-af1200e1d7bc413b",
+          "device_id": "dev-temp-01",
+          "incident_id": "inc-demo-001",
+          "kind": "temperature",
+          "value": 78.0,
+          "unit": "°C",
+          "observed_at": "2026-11-15T08:37:20.883+00:00",
+          "quality": "alarm",
+          "description": "预置模拟温度记录"
+        }
+      ],
+      [
+        {
+          "id": "obs-df0ed7d6f33b475c",
+          "device_id": "dev-water-01",
+          "incident_id": "inc-demo-001",
+          "kind": "water_pressure",
+          "value": 0.35,
+          "unit": "MPa",
+          "observed_at": "2026-11-15T08:37:20.883+00:00",
+          "quality": "good",
+          "description": "预置模拟消防水压记录"
+        }
+      ]
+    ],
+    "inc-demo-fire": [
+      [
+        {
+          "id": "obs-23870748059648be",
+          "device_id": "dev-water-01",
+          "incident_id": "inc-demo-fire",
+          "kind": "water_pressure",
+          "value": 0.35,
+          "unit": "MPa",
+          "observed_at": "2026-11-15T09:41:46.721+00:00",
+          "quality": "good",
+          "description": "DEMO 消防设备水压记录"
+        },
+        {
+          "id": "obs-8f8a78578f7e4200",
+          "device_id": "dev-water-01",
+          "incident_id": "inc-demo-fire",
+          "kind": "water_pressure",
+          "value": 0.31,
+          "unit": "MPa",
+          "observed_at": "2026-11-15T09:44:46.721+00:00",
+          "quality": "good",
+          "description": "DEMO 消防设备水压记录"
+        },
+        {
+          "id": "obs-4c9b52809d1d4d09",
+          "device_id": "dev-water-01",
+          "incident_id": "inc-demo-fire",
+          "kind": "water_pressure",
+          "value": 0.26,
+          "unit": "MPa",
+          "observed_at": "2026-11-15T09:47:46.721+00:00",
+          "quality": "good",
+          "description": "DEMO 消防设备水压记录"
+        },
+        {
+          "id": "obs-60fb8db15af34d83",
+          "device_id": "dev-water-01",
+          "incident_id": "inc-demo-fire",
+          "kind": "water_pressure",
+          "value": 0.18,
+          "unit": "MPa",
+          "observed_at": "2026-11-15T09:50:46.721+00:00",
+          "quality": "good",
+          "description": "DEMO 消防设备水压记录"
+        },
+        {
+          "id": "obs-e9324e007b6343b5",
+          "device_id": "dev-water-01",
+          "incident_id": "inc-demo-fire",
+          "kind": "water_pressure",
+          "value": 0.12,
+          "unit": "MPa",
+          "observed_at": "2026-11-15T09:53:46.721+00:00",
+          "quality": "good",
+          "description": "DEMO 消防设备水压记录"
+        },
+        {
+          "id": "obs-2386b09065a84adb",
+          "device_id": "dev-water-01",
+          "incident_id": "inc-demo-fire",
+          "kind": "water_pressure",
+          "value": 0.08,
+          "unit": "MPa",
+          "observed_at": "2026-11-15T09:56:46.721+00:00",
+          "quality": "alarm",
+          "description": "DEMO 消防设备水压记录"
+        }
+      ]
+    ],
+    "inc-demo-offline": [
+      [
+        {
+          "id": "obs-63fea0bc020844cd",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-demo-offline",
+          "kind": "connectivity",
+          "value": 1.0,
+          "unit": "",
+          "observed_at": "2026-11-15T09:41:46.721+00:00",
+          "quality": "good",
+          "description": "DEMO 视频监控通信状态"
+        },
+        {
+          "id": "obs-e2af7866be9e4a2e",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-demo-offline",
+          "kind": "connectivity",
+          "value": 1.0,
+          "unit": "",
+          "observed_at": "2026-11-15T09:44:46.721+00:00",
+          "quality": "good",
+          "description": "DEMO 视频监控通信状态"
+        },
+        {
+          "id": "obs-f54feff344f74ce4",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-demo-offline",
+          "kind": "connectivity",
+          "value": 1.0,
+          "unit": "",
+          "observed_at": "2026-11-15T09:47:46.721+00:00",
+          "quality": "good",
+          "description": "DEMO 视频监控通信状态"
+        },
+        {
+          "id": "obs-44f699ea3ae44015",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-demo-offline",
+          "kind": "connectivity",
+          "value": 0.0,
+          "unit": "",
+          "observed_at": "2026-11-15T09:50:46.721+00:00",
+          "quality": "good",
+          "description": "DEMO 视频监控通信状态"
+        },
+        {
+          "id": "obs-b1b191eb5ad74c45",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-demo-offline",
+          "kind": "connectivity",
+          "value": 0.0,
+          "unit": "",
+          "observed_at": "2026-11-15T09:53:46.721+00:00",
+          "quality": "good",
+          "description": "DEMO 视频监控通信状态"
+        },
+        {
+          "id": "obs-3af0d77648f943e5",
+          "device_id": "dev-camera-01",
+          "incident_id": "inc-demo-offline",
+          "kind": "connectivity",
+          "value": 0.0,
+          "unit": "",
+          "observed_at": "2026-11-15T09:56:46.721+00:00",
+          "quality": "offline",
+          "description": "DEMO 视频监控通信状态"
+        }
+      ]
+    ]
+  }
+}
