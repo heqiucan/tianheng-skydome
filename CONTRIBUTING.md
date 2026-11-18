@@ -1,5 +1,13 @@
 # 天亨 SKYDOME 协作开发
 
+## 双人协作入口
+
+- [共同目标、暂定分工与协作约定](docs/team-collaboration.md)：两位共同负责人各自完整交付功能，再互相检查；包含与老板对齐的话术。
+- [Iteration 01 协商初稿](docs/iteration-01.md)：基于当前代码核查的两项候选功能、接口草案、文件边界、逐项验收和暂定估时。
+- [现有 Day 5 交付记录](docs/day5-final-delivery.md)：历史阶段能力与验收证据；最新基线结果见 Iteration 01。
+
+上述分工和排期是待双方协商的建议，不代表已获老板批准或功能已经实现。
+
 ## 首次运行（Windows PowerShell）
 
 安装 Git、Python 3.12 和 Node.js 24 后执行：
@@ -21,13 +29,20 @@ Set-Location ..
 
 ## 分支与合并
 
-开始开发前同步主分支，为每个改动创建独立分支：
+`codex/team-collaboration` 用于协作计划和准备材料。本轮文档在该分支提交并推送；不直接修改 `main`。实际功能分别使用独立分支，通过后续 PR 互审后合入 `main`，不在准备分支混写两人的功能。
+
+首轮建议分支为 `codex/task-follow-up-notes` 和 `codex/knowledge-category-search`，具体范围见上述计划。每人负责自己功能的前后端、测试和说明；由另一位共同负责人审查。PR 互审是协作约定，不表示仓库已配置强制审查规则。本轮准备工作不自动创建 PR 或 Issue。
+
+开始开发前先确认工作区干净，再同步主分支，为每个改动创建独立分支：
 
 ```powershell
+git status --short --branch
 git switch main
-git pull --ff-only
+git pull --ff-only origin main
 git switch -c codex/describe-your-change
 ```
+
+未提交的修改应先在原分支妥善处理；不要强制切换覆盖它们。两台电脑各用自己的 checkout。同机多个对话若共用目录，也共用当前分支；新建对话本身不会隔离代码，不能在同一 checkout 同时开发两个功能分支。
 
 完成后只暂存本次修改的文件，检查差异并提交：
 
